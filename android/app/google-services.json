@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "764176599235",
+    "project_id": "p20202amarelo",
+    "storage_bucket": "p20202amarelo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764176599235:android:124a8d882d07795dbffa76",
+        "android_client_info": {
+          "package_name": "br.uff.ic.dm.p20202amarelo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764176599235-n9me81p6i5e0p1dt1eo1sqgl5obru3sn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN6Uv_mc-h6MIJc2MarN9Er_F_UyOj-x4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764176599235-n9me81p6i5e0p1dt1eo1sqgl5obru3sn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
