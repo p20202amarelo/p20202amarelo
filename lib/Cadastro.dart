@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'Home.dart';
 import 'model/Usuario.dart';
@@ -63,7 +64,7 @@ class _CadastroState extends State<Cadastro> {
 
   }
 
-  _cadastrarUsuario( Usuario usuario ){
+  _cadastrarUsuario( Usuario usuario){
 
     FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -78,6 +79,8 @@ class _CadastroState extends State<Cadastro> {
       db.collection("usuarios")
       .document( firebaseUser.user.uid )//.additionalUserInfo.providerId
       .setData( usuario.toMap() );
+
+      _cadastrarPlayerId(usuario, firebaseUser.user.uid);
 
       Navigator.pushNamedAndRemoveUntil(
           context, "/home", (_)=>false
@@ -94,6 +97,19 @@ class _CadastroState extends State<Cadastro> {
 
 
 
+  }
+
+  //abv
+  Future<void> _cadastrarPlayerId(Usuario usuario,  String uid) async {
+    var status = await OneSignal.shared.getPermissionSubscriptionState();
+    var playerId = status.subscriptionStatus.userId;
+    usuario.osId = playerId;
+
+    Firestore db = Firestore.instance;
+
+    db.collection("usuarios")
+        .document( uid )//.additionalUserInfo.providerId
+        .updateData( usuario.toMap() );
   }
 
   @override

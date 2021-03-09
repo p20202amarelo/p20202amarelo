@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">764176599235-n9me81p6i5e0p1dt1eo1sqgl5obru3sn.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">764176599235</string>
+    <string name="google_api_key" translatable="false">AIzaSyCN6Uv_mc-h6MIJc2MarN9Er_F_UyOj-x4</string>
+    <string name="google_app_id" translatable="false">1:764176599235:android:124a8d882d07795dbffa76</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCN6Uv_mc-h6MIJc2MarN9Er_F_UyOj-x4</string>
+    <string name="google_storage_bucket" translatable="false">p20202amarelo.appspot.com</string>
+    <string name="project_id" translatable="false">p20202amarelo</string>
+</resources>

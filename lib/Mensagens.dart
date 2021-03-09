@@ -10,6 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class Mensagens extends StatefulWidget {
   Usuario contato;
@@ -62,38 +63,43 @@ class _MensagensState extends State<Mensagens> {
       //Salvar conversa
       _salvarConversa( mensagem );
 
+      //abv
+      _postarnotif(mensagem);
 
     }
   }
 
+  _postarnotif(Mensagem mensagem) async {
+    //TODO: colocar isso para funcionar via external_ids
 
+    var status = await OneSignal.shared.getPermissionSubscriptionState();
 
-  _recuperarDadosRemetente() async {
+    var playerId = await _recuperarOsIdDestino();//status.subscriptionStatus.userId;
 
+    var response = await OneSignal.shared.postNotificationWithJson({
+      "include_player_ids" : [ playerId],
+      "contents" : {"en" : mensagem.idUsuario + " lhe mandou: " + mensagem.mensagem},
+      "headings" : {"en" : "Você recebeu uma mensagem!"},
+    });
+  }
+
+  Future<String>_recuperarOsIdDestino() async {
+    String _osIdDestinatario;
     //Firestore db = Firestore.instance;
     DocumentSnapshot snapshot = await db.collection("usuarios")
-        .document( _idUsuarioLogado )
+        .document( _idUsuarioDestinatario )
         .get();
 
     Map<String, dynamic> dados = snapshot.data;
 
-    if( dados["urlImagem"] != null ){
+    if( dados["osId"] != null){
       setState(() {
-        _urlImagemRemetente = dados["urlImagem"];
-        print("recuperou "+_urlImagemRemetente);
-      });
-    }
-    if( dados["nome"] != null ){
-      setState(() {
-        _nomeRemetente = dados["nome"];
-        print("recuperou "+_nomeRemetente);
+        _osIdDestinatario = dados["osId"];
       });
     }
 
+    return _osIdDestinatario;
   }
-
-
-
 
   _salvarConversa(Mensagem msg){
 
@@ -127,7 +133,7 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-  _salvarMensagem(
+    _salvarMensagem(
       String idRemetente, String idDestinatario, Mensagem msg) async {
     await db
         .collection("mensagens")
@@ -252,6 +258,12 @@ class _MensagensState extends State<Mensagens> {
     super.initState();
     //_recuperarDadosRemetente();
     _recuperarDadosUsuario();
+  }
+
+  Future<void> initOneSignal() async{
+    OneSignal.shared
+        .setInAppMessageClickedHandler((OSInAppMessageAction action) {
+    });
   }
 
   @override

@@ -7,17 +7,28 @@ class Usuario {
   String _urlImagem;
   String _senha;
 
+  String _osId;
+
   Usuario();
 
   Map<String, dynamic> toMap(){
 
     Map<String, dynamic> map = {
       "nome" : this.nome,
-      "email" : this.email
+      "email" : this.email,
+      "osId" : this.osId // OneSignal player_id
     };
 
     return map;
 
+  }
+
+  //gets e sets do osId
+
+  String get osId => _osId;
+
+  set osId(String value){
+    _osId = value;
   }
 
 

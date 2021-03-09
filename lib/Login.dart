@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'Cadastro.dart';
 import 'Home.dart';
 import 'RouteGenerator.dart';
@@ -12,7 +14,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  TextEditingController _controllerEmail = TextEditingController(text: "lek@gmail.com");
+  TextEditingController _controllerEmail = TextEditingController(text: "athurbittencourt@id.uff.br");
   TextEditingController _controllerSenha = TextEditingController(text: "1234567");
   String _mensagemErro = "";
 
@@ -60,6 +62,7 @@ class _LoginState extends State<Login> {
         password: usuario.senha
     ).then((firebaseUser){
 
+      _atualizarOSId(firebaseUser.user.uid);
       Navigator.pushReplacementNamed(context, "/home");
 
     }).catchError((error){
@@ -70,6 +73,19 @@ class _LoginState extends State<Login> {
 
     });
 
+  }
+
+  //abv
+  Future<void>_atualizarOSId(String uid) async {
+
+    Firestore db = Firestore.instance;
+
+    var status = await OneSignal.shared.getPermissionSubscriptionState();
+    var playerId = status.subscriptionStatus.userId;
+
+    await db.collection("usuarios")
+        .document( uid )
+        .updateData({"osId" : playerId});
   }
 
   Future _verificarUsuarioLogado() async {
