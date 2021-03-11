@@ -14,7 +14,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  TextEditingController _controllerEmail = TextEditingController(text: "athurbittencourt@id.uff.br");
+  TextEditingController _controllerEmail = TextEditingController(text: "t2@gmail.com");
   TextEditingController _controllerSenha = TextEditingController(text: "1234567");
   String _mensagemErro = "";
 

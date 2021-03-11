@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Configuracoes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuracoes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Mensagem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Mensagem.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Usuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Usuario.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/AbaContatos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaContatos.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

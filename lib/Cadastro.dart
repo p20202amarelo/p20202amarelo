@@ -80,7 +80,7 @@ class _CadastroState extends State<Cadastro> {
       .document( firebaseUser.user.uid )//.additionalUserInfo.providerId
       .setData( usuario.toMap() );
 
-      _cadastrarPlayerId(usuario, firebaseUser.user.uid);
+      _cadastrarPlayerId(firebaseUser.user.uid);
 
       Navigator.pushNamedAndRemoveUntil(
           context, "/home", (_)=>false
@@ -100,16 +100,15 @@ class _CadastroState extends State<Cadastro> {
   }
 
   //abv
-  Future<void> _cadastrarPlayerId(Usuario usuario,  String uid) async {
+  Future<void> _cadastrarPlayerId(String uid) async {
     var status = await OneSignal.shared.getPermissionSubscriptionState();
     var playerId = status.subscriptionStatus.userId;
-    usuario.osId = playerId;
 
     Firestore db = Firestore.instance;
 
-    db.collection("usuarios")
-        .document( uid )//.additionalUserInfo.providerId
-        .updateData( usuario.toMap() );
+    await db.collection("usuarios")
+        .document( uid )
+        .updateData({"osId" : playerId});
   }
 
   @override
