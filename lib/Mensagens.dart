@@ -77,7 +77,6 @@ class _MensagensState extends State<Mensagens> {
     var response;
 
     if(mensagem.urlImagem != ""){
-      print("UGABUGA");
       response = await OneSignal.shared.postNotificationWithJson({
         "include_player_ids" : [ playerId],
         "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funfa
@@ -91,8 +90,6 @@ class _MensagensState extends State<Mensagens> {
         "headings" : {"en" : "Você recebeu uma mensagem!"},
       });
     }
-
-    //print("###############" + response.toString());
 
   }
 
