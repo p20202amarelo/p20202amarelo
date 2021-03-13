@@ -412,14 +412,6 @@ class _MensagensState extends State<Mensagens> {
             )
           ],
         ),
-        actions:  <Widget>[
-          IconButton(
-            icon: const Icon(Icons.attachment),
-            tooltip: 'Mandar Anexo',
-            onPressed: () { //TODO: Implementar a funcionalidade de Mandar Anexo
-            },
-          ),
-        ],
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
