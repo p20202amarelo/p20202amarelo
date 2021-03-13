@@ -70,17 +70,30 @@ class _MensagensState extends State<Mensagens> {
   }
 
   _postarnotif(Mensagem mensagem) async {
-    //TODO: colocar isso para funcionar via external_ids
-
     var status = await OneSignal.shared.getPermissionSubscriptionState();
 
     var playerId = await _recuperarOsIdDestino();//status.subscriptionStatus.userId;
 
-    var response = await OneSignal.shared.postNotificationWithJson({
-      "include_player_ids" : [ playerId],
-      "contents" : {"en" : mensagem.idUsuario + " lhe mandou: " + mensagem.mensagem},
-      "headings" : {"en" : "Você recebeu uma mensagem!"},
-    });
+    var response;
+
+    if(mensagem.urlImagem != ""){
+      print("UGABUGA");
+      response = await OneSignal.shared.postNotificationWithJson({
+        "include_player_ids" : [ playerId],
+        "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funfa
+        "headings" : {"en" : "Você recebeu uma imagem!"},
+      });
+    }
+    else{
+      response = await OneSignal.shared.postNotificationWithJson({
+        "include_player_ids" : [ playerId],
+        "contents" : {"en" : mensagem.idUsuario + " lhe mandou: " + mensagem.mensagem},
+        "headings" : {"en" : "Você recebeu uma mensagem!"},
+      });
+    }
+
+    //print("###############" + response.toString());
+
   }
 
   Future<String>_recuperarOsIdDestino() async {
@@ -180,7 +193,6 @@ class _MensagensState extends State<Mensagens> {
     task.onComplete.then((StorageTaskSnapshot snapshot){
       _recuperarUrlImagem(snapshot);
     });
-
   }
 
   Future _recuperarUrlImagem(StorageTaskSnapshot snapshot) async {
@@ -199,6 +211,8 @@ class _MensagensState extends State<Mensagens> {
 
     //Salvar mensagem para o destinatário
     _salvarMensagem(_idUsuarioDestinatario, _idUsuarioLogado, mensagem);
+
+    _postarnotif(mensagem);
 
   }
 

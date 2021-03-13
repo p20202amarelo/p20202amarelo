@@ -4,8 +4,8 @@
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +47,21 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1306" height="179" key="GridCell.Tab.0.bottom" timestamp="1615256810707">
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1615614090588">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="179" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615256810707" />
-    <state width="1306" height="179" key="GridCell.Tab.0.center" timestamp="1615256810707">
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615614090588" />
+    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1615614090588">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="179" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615256810707" />
-    <state width="1306" height="179" key="GridCell.Tab.0.left" timestamp="1615256810707">
+    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615614090588" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1615614090588">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="179" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615256810707" />
-    <state width="1306" height="179" key="GridCell.Tab.0.right" timestamp="1615256810707">
+    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615614090588" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1615614090588">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="179" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615256810707" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615614090588" />
   </component>
 </project>
