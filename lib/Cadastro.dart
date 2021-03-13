@@ -66,6 +66,8 @@ class _CadastroState extends State<Cadastro> {
 
   _cadastrarUsuario( Usuario usuario){
 
+    //TODO : implementar verificação de usuário
+
     FirebaseAuth auth = FirebaseAuth.instance;
 
     auth.createUserWithEmailAndPassword(

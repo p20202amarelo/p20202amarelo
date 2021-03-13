@@ -9,6 +9,7 @@ class Conversa {
   String _caminhoFoto;
   String _tipoMensagem;//texto ou imagem
 
+  // TODO : colocar booleana de arquivado
 
   Conversa();
 

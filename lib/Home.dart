@@ -9,6 +9,8 @@ import 'Login.dart';
 import 'Notif.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
+// TODO : Criar botão no widget de conversa, para arquivar
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

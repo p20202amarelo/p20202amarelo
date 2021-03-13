@@ -12,6 +12,7 @@ class Configuracoes extends StatefulWidget {
 
 class _ConfiguracoesState extends State<Configuracoes> {
 
+  // TODO: Adicionar mudar e-mail e senha
   TextEditingController _controllerNome = TextEditingController();
   File _imagem;
   String _idUsuarioLogado;
