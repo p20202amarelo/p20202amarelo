@@ -124,6 +124,7 @@ class _MensagensState extends State<Mensagens> {
     cRemetente.caminhoFoto = widget.contato.urlImagem; //_urlImagemDestinatario;  // tem que ficar a imagem do destinatario
     //print("cRemetente.caminhoFoto="+cRemetente.caminhoFoto);
     cRemetente.tipoMensagem = msg.tipo;
+    cRemetente.arquivada = false;
     cRemetente.salvar();
 
     //Salvar conversa PARA o destinatario
@@ -139,6 +140,7 @@ class _MensagensState extends State<Mensagens> {
     cDestinatario.caminhoFoto = _urlImagemRemetente; // vai exibir a imagem do remetente
     //print("cDestinatario.caminhoFoto="+cDestinatario.caminhoFoto);
     cDestinatario.tipoMensagem = msg.tipo;
+    cDestinatario.arquivada = false;
     cDestinatario.salvar();
 
   }

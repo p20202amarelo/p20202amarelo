@@ -9,11 +9,11 @@ class Conversa {
   String _caminhoFoto;
   String _tipoMensagem;//texto ou imagem
 
-  // TODO : colocar booleana de arquivado
+  bool _arquivada;
 
   Conversa();
 
-  salvar() async {
+  salvar() async { // isso pode ser feito de um jeito melhor, mas esse é mais simples e elegante
     /*
 
     + conversas
@@ -44,12 +44,20 @@ class Conversa {
       "timeStamp"       : this.timeStamp,
       "caminhoFoto"     : this.caminhoFoto,
       "tipoMensagem"    : this.tipoMensagem,
+      "arquivada" : this._arquivada, // abv
     };
 
     return map;
 
   }
 
+
+  //get e set do _arquivada
+  set arquivada(bool b){
+    _arquivada = b;
+  }
+  bool get arquivada => arquivada;
+  //abv
 
   Timestamp get timeStamp => _timeStamp; //LEK
 
