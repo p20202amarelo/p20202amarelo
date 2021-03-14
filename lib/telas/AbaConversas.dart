@@ -36,6 +36,7 @@ class _AbaConversasState extends State<AbaConversas> {
     final stream = db.collection("conversas")
         .document( _idUsuarioLogado )
         .collection("ultima_conversa")
+        .where('arquivada', isEqualTo: false) //abv
         .snapshots();
 
     stream.listen((dados){
