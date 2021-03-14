@@ -19,15 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Colocando o campo &quot;arquivada&quot; nas conversas">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas">
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615687614612</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas">
+      <created>1615735883351</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615735883351</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -172,33 +175,34 @@
     <MESSAGE value="Retirando a base para arquivos" />
     <MESSAGE value="Colocando os TODO" />
     <MESSAGE value="Colocando o campo &quot;arquivada&quot; nas conversas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Colocando o campo &quot;arquivada&quot; nas conversas" />
+    <MESSAGE value="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas" />
+    <option name="LAST_COMMIT_MESSAGE" value="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog" timestamp="1615662410938">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1323" height="270" key="GridCell.Tab.0.bottom" timestamp="1615689891056">
+    <state width="1306" height="266" key="GridCell.Tab.0.bottom" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="270" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615689891056" />
-    <state width="1323" height="270" key="GridCell.Tab.0.center" timestamp="1615689891056">
+    <state width="1306" height="266" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state width="1306" height="266" key="GridCell.Tab.0.center" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="270" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615689891056" />
-    <state width="1323" height="270" key="GridCell.Tab.0.left" timestamp="1615689891055">
+    <state width="1306" height="266" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state width="1306" height="266" key="GridCell.Tab.0.left" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="270" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615689891055" />
-    <state width="1323" height="270" key="GridCell.Tab.0.right" timestamp="1615689891056">
+    <state width="1306" height="266" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state width="1306" height="266" key="GridCell.Tab.0.right" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="270" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615689891056" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615688791522">
+    <state width="1306" height="266" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615737701801">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615688791522" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615737701801" />
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615652372246">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

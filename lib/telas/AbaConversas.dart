@@ -45,6 +45,15 @@ class _AbaConversasState extends State<AbaConversas> {
 
   }
 
+  _arquivarConversa(String idDestinatario) async {
+    Firestore db = Firestore.instance;
+    await db.collection("conversas")
+        .document( _idUsuarioLogado )
+        .collection( "ultima_conversa" )
+        .document( idDestinatario )
+        .updateData({"arquivada" : true});
+  }
+
   _recuperarDadosUsuario() async {
 
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -93,7 +102,7 @@ class _AbaConversasState extends State<AbaConversas> {
               if( querySnapshot.documents.length == 0 ){ // LEK
                 return Center(
                   child: Text(
-                    "Você não tem nenhuma conversa ainda :( " + querySnapshot.documents.length.toString(),
+                    "Você não tem nenhuma conversa ainda, ou todas as suas conversas estão arquivadas " + querySnapshot.documents.length.toString(),
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold
@@ -152,6 +161,13 @@ class _AbaConversasState extends State<AbaConversas> {
                               color: Colors.grey,
                               fontSize: 14
                           )
+                      ),
+                      trailing: IconButton(
+                              icon: const Icon(Icons.archive_outlined),
+                              tooltip: "Arquivar Conversa",
+                              onPressed: () {
+                                _arquivarConversa(usuario.idUsuario);
+                              }, //abv
                       ),
                     );
 

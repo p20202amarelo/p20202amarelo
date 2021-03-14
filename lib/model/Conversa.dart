@@ -13,6 +13,15 @@ class Conversa {
 
   Conversa();
 
+  arquivar() async {
+    Firestore db = Firestore.instance;
+    await db.collection("conversas")
+        .document( this.idRemetente )
+        .collection( "ultima_conversa" )
+        .document( this.idDestinatario )
+        .setData( this.toMap() );
+  }
+
   salvar() async { // isso pode ser feito de um jeito melhor, mas esse é mais simples e elegante
     /*
 
