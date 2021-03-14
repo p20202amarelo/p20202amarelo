@@ -64,8 +64,20 @@ class _LoginState extends State<Login> {
         password: usuario.senha
     ).then((firebaseUser){
 
-      _atualizarOSId(firebaseUser.user.uid);
-      Navigator.pushReplacementNamed(context, "/home");
+      // TODO : Descomentar esta parte para implementar a verificação por e-mail
+
+      // if(!firebaseUser.user.isEmailVerified){
+      //   firebaseUser.user.sendEmailVerification();
+      //   print("no email");
+      //   setState(() {
+      //     _mensagemErro = "Por favor verifique seu e-mail antes de prosseguir";
+      //   });
+      //
+      // }
+      // else{
+        _atualizarOSId(firebaseUser.user.uid);
+        Navigator.pushReplacementNamed(context, "/home");
+      //}
 
     }).catchError((error){
 
@@ -201,6 +213,27 @@ class _LoginState extends State<Login> {
                           fontSize: 20
                       ),
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 16),
+                  child: GestureDetector(
+                    child:Center(
+                      child: Text(
+                        "Esqueceu sua senha? Clique Aqui.",
+                        style: TextStyle(
+                            color: Colors.white
+                        )
+                      ),
+                    ),
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Cadastro() // TODO: Criar página de recuperação de conta e mandar pra lá aqui
+                          )
+                      );
+                    },
                   ),
                 )
               ],
