@@ -1,3 +1,6 @@
+// Cabeçalho:
+//  Este módulo é responsavel por fazer a troca de telas.
+
 import 'package:flutter/material.dart';
 
 import 'Cadastro.dart';

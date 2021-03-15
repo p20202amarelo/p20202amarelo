@@ -1,3 +1,6 @@
+// Cabeçalho:
+//  Este módulo é responsavel por definir a página de configurações de conta. E todas as suas funcionalidades.
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';

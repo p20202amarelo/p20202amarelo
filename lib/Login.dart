@@ -1,3 +1,7 @@
+// Cabeçalho:
+//  Este módulo é responsável por definir a página de login e todas as suas funcionalidades.
+//  1.Para implementar as notificações, ao clicar no botão de login, o osId do usuário é atualizado para o dispositivo atual, no Firestore.
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';

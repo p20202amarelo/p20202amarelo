@@ -1,3 +1,8 @@
+// Cabeçalho:
+//  Este módulo é responsável por definir a tela de conversa e todas suas funcionalidades.
+//  1.Para implementar a notificação. Quando o botão de enviar é apertado, o osId é recuperado pelo Firestore, e uma notificação é postada para o osId do destinatário.
+//  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto.
+
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
