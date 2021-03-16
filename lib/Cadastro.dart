@@ -72,8 +72,6 @@ class _CadastroState extends State<Cadastro> {
 
   _cadastrarUsuario( Usuario usuario){
 
-    //TODO : não deixar o usuario entrar antes de verificar o e-mail
-
     FirebaseAuth auth = FirebaseAuth.instance;
 
     auth.createUserWithEmailAndPassword(

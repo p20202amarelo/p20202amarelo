@@ -20,25 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Verificação de email no cadastro implementada. Esta funcionalidade está comentada">
+      <change afterPath="$PROJECT_DIR$/lib/Recuperacao.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Configuracoes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuracoes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Notif.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Mensagem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Mensagem.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Usuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Usuario.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,7 +52,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -228,29 +227,41 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="266" key="GridCell.Tab.0.bottom" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.bottom" timestamp="1615912193464">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state width="1306" height="266" key="GridCell.Tab.0.center" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615912193464" />
+    <state width="1306" height="266" key="GridCell.Tab.0.center" timestamp="1615912193464">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state width="1306" height="266" key="GridCell.Tab.0.left" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615912193464" />
+    <state width="1306" height="266" key="GridCell.Tab.0.left" timestamp="1615912193463">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state width="1306" height="266" key="GridCell.Tab.0.right" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615912193463" />
+    <state width="1306" height="266" key="GridCell.Tab.0.right" timestamp="1615912193464">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
+    <state width="1306" height="266" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615912193464" />
     <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615755302729">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615755302729" />
+    <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1615911814346" />
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615737812692">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1615737812692" />
+    <state x="462" y="230" key="git4idea.rebase.GitRebaseDialog" timestamp="1615911721041">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="462" y="230" key="git4idea.rebase.GitRebaseDialog/0.0.1366.738@0.0.1366.738" timestamp="1615911721041" />
+    <state x="497" y="213" key="git4idea.ui.GitTagDialog" timestamp="1615908493013">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="497" y="213" key="git4idea.ui.GitTagDialog/0.0.1366.738@0.0.1366.738" timestamp="1615908493013" />
   </component>
 </project>

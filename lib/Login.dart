@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:p20202amarelo/Recuperacao.dart';
 import 'Cadastro.dart';
 import 'Home.dart';
 import 'RouteGenerator.dart';
@@ -15,8 +16,6 @@ class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
 }
-
-// TODO: Botão de recuperação de e-mail e senha (Sugestão de quem fazer: Theodoro)
 
 class _LoginState extends State<Login> {
 
@@ -234,7 +233,7 @@ class _LoginState extends State<Login> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Cadastro() // TODO: Criar página de recuperação de conta e mandar pra lá aqui
+                              builder: (context) => Recuperacao()
                           )
                       );
                     },
