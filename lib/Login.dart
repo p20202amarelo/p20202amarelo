@@ -70,18 +70,18 @@ class _LoginState extends State<Login> {
 
       // TODO : Descomentar esta parte para implementar a verificação por e-mail 1/2
 
-      // if(!firebaseUser.user.isEmailVerified){
-      //   firebaseUser.user.sendEmailVerification();
-      //   print("no email");
-      //   setState(() {
-      //     _mensagemErro = "Por favor verifique seu e-mail antes de prosseguir";
-      //   });
+       if(!firebaseUser.user.isEmailVerified){
+         firebaseUser.user.sendEmailVerification();
+        print("no email");
+         setState(() {
+           _mensagemErro = "Por favor verifique seu e-mail antes de prosseguir";
+         });
       //
-      // }
-      // else{
+       }
+       else{
         _atualizarOSId(firebaseUser.user.uid);
         Navigator.pushReplacementNamed(context, "/home");
-      //}
+      }
 
     }).catchError((error){
 

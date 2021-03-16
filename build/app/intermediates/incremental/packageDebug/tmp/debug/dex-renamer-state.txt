@@ -1,10 +1,10 @@
-#Sun Mar 14 16:46:03 BRT 2021
+#Mon Mar 15 11:50:50 BRT 2021
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=C\:\\src\\projetos\\GA\\p20202amarelo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes3.dex
-base.1=C\:\\src\\projetos\\GA\\p20202amarelo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
-base.0=C\:\\src\\projetos\\GA\\p20202amarelo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+base.2=C\:\\Users\\lucas\\codigo_programas\\AndroidStudioProjects\\p20202amarelo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes3.dex
+base.1=C\:\\Users\\lucas\\codigo_programas\\AndroidStudioProjects\\p20202amarelo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
+base.0=C\:\\Users\\lucas\\codigo_programas\\AndroidStudioProjects\\p20202amarelo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
