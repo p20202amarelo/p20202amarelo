@@ -64,7 +64,7 @@ class _LoginState extends State<Login> {
         password: usuario.senha
     ).then((firebaseUser){
 
-      // TODO : Descomentar esta parte para implementar a verificação por e-mail 1/2
+      // TODO : Descomentar esta parte para implementar a verificação por e-mail
 
       // if(!firebaseUser.user.isEmailVerified){
       //   firebaseUser.user.sendEmailVerification();
