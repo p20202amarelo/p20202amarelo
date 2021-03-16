@@ -17,8 +17,6 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-// TODO: Botão de recuperação de e-mail e senha (Sugestão de quem fazer: Theodoro)
-
 class _LoginState extends State<Login> {
 
   TextEditingController _controllerEmail = TextEditingController(text: "t2@gmail.com");
@@ -235,7 +233,7 @@ class _LoginState extends State<Login> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Recuperacao() // TODO: Criar página de recuperação de conta e mandar pra lá aqui
+                              builder: (context) => Recuperacao()
                           )
                       );
                     },
