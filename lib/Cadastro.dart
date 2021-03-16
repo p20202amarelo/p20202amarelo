@@ -66,7 +66,7 @@ class _CadastroState extends State<Cadastro> {
 
   _cadastrarUsuario( Usuario usuario){
 
-    //TODO : implementar verificação de usuário
+    //TODO : não deixar o usuario entrar antes de verificar o e-mail
 
     FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -74,6 +74,8 @@ class _CadastroState extends State<Cadastro> {
         email: usuario.email,
         password: usuario.senha
     ).then((firebaseUser){
+
+      firebaseUser.user.sendEmailVerification();
 
       //Salvar dados do usuário
       Firestore db = Firestore.instance;
@@ -84,9 +86,23 @@ class _CadastroState extends State<Cadastro> {
 
       _cadastrarPlayerId(firebaseUser.user.uid);
 
-      Navigator.pushNamedAndRemoveUntil(
-          context, "/home", (_)=>false
-      );
+      //TODO : Descomentar esta parte para implementar verificação de email 1/2
+
+      // if(!firebaseUser.user.isEmailVerified){
+      //   firebaseUser.user.sendEmailVerification();
+      //   //print("no email");
+      //   setState(() {
+      //     _mensagemErro = "Conta cadastrada, verifique seu e-mail antes de prosseguir"; // TODO : (Extra) Mandar o cadastrado para uma pagina de verificação de email
+      //   });
+      //
+      // }
+      // else{
+        Navigator.pushNamedAndRemoveUntil(
+            context, "/login", (_)=>false
+        );
+      //}
+
+
 
     }).catchError((error){
       print("erro app: " + error.toString() );
