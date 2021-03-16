@@ -7,6 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:io';
+import 'dart:developer';
 
 class Configuracoes extends StatefulWidget {
   @override
@@ -15,8 +16,10 @@ class Configuracoes extends StatefulWidget {
 
 class _ConfiguracoesState extends State<Configuracoes> {
 
-  // TODO: Adicionar mudar e-mail e senha
+  // TODO: Adicionar mudar senha
   TextEditingController _controllerNome = TextEditingController();
+  TextEditingController _controllerEmail = TextEditingController();
+  final emailCheck = RegExp(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)");
   File _imagem;
   String _idUsuarioLogado;
   bool _subindoImagem = false;
@@ -107,6 +110,71 @@ class _ConfiguracoesState extends State<Configuracoes> {
         .document(_idUsuarioLogado)
         .updateData( dadosAtualizar );
 
+  }
+
+  _atualizarEmailFirestore() {
+
+    String email = _controllerEmail.text;
+    Firestore db = Firestore.instance;
+    if (email == ''){
+      log("null");
+    }else {
+      if(emailCheck.hasMatch(email)){
+        Map<String, dynamic> dadosAtualizar = {
+          "email" : email
+        };
+
+        db.collection("usuarios")
+            .document(_idUsuarioLogado)
+            .updateData( dadosAtualizar );
+
+        _atualizarEmailAuth(email).then((value) => log("############################################ $value"));
+        // TODO: estilizar tela de loading
+        _onLoading();
+      }else {
+        log("not email");
+      }
+    }
+  }
+
+  void _onLoading() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          child: new Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              new CircularProgressIndicator(),
+              new Text("Loading"),
+            ],
+          ),
+        );
+      },
+    );
+    new Future.delayed(new Duration(seconds: 3), () {
+      Navigator.pop(context); //pop dialog
+
+    });
+  }
+
+
+  Future _atualizarEmailAuth(String newEmail) async {
+    // TODO: bug estranho as vezes aqui
+    var message;
+    FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+    log("_atualizarEmailAuth function call args $newEmail");
+    log("$firebaseUser");
+    firebaseUser
+        .updateEmail(newEmail)
+        .then(
+          (value) => message = "#### email update",
+    )
+        .catchError((onError) => message = 'error');
+
+    
+    return message;
   }
 
   _atualizarUrlImagemFirestore(String url){
@@ -211,6 +279,27 @@ class _ConfiguracoesState extends State<Configuracoes> {
                             borderRadius: BorderRadius.circular(32))),
                   ),
                 ),
+
+                // WORKING HERE
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: TextField(
+                    controller: _controllerEmail,
+                    autofocus: true,
+                    keyboardType: TextInputType.text,
+                    style: TextStyle(fontSize: 20),
+                    /*onChanged: (texto){
+                      _atualizarNomeFirestore(texto);
+                    },*/
+                    decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                        hintText: "email",
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(32))),
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.only(top: 16, bottom: 10),
                   child: RaisedButton(
@@ -224,6 +313,8 @@ class _ConfiguracoesState extends State<Configuracoes> {
                           borderRadius: BorderRadius.circular(32)),
                       onPressed: () {
                         _atualizarNomeFirestore();
+                        _atualizarEmailFirestore();
+                        // atualizar email
                       }
                   ),
                 )
