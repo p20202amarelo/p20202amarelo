@@ -1,4 +1,0 @@
-# Referenced at C:\src\projetos\GA\p20202amarelo\build\app\intermediates\merged_manifests\debug\AndroidManifest.xml:60
--keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at C:\src\projetos\GA\p20202amarelo\build\app\intermediates\merged_manifests\debug\AndroidManifest.xml:60
--keep class io.flutter.app.FlutterApplication { <init>(); }
