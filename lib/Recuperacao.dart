@@ -1,6 +1,7 @@
 // Cabeçalho:
 //  Este módulo é responsável por definir a página de recuperação de senha.
 //  1.Para implementar a funcionalidade de recuperação de conta, este módulo foi criado.
+//  1.1.Quando o botão de recuperação é clicado, o campo e-mail é validado, e depois, pela API do firebase, é mandado o e-mail de verificação, junto com uma mensagem de feedback.
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,6 @@ import 'Cadastro.dart';
 import 'Home.dart';
 import 'RouteGenerator.dart';
 import 'model/Usuario.dart';
-
-// TODO : Implementar a funcionalidade de recuperar a senha
 
 class Recuperacao extends StatefulWidget {
   @override
@@ -42,6 +41,8 @@ class _RecuperacaoState extends State<Recuperacao> {
         usuario.email = email;
         usuario.senha = senha;
 
+        _recuperarSenha(email);
+
 
       }else{
         setState(() {
@@ -57,8 +58,13 @@ class _RecuperacaoState extends State<Recuperacao> {
 
   }
 
-  //abv
-
+  Future<void> _recuperarSenha(String email) async { // abv
+    FirebaseAuth auth = FirebaseAuth.instance;
+    await auth.sendPasswordResetEmail(email: email);
+    setState(() {
+      _mensagemErro = "Um e-mail de recuperação de senha foi mandado para o e-mail fornecido";
+    });
+  }
   @override
   void initState() {
     super.initState();

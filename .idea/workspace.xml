@@ -19,14 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Verificação de email no cadastro implementada. Esta funcionalidade está comentada">
-      <change afterPath="$PROJECT_DIR$/lib/Recuperacao.dart" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Atualizando os TODO">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/debug_android_application.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Notif.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Recuperacao.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Recuperacao.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -149,7 +152,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615754914319</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Página de recuperação de senha criada">
+      <created>1615914548882</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615914548882</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Atualizando os TODO">
+      <created>1615914780315</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1615914780315</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -216,7 +233,9 @@
     <MESSAGE value="tirando o TODO de arquivar conversa" />
     <MESSAGE value="Implementando verificação por e-mail" />
     <MESSAGE value="Verificação de email no cadastro implementada. Esta funcionalidade está comentada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verificação de email no cadastro implementada. Esta funcionalidade está comentada" />
+    <MESSAGE value="Página de recuperação de senha criada" />
+    <MESSAGE value="Atualizando os TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualizando os TODO" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -227,26 +246,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="266" key="GridCell.Tab.0.bottom" timestamp="1615912193464">
+    <state width="1323" height="269" key="GridCell.Tab.0.bottom" timestamp="1615928607969">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615912193464" />
-    <state width="1306" height="266" key="GridCell.Tab.0.center" timestamp="1615912193464">
+    <state width="1323" height="269" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
+    <state width="1323" height="269" key="GridCell.Tab.0.center" timestamp="1615928607969">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615912193464" />
-    <state width="1306" height="266" key="GridCell.Tab.0.left" timestamp="1615912193463">
+    <state width="1323" height="269" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
+    <state width="1323" height="269" key="GridCell.Tab.0.left" timestamp="1615928607969">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615912193463" />
-    <state width="1306" height="266" key="GridCell.Tab.0.right" timestamp="1615912193464">
+    <state width="1323" height="269" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
+    <state width="1323" height="269" key="GridCell.Tab.0.right" timestamp="1615928607969">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615912193464" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615755302729">
+    <state width="1323" height="269" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615914787297">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615755302729" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615914787297" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
