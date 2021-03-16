@@ -2,6 +2,7 @@
 //  Este módulo é responsavel por fazer a troca de telas.
 
 import 'package:flutter/material.dart';
+import 'package:p20202amarelo/Recuperacao.dart';
 
 import 'Cadastro.dart';
 import 'Configuracoes.dart';
@@ -23,6 +24,10 @@ class RouteGenerator {
       case "/login" :
         return MaterialPageRoute(
             builder: (_) => Login()
+        );
+      case "/recuperacao" :
+        return MaterialPageRoute(
+            builder: (_) => Recuperacao()
         );
       case "/cadastro" :
         return MaterialPageRoute(

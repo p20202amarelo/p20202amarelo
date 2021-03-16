@@ -1,25 +1,24 @@
 // Cabeçalho:
-//  Este módulo é responsável por definir a página de login e todas as suas funcionalidades.
-//  1.Para implementar as notificações, ao clicar no botão de login, o osId do usuário é atualizado para o dispositivo atual, no Firestore.
+//  Este módulo é responsável por definir a página de recuperação de senha.
+//  1.Para implementar a funcionalidade de recuperação de conta, este módulo foi criado.
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:p20202amarelo/Recuperacao.dart';
 import 'Cadastro.dart';
 import 'Home.dart';
 import 'RouteGenerator.dart';
 import 'model/Usuario.dart';
 
-class Login extends StatefulWidget {
+// TODO : Implementar a funcionalidade de recuperar a senha
+
+class Recuperacao extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _RecuperacaoState createState() => _RecuperacaoState();
 }
 
-// TODO: Botão de recuperação de e-mail e senha (Sugestão de quem fazer: Theodoro)
-
-class _LoginState extends State<Login> {
+class _RecuperacaoState extends State<Recuperacao> {
 
   TextEditingController _controllerEmail = TextEditingController(text: "t2@gmail.com");
   TextEditingController _controllerSenha = TextEditingController(text: "1234567");
@@ -43,8 +42,6 @@ class _LoginState extends State<Login> {
         usuario.email = email;
         usuario.senha = senha;
 
-        _logarUsuario( usuario );
-
 
       }else{
         setState(() {
@@ -60,69 +57,10 @@ class _LoginState extends State<Login> {
 
   }
 
-  _logarUsuario( Usuario usuario ){
-
-    FirebaseAuth auth = FirebaseAuth.instance;
-
-    auth.signInWithEmailAndPassword(
-        email: usuario.email,
-        password: usuario.senha
-    ).then((firebaseUser){
-
-      // TODO : Descomentar esta parte para implementar a verificação por e-mail 1/2
-
-      // if(!firebaseUser.user.isEmailVerified){
-      //   firebaseUser.user.sendEmailVerification();
-      //   print("no email");
-      //   setState(() {
-      //     _mensagemErro = "Por favor verifique seu e-mail antes de prosseguir";
-      //   });
-      //
-      // }
-      // else{
-        _atualizarOSId(firebaseUser.user.uid);
-        Navigator.pushReplacementNamed(context, "/home");
-      //}
-
-    }).catchError((error){
-
-      setState(() {
-        _mensagemErro = "Erro ao autenticar usuário, verifique e-mail e senha e tente novamente!";
-      });
-
-    });
-
-  }
-
   //abv
-  Future<void>_atualizarOSId(String uid) async {
-
-    Firestore db = Firestore.instance;
-
-    var status = await OneSignal.shared.getPermissionSubscriptionState();
-    var playerId = status.subscriptionStatus.userId;
-
-    await db.collection("usuarios")
-        .document( uid )
-        .updateData({"osId" : playerId});
-  }
-
-  Future _verificarUsuarioLogado() async {
-
-    FirebaseAuth auth = FirebaseAuth.instance;
-    //auth.signOut();
-
-    FirebaseUser usuarioLogado = await auth.currentUser();
-
-    if( usuarioLogado != null ){
-      Navigator.pushReplacementNamed(context, "/home");
-    }
-
-  }
 
   @override
   void initState() {
-    _verificarUsuarioLogado();
     super.initState();
   }
 
@@ -138,12 +76,7 @@ class _LoginState extends State<Login> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(bottom: 32),
-                  child: Image.asset(
-                    "imagens/logo.png",
-                    width: 200,
-                    height: 150,
-                  ),
+                  padding: EdgeInsets.only(bottom: 32)
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 8),
@@ -161,30 +94,17 @@ class _LoginState extends State<Login> {
                             borderRadius: BorderRadius.circular(32))),
                   ),
                 ),
-                TextField(
-                  controller: _controllerSenha,
-                  obscureText: true,
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 20),
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                      hintText: "Senha",
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(32))),
-                ),
                 Padding(
                   padding: EdgeInsets.only(top: 16, bottom: 10),
                   child: RaisedButton(
                       child: Text(
-                        "Entrar",
+                        "Recuperar Senha",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       color: Colors.green,
                       padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32)
+                          borderRadius: BorderRadius.circular(32)
                       ),
                       onPressed: () {
                         _validarCampos();
@@ -209,7 +129,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(top: 16),
+                  padding: EdgeInsets.only(top: 16),
                   child: Center(
                     child: Text(
                       _mensagemErro,
@@ -220,27 +140,6 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 16),
-                  child: GestureDetector(
-                    child:Center(
-                      child: Text(
-                        "Esqueceu sua senha? Clique Aqui.",
-                        style: TextStyle(
-                            color: Colors.white
-                        )
-                      ),
-                    ),
-                    onTap: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Recuperacao() // TODO: Criar página de recuperação de conta e mandar pra lá aqui
-                          )
-                      );
-                    },
-                  ),
-                )
               ],
             ),
           ),
