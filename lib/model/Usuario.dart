@@ -1,3 +1,7 @@
+// Cabeçalho
+//  Este módulo define a classe Usuario, que também define como o objeto será guardado no Firestore
+//  1.Foi adicionado o campo osId, para identificar o dispositivo ao qual as notificações push serão mandadas
+
 
 class Usuario {
 

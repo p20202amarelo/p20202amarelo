@@ -1,3 +1,6 @@
+// Cabeçalho
+//  Este é o módulo que define a classe Mensagem, que também define como o objeto será guardado no Firestore
+
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 

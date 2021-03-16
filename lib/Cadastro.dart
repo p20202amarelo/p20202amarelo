@@ -1,3 +1,9 @@
+// Cabeçalho:
+// Este módulo define a página de cadastro e todas as suas funcionalidades.
+// 1.Para implementar as notificações, quando o usuário faz o cadastro, o 'osId' do Usuario é atualizado para o dispositivo atual no Firestore.
+// 2.Para implementar a verificação de e-mail, quando o usuário faz o cadastro, ele checa se o e-mail foi verificado.
+// 2.1.E caso não verificado, ele manda o e-mail de verificação, junto com um alerta para fazer a verificação por e-mail.
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
