@@ -19,21 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Verificação de email no cadastro implementada. Esta funcionalidade está comentada">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Configuracoes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuracoes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Notif.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Mensagem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Mensagem.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Usuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Usuario.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,35 +113,7 @@
       <option name="project" value="LOCAL" />
       <updated>1615735883351</updated>
     </task>
-    <task id="LOCAL-00008" summary="Arquivamento de conversas completo. Talvez precise de melhoramento">
-      <created>1615737740721</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1615737740721</updated>
-    </task>
-    <task id="LOCAL-00009" summary="tirando o TODO de arquivar conversa">
-      <created>1615738054125</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1615738054125</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Implementando verificação por e-mail">
-      <created>1615750387036</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1615750387036</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Verificação de email no cadastro implementada. Esta funcionalidade está comentada">
-      <created>1615754914319</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1615754914319</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -213,44 +176,36 @@
     <MESSAGE value="Colocando os TODO" />
     <MESSAGE value="Colocando o campo &quot;arquivada&quot; nas conversas" />
     <MESSAGE value="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas" />
-    <MESSAGE value="Arquivamento de conversas completo. Talvez precise de melhoramento" />
-    <MESSAGE value="tirando o TODO de arquivar conversa" />
-    <MESSAGE value="Implementando verificação por e-mail" />
-    <MESSAGE value="Verificação de email no cadastro implementada. Esta funcionalidade está comentada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verificação de email no cadastro implementada. Esta funcionalidade está comentada" />
+    <option name="LAST_COMMIT_MESSAGE" value="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615768574788" />
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog" timestamp="1615662410938">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="266" key="GridCell.Tab.0.bottom" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.bottom" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state width="1306" height="266" key="GridCell.Tab.0.center" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state width="1306" height="266" key="GridCell.Tab.0.center" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state width="1306" height="266" key="GridCell.Tab.0.left" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state width="1306" height="266" key="GridCell.Tab.0.left" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state width="1306" height="266" key="GridCell.Tab.0.right" timestamp="1615755328201">
+    <state width="1306" height="266" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state width="1306" height="266" key="GridCell.Tab.0.right" timestamp="1615737529960">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="266" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615755328201" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615755302729">
+    <state width="1306" height="266" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615737529960" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615737701801">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615755302729" />
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615737812692">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615737701801" />
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615652372246">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1615737812692" />
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1615652372246" />
   </component>
 </project>

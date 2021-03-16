@@ -1,7 +1,3 @@
-// Cabeçalho:
-//  Este é o modulo responsável por definir a página de seleção de conversa (Seja pela aba contatos ou pela aba conversas) e suas funcionalidades.
-//  1.Para implementar as notificações, foram colocados os métodos de inicialização do OneSignal.
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,6 +6,7 @@ import 'telas/AbaContatos.dart';
 import 'telas/AbaConversas.dart';
 import 'dart:io';
 import 'Login.dart';
+import 'Notif.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -33,8 +30,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     FirebaseUser usuarioLogado = await auth.currentUser();
 
 
-    // abv - linha abaixo caiu em desuso
-    //OneSignal.shared.setExternalUserId(usuarioLogado.uid);
+    // abv
+    OneSignal.shared.setExternalUserId(usuarioLogado.uid);
 
     setState(() {
       _emailUsuario = usuarioLogado.email;
