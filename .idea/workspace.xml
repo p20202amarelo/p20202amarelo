@@ -19,16 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Atualizando os TODO">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Implementando a recuperação de senha no projeto">
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/debug_android_application.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Recuperacao.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Recuperacao.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Configuracoes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuracoes.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615914780315</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Implementando a recuperação de senha no projeto">
+      <created>1615929139648</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1615929139648</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -235,7 +238,8 @@
     <MESSAGE value="Verificação de email no cadastro implementada. Esta funcionalidade está comentada" />
     <MESSAGE value="Página de recuperação de senha criada" />
     <MESSAGE value="Atualizando os TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizando os TODO" />
+    <MESSAGE value="Implementando a recuperação de senha no projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementando a recuperação de senha no projeto" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -246,26 +250,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1323" height="269" key="GridCell.Tab.0.bottom" timestamp="1615928607969">
+    <state width="1323" height="269" key="GridCell.Tab.0.bottom" timestamp="1615934491201">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="269" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
-    <state width="1323" height="269" key="GridCell.Tab.0.center" timestamp="1615928607969">
+    <state width="1323" height="269" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615934491201" />
+    <state width="1323" height="269" key="GridCell.Tab.0.center" timestamp="1615934491201">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="269" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
-    <state width="1323" height="269" key="GridCell.Tab.0.left" timestamp="1615928607969">
+    <state width="1323" height="269" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615934491201" />
+    <state width="1323" height="269" key="GridCell.Tab.0.left" timestamp="1615934491201">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="269" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
-    <state width="1323" height="269" key="GridCell.Tab.0.right" timestamp="1615928607969">
+    <state width="1323" height="269" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615934491201" />
+    <state width="1323" height="269" key="GridCell.Tab.0.right" timestamp="1615934491201">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="269" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615928607969" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615914787297">
+    <state width="1323" height="269" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615934491201" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615929154888">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615914787297" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615929154888" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

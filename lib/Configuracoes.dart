@@ -16,9 +16,9 @@ class Configuracoes extends StatefulWidget {
 
 class _ConfiguracoesState extends State<Configuracoes> {
 
-  // TODO: Adicionar mudar senha
   TextEditingController _controllerNome = TextEditingController();
   TextEditingController _controllerEmail = TextEditingController();
+  TextEditingController _controllerSenha = TextEditingController();
   final emailCheck = RegExp(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)");
   File _imagem;
   String _idUsuarioLogado;
@@ -177,6 +177,19 @@ class _ConfiguracoesState extends State<Configuracoes> {
     return message;
   }
 
+  Future _atualizarSenha() async {
+    // usando a mesma técnica que o método acima
+    String newPassword = _controllerSenha.text;
+    if(newPassword == ''){
+      print("no password");
+      return;
+    }
+    else{
+      FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+      firebaseUser.updatePassword(newPassword);
+    }
+  }
+
   _atualizarUrlImagemFirestore(String url){
 
     Firestore db = Firestore.instance;
@@ -300,6 +313,25 @@ class _ConfiguracoesState extends State<Configuracoes> {
                             borderRadius: BorderRadius.circular(32))),
                   ),
                 ),
+
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: TextField(
+                    controller: _controllerSenha,
+                    obscureText: true,
+                    autofocus: true,
+                    keyboardType: TextInputType.text,
+                    style: TextStyle(fontSize: 20),
+                    decoration: InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                        hintText: "senha",
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(32))),
+                  ),
+                ),
+
                 Padding(
                   padding: EdgeInsets.only(top: 16, bottom: 10),
                   child: RaisedButton(
@@ -315,6 +347,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
                         _atualizarNomeFirestore();
                         _atualizarEmailFirestore();
                         // atualizar email
+                        _atualizarSenha();
                       }
                   ),
                 )
