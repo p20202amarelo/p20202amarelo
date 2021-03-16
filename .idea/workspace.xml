@@ -20,20 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Verificação de email no cadastro implementada. Esta funcionalidade está comentada">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Configuracoes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuracoes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Notif.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Mensagem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Mensagem.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Usuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Usuario.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
