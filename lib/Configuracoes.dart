@@ -1,5 +1,7 @@
 // Cabeçalho:
 //  Este módulo é responsavel por definir a página de configurações de conta. E todas as suas funcionalidades.
+//  1.Para implementar a opção de mudar e-mail e senha foram criados os TextControllers para e-mail e senha.
+//  1.1.Quando o botão "Salvar" é apertado, os controladores de e-mail e senha são checados, e se não estiverem vazios, fazem o update de e-mail e senha no firebase
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
