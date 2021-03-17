@@ -24,6 +24,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
   final emailCheck = RegExp(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)");
   File _imagem;
   String _idUsuarioLogado;
+  String _emailUsuarioLogado;
   bool _subindoImagem = false;
   String _urlImagemRecuperada;
   static ImagePicker _imagePicker = null;
@@ -145,12 +146,18 @@ class _ConfiguracoesState extends State<Configuracoes> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return Dialog(
-          child: new Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              new CircularProgressIndicator(),
-              new Text("Loading"),
-            ],
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 8),
+            child: new Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: new CircularProgressIndicator(),
+                ),
+                new Text("Loading"),
+              ],
+            ),
           ),
         );
       },
@@ -211,7 +218,8 @@ class _ConfiguracoesState extends State<Configuracoes> {
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
     _idUsuarioLogado = usuarioLogado.uid;
-
+    _emailUsuarioLogado = usuarioLogado.email;
+    _controllerEmail.text = _emailUsuarioLogado;
     Firestore db = Firestore.instance;
     DocumentSnapshot snapshot = await db.collection("usuarios")
       .document( _idUsuarioLogado )
@@ -308,7 +316,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
                     },*/
                     decoration: InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                        hintText: "email",
+                        hintText: "$_emailUsuarioLogado",
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
