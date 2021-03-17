@@ -2,6 +2,9 @@
 //  Este módulo é responsável por definir a tela de conversa e todas suas funcionalidades.
 //  1.Para implementar a notificação. Quando o botão de enviar é apertado, o osId é recuperado pelo Firestore, e uma notificação é postada para o osId do destinatário.
 //  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto.
+//  2.Para implementar a remoção de mensagens foram criados os métodos _removerMensagem e _buildPopupDialog.
+//  2.1 O _buildPopupDialog abre uma janela quando a mensagem é pressionado por um tempo, apresentando duas opções para o usuário e então chama _removerMensagem.
+//  2.2 O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
 
 import 'dart:async';
 
@@ -125,7 +128,7 @@ class _MensagensState extends State<Mensagens> {
     cRemetente.mensagem = msg.mensagem;
     cRemetente.nome = widget.contato.nome; //_nomeDestinatario;   // tem que ficar o nome do destinatario
     //print("cRemetente.nome="+cRemetente.nome);
-    cRemetente.timeStamp = Timestamp.now(); //"LEK
+    cRemetente.timeStamp = msg.timeStamp; //"LEK
     cRemetente.caminhoFoto = widget.contato.urlImagem; //_urlImagemDestinatario;  // tem que ficar a imagem do destinatario
     //print("cRemetente.caminhoFoto="+cRemetente.caminhoFoto);
     cRemetente.tipoMensagem = msg.tipo;
@@ -141,7 +144,7 @@ class _MensagensState extends State<Mensagens> {
     //_recuperarDadosRemetente();
     cDestinatario.nome = _nomeRemetente; // vai exibir no nome do remetente
     //print("cDestinatario.nome="+cDestinatario.nome);
-    cDestinatario.timeStamp = Timestamp.now(); //LEK
+    cDestinatario.timeStamp = msg.timeStamp; //LEK
     cDestinatario.caminhoFoto = _urlImagemRemetente; // vai exibir a imagem do remetente
     //print("cDestinatario.caminhoFoto="+cDestinatario.caminhoFoto);
     cDestinatario.tipoMensagem = msg.tipo;
@@ -269,7 +272,87 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
+  _removerMensagem(String idRemetente, String idDestinatario, Timestamp timeStamp) async {
+    String id;
+    Timestamp ultimaMensagem;
 
+    await db
+        .collection("mensagens")
+        .document(idRemetente)
+        .collection(idDestinatario)
+        .where("timeStamp", isEqualTo: timeStamp)
+        .limit(1)
+        .getDocuments()
+        .then((QuerySnapshot querySnapshot) => {
+          id = querySnapshot.documents.first.documentID
+    });
+
+    await db
+        .collection("mensagens")
+        .document(idRemetente)
+        .collection(idDestinatario)
+        .document(id)
+        .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : ""});
+
+    await db.collection("conversas")
+        .document(_idUsuarioLogado)
+        .collection("ultima_conversa")
+        .document(_idUsuarioDestinatario)
+        .get()
+        .then((DocumentSnapshot doc) => {
+          ultimaMensagem = doc.data["timeStamp"]
+        });
+
+    print(ultimaMensagem);
+    print(timeStamp);
+
+    if(ultimaMensagem==timeStamp){
+      Mensagem mensagem = Mensagem();
+      mensagem.timeStamp = timeStamp;
+      mensagem.mensagem = "[Mensagem apagada]";
+      mensagem.tipo = "texto";
+      mensagem.idUsuario = _idUsuarioLogado;
+      _salvarConversa(mensagem);
+    };
+  }
+
+  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) {
+    return new AlertDialog(
+      title: const Text('Deletar', style: TextStyle(color: Colors.red)),
+      content: new Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          InkWell(
+            child: Text("Para você"),
+            onTap: (){
+              _removerMensagem(_idUsuarioLogado, _idUsuarioDestinatario, timeStamp);
+              Navigator.of(context).pop();
+            },
+          ),
+          Text(" "),
+          Text(" "),
+          InkWell(
+            child: Text("Para ambos"),
+            onTap: (){
+              _removerMensagem(_idUsuarioLogado, _idUsuarioDestinatario, timeStamp);
+              _removerMensagem(_idUsuarioDestinatario, _idUsuarioLogado, timeStamp);
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+      actions: <Widget>[
+        new FlatButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          textColor: Theme.of(context).primaryColor,
+          child: const Text('Fechar'),
+        ),
+      ],
+    );
+  }
 
   @override
   void initState() {
@@ -382,18 +465,35 @@ class _MensagensState extends State<Mensagens> {
                         alignment: alinhamento,
                         child: Padding(
                           padding: EdgeInsets.all(6),
-                          child: Container(
-                            width: larguraContainer,
-                            padding: EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                                color: cor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
-                            child:
-                            item["tipo"] == "texto"
-                                ? Text(item["mensagem"],style: TextStyle(fontSize: 18),)
-                                : Image.network(item["urlImagem"]),
-                          ),
+                          child: InkWell(
+                            onLongPress: (){
+                              if ( _idUsuarioLogado == item["idUsuario"] ) {
+                                Mensagem msgatual = Mensagem();
+                                msgatual.idUsuario = item["idUsuario"];
+                                msgatual.mensagem = item["mensagem"];
+                                msgatual.timeStamp = item["timeStamp"];
+                                msgatual.tipo = item["tipo"];
+                                msgatual.urlImagem = item["uriImagem"];
+                                print(msgatual.toMap());
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
+                                );
+                              }
+                            },
+                            child: Container(
+                              width: larguraContainer,
+                              padding: EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                  color: cor,
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                              child:
+                              item["tipo"] == "texto"
+                                  ? Text(item["mensagem"],style: TextStyle(fontSize: 18),)
+                                  : Image.network(item["urlImagem"]),
+                            ),
+                          )
                         ),
                       );
                     }),
