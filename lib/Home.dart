@@ -244,7 +244,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Arthur Vasconcelos"),
+        title: Text("WhatsUFF"),
         elevation: Platform.isIOS ? 0 : 4,
         bottom: TabBar(
           indicatorWeight: 4,
