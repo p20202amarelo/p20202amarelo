@@ -367,8 +367,6 @@ class _MensagensState extends State<Mensagens> {
     });
   }
 
-  // TODO : Colocar um botão de apagar mensagem que abre um dialogo de opção para apagar para si ou para todos
-
   @override
   Widget build(BuildContext context) {
 
