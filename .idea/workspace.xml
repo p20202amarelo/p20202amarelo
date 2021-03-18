@@ -19,14 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Atualizando os cabeçalhos">
-      <change afterPath="$PROJECT_DIR$/lib/telas/AbaArquivadas.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)">
+      <change afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/Grupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaConversas.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615954997564</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)">
+      <created>1616097072762</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616097072762</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -280,7 +286,8 @@
     <MESSAGE value="Tela inicial mudada para WhatsUff" />
     <MESSAGE value="Atualizando os TODO" />
     <MESSAGE value="Atualizando os cabeçalhos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizando os cabeçalhos" />
+    <MESSAGE value="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -291,26 +298,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="261" key="GridCell.Tab.0.bottom" timestamp="1616096171202">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1616097587862">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="261" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616096171202" />
-    <state width="1306" height="261" key="GridCell.Tab.0.center" timestamp="1616096171202">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
+    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1616097587862">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="261" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616096171202" />
-    <state width="1306" height="261" key="GridCell.Tab.0.left" timestamp="1616096171202">
+    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
+    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1616097587862">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="261" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616096171202" />
-    <state width="1306" height="261" key="GridCell.Tab.0.right" timestamp="1616096171202">
+    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1616097587862">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="261" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616096171202" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615955003413">
+    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616097091679">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1615955003413" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616097091679" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

@@ -44,10 +44,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   }
 
   Future _verificarUsuarioLogado() async {
-
     FirebaseAuth auth = FirebaseAuth.instance;
 
     FirebaseUser usuarioLogado = await auth.currentUser();
+
 
     if( usuarioLogado == null ){
       Navigator.pushReplacementNamed(context, "/login");
