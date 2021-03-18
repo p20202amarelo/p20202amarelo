@@ -1,8 +1,5 @@
 // Cabeçalho:
-//  Este módulo é responsavel por definir a aba de conversas não arquivadas e suas funcionalidades
-//  1.Para implementar a funcionalidade de arquivar conversas,
-//  1.1.Foi criado um botão em cada opção de conversa. Quando clicado, ele chama o método _arquivarConversa.
-//  1.2.Foi também colocado uma booleana, no objeto Conversa, colocado no Firestore. Que indica se a conversa está arquivada
+//  Este módulo é responsável por definir a aba de conversas arquivadas e todas suas funcionalidades;
 
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -11,12 +8,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../model/Usuario.dart';
 
-class AbaConversas extends StatefulWidget {
+class AbaArquivadas extends StatefulWidget {
   @override
-  _AbaConversasState createState() => _AbaConversasState();
+  _AbaArquivadasState createState() => _AbaArquivadasState();
 }
 
-class _AbaConversasState extends State<AbaConversas> {
+class _AbaArquivadasState extends State<AbaArquivadas> {
 
   List<Conversa> _listaConversas = List();
   final _controller = StreamController<QuerySnapshot>.broadcast();
@@ -42,7 +39,7 @@ class _AbaConversasState extends State<AbaConversas> {
     final stream = db.collection("conversas")
         .document( _idUsuarioLogado )
         .collection("ultima_conversa")
-        .where('arquivada', isEqualTo: false) //abv
+        .where('arquivada', isEqualTo: true) //abv
         .snapshots();
 
     stream.listen((dados){
@@ -57,7 +54,7 @@ class _AbaConversasState extends State<AbaConversas> {
         .document( _idUsuarioLogado )
         .collection( "ultima_conversa" )
         .document( idDestinatario )
-        .updateData({"arquivada" : true});
+        .updateData({"arquivada" : false});
   }
 
   _recuperarDadosUsuario() async {
@@ -88,15 +85,15 @@ class _AbaConversasState extends State<AbaConversas> {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
-          return Center(
-            child: Column(
-              children: <Widget>[
-                Text("Carregando conversas"),
-                CircularProgressIndicator()
-              ],
-            ),
-          );
-          break;
+            return Center(
+              child: Column(
+                children: <Widget>[
+                  Text("Carregando conversas"),
+                  CircularProgressIndicator()
+                ],
+              ),
+            );
+            break;
           case ConnectionState.active:
           case ConnectionState.done:
             if (snapshot.hasError) {
@@ -169,11 +166,11 @@ class _AbaConversasState extends State<AbaConversas> {
                           )
                       ),
                       trailing: IconButton(
-                              icon: const Icon(Icons.archive_outlined),
-                              tooltip: "Arquivar Conversa",
-                              onPressed: () {
-                                _arquivarConversa(usuario.idUsuario);
-                              }, //abv
+                        icon: const Icon(Icons.archive_outlined),
+                        tooltip: "Arquivar Conversa",
+                        onPressed: () {
+                          _arquivarConversa(usuario.idUsuario);
+                        }, //abv
                       ),
                     );
 

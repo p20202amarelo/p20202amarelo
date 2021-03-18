@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:p20202amarelo/telas/AbaArquivadas.dart';
 import 'telas/AbaContatos.dart';
 import 'telas/AbaConversas.dart';
 import 'dart:io';
@@ -23,7 +24,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   TabController _tabController;
   List<String> itensMenu = [
-    "Configurações", "Deslogar"
+    "Configurações", "Deslogar", "Criar Grupo",
   ];
   String _emailUsuario= "";
 
@@ -60,7 +61,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     _verificarUsuarioLogado();
     _recuperarDadosUsuario();
     _tabController = TabController(
-        length: 2,
+        length: 3,
         vsync: this
     );
 
@@ -225,7 +226,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       case "Deslogar":
         _deslogarUsuario();
         break;
-
+      case "Criar Grupo":
+        // TODO : criar a página de criar grupo, e descomentar a linha abaixo
+        // Navigator.pushNamed(context, "/criargrupo");
+        break;
     }
     //print("Item escolhido: " + itemEscolhido );
 
@@ -256,7 +260,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           indicatorColor: Platform.isIOS ? Colors.grey[400] : Colors.white,
           tabs: <Widget>[
             Tab(text: "Conversas",),
-            Tab(text: "Contatos",)
+            Tab(text: "Contatos",),
+            Tab(text: "Arquivadas",)
           ],
         ),
         actions: <Widget>[
@@ -277,7 +282,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         controller: _tabController,
         children: <Widget>[
           AbaConversas(),
-          AbaContatos()
+          AbaContatos(),
+          AbaArquivadas()
         ],
       ),
     );
