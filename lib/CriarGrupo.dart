@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'Home.dart';
+import 'model/Mensagem.dart';
 import 'model/Usuario.dart';
 
 class CriarGrupo extends StatefulWidget {
@@ -34,6 +35,13 @@ class _CriarGrupoState extends State<CriarGrupo> {
       });
     }
 
+  }
+
+  _testeMensagem() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
+    Firestore db = Firestore.instance;
+
+    Mensagem msg = Mensagem();
+    db.collection("grupos").document(_controllerNome.text).collection("mensagens").add(msg.toMap());
   }
 
   _cadastrarGrupo() async{
@@ -92,6 +100,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
                           borderRadius: BorderRadius.circular(32)),
                       onPressed: () {
                         _validarCampos();
+                        _testeMensagem();
                       }
                   ),
                 ),

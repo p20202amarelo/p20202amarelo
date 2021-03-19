@@ -94,7 +94,7 @@ class _MensagensState extends State<Mensagens> {
     else{
       response = await OneSignal.shared.postNotificationWithJson({
         "include_player_ids" : [ playerId],
-        "contents" : {"en" : mensagem.idUsuario + " lhe mandou: " + mensagem.mensagem},
+        "contents" : {"en" : _nomeRemetente + " lhe mandou: " + mensagem.mensagem},
         "headings" : {"en" : "Você recebeu uma mensagem!"},
       });
     }
@@ -330,8 +330,9 @@ class _MensagensState extends State<Mensagens> {
               Navigator.of(context).pop();
             },
           ),
-          Text(" "),
-          Text(" "),
+          Padding(
+            padding: EdgeInsets.only(top: 40)
+          ),
           InkWell(
             child: Text("Para ambos"),
             onTap: (){

@@ -27,18 +27,22 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     "Configurações", "Deslogar", "Criar Grupo",
   ];
   String _emailUsuario= "";
+  String _nomeUsuario="";
 
   Future _recuperarDadosUsuario() async {
 
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
 
-
+    String nom;
+    await Firestore.instance.collection("usuarios").document(usuarioLogado.uid).get()
+      .then((value) => nom = value.data["nome"]);
     // abv - linha abaixo caiu em desuso
     //OneSignal.shared.setExternalUserId(usuarioLogado.uid);
 
     setState(() {
       _emailUsuario = usuarioLogado.email;
+      _nomeUsuario = nom;
     });
 
   }
@@ -247,7 +251,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("WhatsUFF"),
+        title: Text(_nomeUsuario),
         elevation: Platform.isIOS ? 0 : 4,
         bottom: TabBar(
           indicatorWeight: 4,
