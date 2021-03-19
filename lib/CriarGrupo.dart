@@ -17,7 +17,7 @@ class CriarGrupo extends StatefulWidget {
 class _CriarGrupoState extends State<CriarGrupo> {
 
   //Controladores
-  TextEditingController _controllerNome = TextEditingController(text: "lek");
+  TextEditingController _controllerNome = TextEditingController(text: "");
   String _mensagemErro = "";
 
   _validarCampos(){
@@ -43,8 +43,8 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
     Firestore db = Firestore.instance;
 
-    // TODO : Criar modelo grupo
-    //TODO : Cadastrar o objeto grupo no Firestore
+
+    //TODO : (Precisa-se decidir como a estrutura vai ficar no bd) Cadastrar o objeto grupo no Firestore
 
     Navigator.pushReplacementNamed(context, "/home");
   }
@@ -64,14 +64,6 @@ class _CriarGrupoState extends State<CriarGrupo> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(bottom: 32),
-                  child: Image.asset(
-                    "imagens/usuario.png",
-                    width: 200,
-                    height: 150,
-                  ),
-                ),
-                Padding(
                   padding: EdgeInsets.only(bottom: 8),
                   child: TextField(
                     controller: _controllerNome,
@@ -80,7 +72,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
                     style: TextStyle(fontSize: 20),
                     decoration: InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                        hintText: "Nome",
+                        hintText: "Nome do Grupo",
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
@@ -91,7 +83,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
                   padding: EdgeInsets.only(top: 16, bottom: 10),
                   child: RaisedButton(
                       child: Text(
-                        "Cadastrar",
+                        "Continuar",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       color: Colors.green,
@@ -111,7 +103,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
                         fontSize: 20
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

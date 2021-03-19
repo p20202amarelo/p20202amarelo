@@ -20,7 +20,7 @@ class _AbaContatosState extends State<AbaContatos> {
     QuerySnapshot querySnapshot =
         await db.collection("usuarios").getDocuments();
 
-    List<Usuario> listaUsuarios = List();
+    List<Usuario> listaUsuarios = [];
     for (DocumentSnapshot item in querySnapshot.documents) {
 
       var dados = item.data;

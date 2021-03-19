@@ -18,7 +18,7 @@ class AbaConversas extends StatefulWidget {
 
 class _AbaConversasState extends State<AbaConversas> {
 
-  List<Conversa> _listaConversas = List();
+  List<Conversa> _listaConversas = [];
   final _controller = StreamController<QuerySnapshot>.broadcast();
   Firestore db = Firestore.instance;
   String _idUsuarioLogado;
@@ -48,6 +48,8 @@ class _AbaConversasState extends State<AbaConversas> {
     stream.listen((dados){
       _controller.add( dados );
     });
+
+    return stream; // warning clearer
 
   }
 

@@ -227,8 +227,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         _deslogarUsuario();
         break;
       case "Criar Grupo":
-        // TODO : criar a página de criar grupo, e descomentar a linha abaixo
-        // Navigator.pushNamed(context, "/criargrupo");
+        Navigator.pushNamed(context, "/criargrupo");
         break;
     }
     //print("Item escolhido: " + itemEscolhido );

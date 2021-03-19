@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Criado os módulos de criar grupo e objeto grupo">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Atualizando o RouteGenerator.dart para incluir a pagina CriarGrupo">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616102684709</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Atualizando o RouteGenerator.dart para incluir a pagina CriarGrupo">
+      <created>1616103873144</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1616103873144</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -291,7 +300,8 @@
     <MESSAGE value="Atualizando os cabeçalhos" />
     <MESSAGE value="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)" />
     <MESSAGE value="Criado os módulos de criar grupo e objeto grupo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criado os módulos de criar grupo e objeto grupo" />
+    <MESSAGE value="Atualizando o RouteGenerator.dart para incluir a pagina CriarGrupo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualizando o RouteGenerator.dart para incluir a pagina CriarGrupo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -302,26 +312,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1616097587862">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1616115618529">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
-    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1616097587862">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616115618529" />
+    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1616115618529">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
-    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1616097587862">
+    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616115618529" />
+    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1616115618529">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
-    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1616097587862">
+    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616115618529" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1616115618529">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616097587862" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616102690256">
+    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616115618529" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616103878601">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616102690256" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616103878601" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
