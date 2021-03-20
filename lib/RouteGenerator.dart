@@ -10,6 +10,7 @@ import 'Configuracoes.dart';
 import 'Home.dart';
 import 'Login.dart';
 import 'Mensagens.dart';
+import 'PopularGrupo.dart';
 
 class RouteGenerator {
 
@@ -37,6 +38,10 @@ class RouteGenerator {
       case "/criargrupo" :
         return MaterialPageRoute(
             builder: (_) => CriarGrupo()
+        );
+      case "/populargrupo" :
+        return MaterialPageRoute(
+            builder: (_) => PopularGrupo()
         );
       case "/home" :
         return MaterialPageRoute(

@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Pagina CriarGrupo acessível, precisa ser definida">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Polimentos extras em apresentação, e teste do banco de dados">
+      <change afterPath="$PROJECT_DIR$/lib/PopularGrupo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/telas/AbaAddGrupo.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
@@ -27,8 +29,7 @@
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +55,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/telas" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\src\projetos\GA\p20202amarelo\lib\telas" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
@@ -235,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616117400401</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Polimentos extras em apresentação, e teste do banco de dados">
+      <created>1616183466633</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1616183466633</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -313,7 +328,8 @@
     <MESSAGE value="Criado os módulos de criar grupo e objeto grupo" />
     <MESSAGE value="Atualizando o RouteGenerator.dart para incluir a pagina CriarGrupo" />
     <MESSAGE value="Pagina CriarGrupo acessível, precisa ser definida" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagina CriarGrupo acessível, precisa ser definida" />
+    <MESSAGE value="Polimentos extras em apresentação, e teste do banco de dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Polimentos extras em apresentação, e teste do banco de dados" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -324,22 +340,22 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="257" key="GridCell.Tab.0.bottom" timestamp="1616179321124">
+    <state width="1306" height="257" key="GridCell.Tab.0.bottom" timestamp="1616217959635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="257" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616179321124" />
-    <state width="1306" height="257" key="GridCell.Tab.0.center" timestamp="1616179321124">
+    <state width="1306" height="257" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616217959635" />
+    <state width="1306" height="257" key="GridCell.Tab.0.center" timestamp="1616217959635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="257" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616179321124" />
-    <state width="1306" height="257" key="GridCell.Tab.0.left" timestamp="1616179321124">
+    <state width="1306" height="257" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616217959635" />
+    <state width="1306" height="257" key="GridCell.Tab.0.left" timestamp="1616217959635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="257" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616179321124" />
-    <state width="1306" height="257" key="GridCell.Tab.0.right" timestamp="1616179321124">
+    <state width="1306" height="257" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616217959635" />
+    <state width="1306" height="257" key="GridCell.Tab.0.right" timestamp="1616217959635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="257" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616179321124" />
+    <state width="1306" height="257" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616217959635" />
     <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616117407557">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

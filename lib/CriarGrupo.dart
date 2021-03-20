@@ -40,8 +40,8 @@ class _CriarGrupoState extends State<CriarGrupo> {
   _testeMensagem() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
     Firestore db = Firestore.instance;
 
-    Mensagem msg = Mensagem();
-    db.collection("grupos").document(_controllerNome.text).collection("mensagens").add(msg.toMap());
+    Usuario usu = Usuario();
+    db.collection("grupos").document(_controllerNome.text).collection("integrantes").add(usu.toMap());
   }
 
   _cadastrarGrupo() async{
@@ -54,7 +54,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
     //TODO : (Precisa-se decidir como a estrutura vai ficar no bd) Cadastrar o objeto grupo no Firestore
 
-    Navigator.pushReplacementNamed(context, "/home");
+    Navigator.pushReplacementNamed(context, "/populargrupo");
   }
 
   @override
