@@ -19,13 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Criando o PopularGrupo e AbaAddGrupo, para adicionar integrantes ao grupo">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Criação de grupo implementada, TODOs desatualizados">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/PopularGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/PopularGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/AbaAddGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaAddGrupo.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616223109467</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Criação de grupo implementada, TODOs desatualizados">
+      <created>1616309950659</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1616309950659</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -333,7 +339,8 @@
     <MESSAGE value="Pagina CriarGrupo acessível, precisa ser definida" />
     <MESSAGE value="Polimentos extras em apresentação, e teste do banco de dados" />
     <MESSAGE value="Criando o PopularGrupo e AbaAddGrupo, para adicionar integrantes ao grupo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criando o PopularGrupo e AbaAddGrupo, para adicionar integrantes ao grupo" />
+    <MESSAGE value="Criação de grupo implementada, TODOs desatualizados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação de grupo implementada, TODOs desatualizados" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -360,10 +367,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1306" height="156" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616309513646" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616223126747">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616310156881">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616223126747" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616310156881" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

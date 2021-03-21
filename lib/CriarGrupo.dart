@@ -69,9 +69,6 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
     Firestore db = Firestore.instance;
 
-
-    //TODO : (Precisa-se decidir como a estrutura vai ficar no bd) Cadastrar o objeto grupo no Firestore
-
     Navigator.pushReplacementNamed(context, "/populargrupo", arguments: _controllerNome.text);
   }
 
