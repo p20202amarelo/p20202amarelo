@@ -13,6 +13,8 @@ import 'dart:io';
 import 'Login.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
+import 'telas/AbaGrupos.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -286,7 +288,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: <Widget>[
           AbaConversas(),
           AbaContatos(),
-          AbaArquivadas()
+          AbaGrupos() // temporario?
         ],
       ),
     );

@@ -57,6 +57,19 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
     db.collection("grupos")
         .document(_controllerNome.text)
+        .setData({"nome" : _controllerNome.text});
+
+    Mensagem mensagem = Mensagem();
+    mensagem.idUsuario = "sistema";
+    mensagem.mensagem = "grupo criado";
+    mensagem.timeStamp = Timestamp.now();
+    db.collection("grupos")
+        .document(_controllerNome.text)
+        .collection("mensagens")
+        .add(mensagem.toMap());
+
+    db.collection("grupos")
+        .document(_controllerNome.text)
         .collection("integrantes")
         .document(usuario.idUsuario)
         .setData({"nome" : usuario.nome, "osId" : usuario.osId});

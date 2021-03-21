@@ -19,12 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Criação de grupo implementada, TODOs desatualizados">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="TODOs atualizados">
+      <change afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/RouteGenerator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/RouteGenerator.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +60,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\src\projetos\GA\p20202amarelo\lib\telas" />
+      <recent name="C:\src\projetos\GA\p20202amarelo\lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -259,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616309950659</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="TODOs atualizados">
+      <created>1616310642754</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1616310642754</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -315,7 +325,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Notificação agora funciona ao mandar imagens" />
     <MESSAGE value="Retirando as mensagens de debug em _postarnotif" />
     <MESSAGE value="Colocando a base para mandar arquivos" />
     <MESSAGE value="Retirando a base para arquivos" />
@@ -340,7 +349,8 @@
     <MESSAGE value="Polimentos extras em apresentação, e teste do banco de dados" />
     <MESSAGE value="Criando o PopularGrupo e AbaAddGrupo, para adicionar integrantes ao grupo" />
     <MESSAGE value="Criação de grupo implementada, TODOs desatualizados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação de grupo implementada, TODOs desatualizados" />
+    <MESSAGE value="TODOs atualizados" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODOs atualizados" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -351,26 +361,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="156" key="GridCell.Tab.0.bottom" timestamp="1616309513646">
+    <state width="1306" height="156" key="GridCell.Tab.0.bottom" timestamp="1616311235109">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616309513646" />
-    <state width="1306" height="156" key="GridCell.Tab.0.center" timestamp="1616309513646">
+    <state width="1306" height="156" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
+    <state width="1306" height="156" key="GridCell.Tab.0.center" timestamp="1616311235109">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616309513646" />
-    <state width="1306" height="156" key="GridCell.Tab.0.left" timestamp="1616309513646">
+    <state width="1306" height="156" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
+    <state width="1306" height="156" key="GridCell.Tab.0.left" timestamp="1616311235109">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616309513646" />
-    <state width="1306" height="156" key="GridCell.Tab.0.right" timestamp="1616309513646">
+    <state width="1306" height="156" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
+    <state width="1306" height="156" key="GridCell.Tab.0.right" timestamp="1616311235109">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616309513646" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616310156881">
+    <state width="1306" height="156" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616310831839">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616310156881" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616310831839" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

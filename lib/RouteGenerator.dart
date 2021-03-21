@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:p20202amarelo/CriarGrupo.dart';
+import 'package:p20202amarelo/MensagensGrupo.dart';
 import 'package:p20202amarelo/Recuperacao.dart';
 
 import 'Cadastro.dart';
@@ -54,6 +55,10 @@ class RouteGenerator {
       case "/mensagens" :
         return MaterialPageRoute(
             builder: (_) => Mensagens(args)
+        );
+      case "/mensagensgrupo" :
+        return MaterialPageRoute(
+            builder: (_) => MensagensGrupo(args)
         );
       default:
         _erroRota();
