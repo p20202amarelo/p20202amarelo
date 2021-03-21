@@ -85,8 +85,8 @@ class _CadastroState extends State<Cadastro> {
       Firestore db = Firestore.instance;
 
       db.collection("usuarios")
-      .document( firebaseUser.user.uid )//.additionalUserInfo.providerId
-      .setData( usuario.toMap() );
+          .document( firebaseUser.user.uid )//.additionalUserInfo.providerId
+          .setData( usuario.toMap() );
 
       _cadastrarPlayerId(firebaseUser.user.uid);
 
@@ -101,9 +101,9 @@ class _CadastroState extends State<Cadastro> {
       //
       // }
       // else{
-        Navigator.pushNamedAndRemoveUntil(
-            context, "/login", (_)=>false
-        );
+      Navigator.pushNamedAndRemoveUntil(
+          context, "/login", (_)=>false
+      );
       //}
 
 
@@ -120,8 +120,27 @@ class _CadastroState extends State<Cadastro> {
 
 
   }
+  mensagemCad(BuildContext context) {
+    return showDialog(context: context,
+        builder: (context){
+      return AlertDialog
+        (
+        title:
+        Text("Verifique seu e-mail, para logar nas sessões futuras"),
+        actions : <Widget> [
+          MaterialButton(
+            elevation: 5.0,
+            child: Text('OK!'),
+            onPressed : (){
+            Navigator.of(context).pop();
+            }
+          )
+       ]
+      );
+    }
+    );
+  }
 
-  //abv
   Future<void> _cadastrarPlayerId(String uid) async {
     var status = await OneSignal.shared.getPermissionSubscriptionState();
     var playerId = status.subscriptionStatus.userId;
@@ -212,8 +231,9 @@ class _CadastroState extends State<Cadastro> {
                           borderRadius: BorderRadius.circular(32)),
                       onPressed: () {
                         _validarCampos();
+                        mensagemCad(context);
                       }
-                      ),
+                  ),
                 ),
                 Center(
                   child: Text(
