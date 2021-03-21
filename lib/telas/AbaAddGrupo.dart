@@ -5,6 +5,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AbaAddGrupo extends StatefulWidget {
+  String grupoNome;
+
+  AbaAddGrupo(this.grupoNome);
+
   @override
   _AbaAddGrupoState createState() => _AbaAddGrupoState();
 }
@@ -17,20 +21,32 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
   Future<List<Usuario>> _recuperarContatos() async {
     Firestore db = Firestore.instance;
 
+    QuerySnapshot iquery = await db.collection("grupos")
+        .document(widget.grupoNome)
+        .collection("integrantes").getDocuments();
+
+    List<String> listaIntegrantes = [];
+    for (DocumentSnapshot intem in iquery.documents){
+      listaIntegrantes.add(intem.documentID);
+    }
+
     QuerySnapshot querySnapshot =
-        await db.collection("usuarios").getDocuments();
+        await db.collection("usuarios")
+            .getDocuments();
 
     List<Usuario> listaUsuarios = [];
     for (DocumentSnapshot item in querySnapshot.documents) {
 
       var dados = item.data;
       if( dados["email"] == _emailUsuarioLogado ) continue;
+      if( listaIntegrantes.contains(item.documentID) )continue;
 
       Usuario usuario = Usuario();
       usuario.idUsuario = item.documentID;
       usuario.email = dados["email"];
       usuario.nome = dados["nome"];
       usuario.urlImagem = dados["urlImagem"];
+      usuario.osId = dados["osId"];
 
       listaUsuarios.add(usuario);
     }
@@ -45,6 +61,20 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
     _idUsuarioLogado = usuarioLogado.uid;
     _emailUsuarioLogado = usuarioLogado.email;
 
+  }
+
+  _adicionarUsuario(Usuario usuario) async {
+    Firestore db = Firestore.instance;
+
+    db.collection("grupos")
+        .document(widget.grupoNome)
+        .collection("integrantes")
+        .document(usuario.idUsuario)
+        .setData({"nome" : usuario.nome, "osId" : usuario.osId});
+
+    setState(() {
+
+    });
   }
 
   @override
@@ -81,7 +111,8 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
 
                   return ListTile(
                     onTap: (){
-                      // TODO : quando pressionado adicionar pessoa ao grupo
+                      _adicionarUsuario(usuario);
+
                     },
                     contentPadding: EdgeInsets.fromLTRB(16, 8, 16, 8),
                     leading: CircleAvatar(

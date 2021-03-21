@@ -15,6 +15,10 @@ import 'Login.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class PopularGrupo extends StatefulWidget {
+  String grupoNome;
+
+  PopularGrupo(this.grupoNome);
+
   @override
   _PopularGrupoState createState() => _PopularGrupoState();
 }
@@ -61,7 +65,7 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
     _verificarUsuarioLogado();
     _recuperarDadosUsuario();
     _tabController = TabController(
-        length: 3,
+        length: 1,
         vsync: this
     );
 
@@ -258,16 +262,23 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
           controller: _tabController,
           indicatorColor: Platform.isIOS ? Colors.grey[400] : Colors.white,
           tabs: <Widget>[
-            Tab(text: "Contatos",),
+            Tab(text: widget.grupoNome,),
           ],
         ),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.arrow_forward_outlined),
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, "/home");
+            },
+
+          ),
         ],
       ),
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          AbaAddGrupo(),
+          AbaAddGrupo(widget.grupoNome),
         ],
       ),
     );

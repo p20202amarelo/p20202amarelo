@@ -41,7 +41,7 @@ class RouteGenerator {
         );
       case "/populargrupo" :
         return MaterialPageRoute(
-            builder: (_) => PopularGrupo()
+            builder: (_) => PopularGrupo(args)
         );
       case "/home" :
         return MaterialPageRoute(

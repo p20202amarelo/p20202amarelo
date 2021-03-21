@@ -38,10 +38,28 @@ class _CriarGrupoState extends State<CriarGrupo> {
   }
 
   _testeMensagem() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
+
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseUser usuarioLogado = await auth.currentUser();
+
+
     Firestore db = Firestore.instance;
 
-    Usuario usu = Usuario();
-    db.collection("grupos").document(_controllerNome.text).collection("integrantes").add(usu.toMap());
+    DocumentSnapshot item = await db.collection("usuarios").document(usuarioLogado.uid).get();
+    var dados = item.data;
+
+    Usuario usuario = Usuario();
+    usuario.idUsuario = item.documentID;
+    usuario.email = dados["email"];
+    usuario.nome = dados["nome"];
+    usuario.urlImagem = dados["urlImagem"];
+    usuario.osId = dados["osId"];
+
+    db.collection("grupos")
+        .document(_controllerNome.text)
+        .collection("integrantes")
+        .document(usuario.idUsuario)
+        .setData({"nome" : usuario.nome, "osId" : usuario.osId});
   }
 
   _cadastrarGrupo() async{
@@ -54,7 +72,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
     //TODO : (Precisa-se decidir como a estrutura vai ficar no bd) Cadastrar o objeto grupo no Firestore
 
-    Navigator.pushReplacementNamed(context, "/populargrupo");
+    Navigator.pushReplacementNamed(context, "/populargrupo", arguments: _controllerNome.text);
   }
 
   @override
