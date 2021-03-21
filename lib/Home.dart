@@ -266,7 +266,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           tabs: <Widget>[
             Tab(text: "Conversas",),
             Tab(text: "Contatos",),
-            Tab(text: "Arquivadas",)
+            Tab(text: "Grupos",)
           ],
         ),
         actions: <Widget>[

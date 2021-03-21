@@ -56,7 +56,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     usuario.osId = dados["osId"];
 
     db.collection("grupos")
-        .document(_controllerNome.text)
+        .document(_controllerNome.text) // TODO : Mudar para o nome do documento ser uma sopa de letrinhas
         .setData({"nome" : _controllerNome.text});
 
     Mensagem mensagem = Mensagem();
@@ -66,7 +66,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     db.collection("grupos")
         .document(_controllerNome.text)
         .collection("mensagens")
-        .add(mensagem.toMap());
+        .add(mensagem.toMap()); // rever
 
     db.collection("grupos")
         .document(_controllerNome.text)

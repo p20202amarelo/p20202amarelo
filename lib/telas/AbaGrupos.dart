@@ -14,7 +14,7 @@ class _AbaGruposState extends State<AbaGrupos> {
   String _idUsuarioLogado;
   String _emailUsuarioLogado;
 
-  Future<List<Usuario>> _recuperarContatos() async { // TODO: Filtrar grupos onde o usuario está incluido
+  Future<List<Usuario>> _recuperarContatos() async { // TODO: Filtrar grupos onde o usuario está incluido (Theodoro, Pedro)
     Firestore db = Firestore.instance;
 
     QuerySnapshot querySnapshot =
