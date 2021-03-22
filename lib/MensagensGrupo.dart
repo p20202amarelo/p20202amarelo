@@ -36,6 +36,11 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   String _idGrupoNome;
   String _urlImagemRemetente="blz2"; // Remetente eh o logado
   String _nomeRemetente="blz2";
+
+  final Map<String, String> _mapaUsuarios = {};
+
+
+
   static ImagePicker _imagePicker = null;
 
   Firestore db = Firestore.instance;
@@ -49,6 +54,8 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     if (_imagePicker == null)
       _imagePicker = ImagePicker();
   }
+
+
 
   _enviarMensagem() {
     String textoMensagem = _controllerMensagem.text;
@@ -112,7 +119,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     return idList;
   }
 
-    _salvarMensagem(
+  _salvarMensagem(
       String idRemetente, String idDestinatario, Mensagem msg) async {
     await db
         .collection("grupos")
@@ -212,7 +219,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   Stream<QuerySnapshot> _adicionarListenerMensagens(){
 
     final stream = db.
-        collection("grupos")
+    collection("grupos")
         .document(widget.grupoNome)
         .collection("mensagens")
         .orderBy("timeStamp")  //LEK
@@ -239,7 +246,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
         .limit(1)
         .getDocuments()
         .then((QuerySnapshot querySnapshot) => {
-          id = querySnapshot.documents.first.documentID
+      id = querySnapshot.documents.first.documentID
     });
 
     await db
@@ -278,11 +285,41 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     );
   }
 
+  Future<String> _procuraNome(String id) async {
+    String nome;
+    await db
+        .collection("usuarios")
+        .document(id)
+        .get()
+        .then((DocumentSnapshot doc) => {
+      nome = doc.data["nome"]
+    });
+    print("mapatual");
+    print(_mapaUsuarios);
+    return nome;
+  }
+
+  _recuperaUsuarios() async{
+    String id;
+    String nome;
+    await db
+        .collection("grupos").document(widget.grupoNome)
+        .collection("integrantes")
+        .getDocuments()
+        .then((QuerySnapshot querySnapshot) => {
+      querySnapshot.documents.forEach((doc) {
+        _mapaUsuarios[doc.documentID] = doc["nome"];
+      })
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     //_recuperarDadosRemetente();
     _recuperarDadosUsuario();
+    print("Recuperando usuarios");
+    _recuperaUsuarios();
   }
 
   Future<void> initOneSignal() async{
@@ -314,7 +351,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32)),
                     prefixIcon:
-                      _subindoImagem
+                    _subindoImagem
                         ? CircularProgressIndicator()
                         : IconButton(icon: Icon(Icons.camera_alt),onPressed: _enviarFoto)
                 ),
@@ -323,18 +360,18 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
           ),
           Platform.isIOS
               ? CupertinoButton(
-                  child: Text("Enviar"),
-                  onPressed: _enviarMensagem,
-                )
+            child: Text("Enviar"),
+            onPressed: _enviarMensagem,
+          )
               : FloatingActionButton(
-                  backgroundColor: Color(0xff075E54),
-                  child: Icon(
-                    Icons.send,
-                    color: Colors.white,
-                  ),
-                  mini: true,
-                  onPressed: _enviarMensagem,
-                )
+            backgroundColor: Color(0xff075E54),
+            child: Icon(
+              Icons.send,
+              color: Colors.white,
+            ),
+            mini: true,
+            onPressed: _enviarMensagem,
+          )
         ],
       ),
     );
@@ -367,7 +404,6 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                     controller: _scrollController,
                     itemCount: querySnapshot.documents.length,
                     itemBuilder: (context, indice) {
-
                       //recupera mensagem
                       List<DocumentSnapshot> mensagens = querySnapshot.documents.toList();
                       DocumentSnapshot item = mensagens[indice];
@@ -378,6 +414,10 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                       //Define cores e alinhamentos
                       Alignment alinhamento = Alignment.centerRight;
                       Color cor = Color(0xffd2ffa5);
+                      String nome = "Sistema";
+                      if(item["idUsuario"]!="sistema"){
+                        nome = _mapaUsuarios[item["idUsuario"]];
+                      }
                       if ( _idUsuarioLogado != item["idUsuario"] ) {
                         alinhamento = Alignment.centerLeft;
                         cor = Colors.white;
@@ -386,36 +426,36 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                       return Align(
                         alignment: alinhamento,
                         child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: InkWell(
-                            onLongPress: (){
-                              if ( _idUsuarioLogado == item["idUsuario"] ) {
-                                Mensagem msgatual = Mensagem();
-                                msgatual.idUsuario = item["idUsuario"];
-                                msgatual.mensagem = item["mensagem"];
-                                msgatual.timeStamp = item["timeStamp"];
-                                msgatual.tipo = item["tipo"];
-                                msgatual.urlImagem = item["uriImagem"];
-                                print(msgatual.toMap());
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
-                                );
-                              }
-                            },
-                            child: Container(
-                              width: larguraContainer,
-                              padding: EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                  color: cor,
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(8))),
-                              child:
-                              item["tipo"] == "texto"
-                                  ? Text(item["mensagem"],style: TextStyle(fontSize: 18),)
-                                  : Image.network(item["urlImagem"]),
-                            ),
-                          )
+                            padding: EdgeInsets.all(6),
+                            child: InkWell(
+                              onLongPress: (){
+                                if ( _idUsuarioLogado == item["idUsuario"] ) {
+                                  Mensagem msgatual = Mensagem();
+                                  msgatual.idUsuario = item["idUsuario"];
+                                  msgatual.mensagem = item["mensagem"];
+                                  msgatual.timeStamp = item["timeStamp"];
+                                  msgatual.tipo = item["tipo"];
+                                  msgatual.urlImagem = item["uriImagem"];
+                                  print(msgatual.toMap());
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
+                                  );
+                                }
+                              },
+                              child: Container(
+                                width: larguraContainer,
+                                padding: EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                    color: cor,
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(8))),
+                                child:
+                                item["tipo"] == "texto"
+                                    ? Text(nome + ": " + item["mensagem"],style: TextStyle(fontSize: 18),)
+                                    : Image.network(item["urlImagem"]),
+                              ),
+                            )
                         ),
                       );
                     }),
@@ -445,14 +485,14 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                 image: AssetImage("imagens/bg.png"), fit: BoxFit.cover)),
         child: SafeArea(
             child: Container(
-          padding: EdgeInsets.all(8),
-          child: Column(
-            children: <Widget>[
-              stream,
-              caixaMensagem,
-            ],
-          ),
-        )),
+              padding: EdgeInsets.all(8),
+              child: Column(
+                children: <Widget>[
+                  stream,
+                  caixaMensagem,
+                ],
+              ),
+            )),
       ),
     );
   }

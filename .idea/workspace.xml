@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Bug na criação de grupo removido.">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar.">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
     </list>
@@ -299,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616378748255</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar.">
+      <created>1616380915594</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1616380915594</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -355,7 +365,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas" />
     <MESSAGE value="Arquivamento de conversas completo. Talvez precise de melhoramento" />
     <MESSAGE value="tirando o TODO de arquivar conversa" />
     <MESSAGE value="Implementando verificação por e-mail" />
@@ -380,7 +389,8 @@
     <MESSAGE value="TODOS ATUALIZADOS BOA SORTE" />
     <MESSAGE value="Mensagens e notificações funcionando, precisa de mais testes" />
     <MESSAGE value="Bug na criação de grupo removido." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug na criação de grupo removido." />
+    <MESSAGE value="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar." />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -391,26 +401,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="281" key="GridCell.Tab.0.bottom" timestamp="1616379426430">
+    <state width="1306" height="281" key="GridCell.Tab.0.bottom" timestamp="1616382408238">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="281" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
-    <state width="1306" height="281" key="GridCell.Tab.0.center" timestamp="1616379426430">
+    <state width="1306" height="281" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
+    <state width="1306" height="281" key="GridCell.Tab.0.center" timestamp="1616382408238">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="281" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
-    <state width="1306" height="281" key="GridCell.Tab.0.left" timestamp="1616379426430">
+    <state width="1306" height="281" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
+    <state width="1306" height="281" key="GridCell.Tab.0.left" timestamp="1616382408238">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="281" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
-    <state width="1306" height="281" key="GridCell.Tab.0.right" timestamp="1616379426430">
+    <state width="1306" height="281" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
+    <state width="1306" height="281" key="GridCell.Tab.0.right" timestamp="1616382408238">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="281" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616378752796">
+    <state width="1306" height="281" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616380921112">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616378752796" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616380921112" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
