@@ -29,8 +29,6 @@ class MensagensGrupo extends StatefulWidget {
   _MensagensGrupoState createState() => _MensagensGrupoState();
 }
 
-
-
 class _MensagensGrupoState extends State<MensagensGrupo> {
   File _imagem;
   bool _subindoImagem = false;
@@ -47,7 +45,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   ScrollController _scrollController = ScrollController();
 
 
-  _MensagensState(){
+  _MensagensGrupoState(){
     if (_imagePicker == null)
       _imagePicker = ImagePicker();
   }
@@ -174,11 +172,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     mensagem.urlImagem = url;
     mensagem.tipo = "imagem";
 
-    //Salvar mensagem para remetente
     _salvarMensagem(_idUsuarioLogado, _idGrupoNome, mensagem);
-
-    //Salvar mensagem para o destinatário
-    _salvarMensagem(_idGrupoNome, _idUsuarioLogado, mensagem);
 
     _postarnotif(mensagem);
 
@@ -239,9 +233,8 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     Timestamp ultimaMensagem;
 
     await db
+        .collection("grupos").document(widget.grupoNome)
         .collection("mensagens")
-        .document(idRemetente)
-        .collection(idDestinatario)
         .where("timeStamp", isEqualTo: timeStamp)
         .limit(1)
         .getDocuments()
@@ -250,55 +243,24 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     });
 
     await db
+        .collection("grupos").document(widget.grupoNome)
         .collection("mensagens")
-        .document(idRemetente)
-        .collection(idDestinatario)
         .document(id)
         .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : ""});
 
-    await db.collection("conversas")
-        .document(_idUsuarioLogado)
-        .collection("ultima_conversa")
-        .document(_idGrupoNome)
-        .get()
-        .then((DocumentSnapshot doc) => {
-          ultimaMensagem = doc.data["timeStamp"]
-        });
-
-    print(ultimaMensagem);
-    print(timeStamp);
-
-    if(ultimaMensagem==timeStamp){
-      Mensagem mensagem = Mensagem();
-      mensagem.timeStamp = timeStamp;
-      mensagem.mensagem = "[Mensagem apagada]";
-      mensagem.tipo = "texto";
-      mensagem.idUsuario = _idUsuarioLogado;
-    };
   }
 
   Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) {
     return new AlertDialog(
-      title: const Text('Deletar', style: TextStyle(color: Colors.red)),
+      title: const Text('Deletar em grupo deleta para todos. Deletar?', style: TextStyle(color: Colors.red)),
       content: new Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           InkWell(
-            child: Text("Para você"),
+            child: Text("Sim"),
             onTap: (){
               _removerMensagem(_idUsuarioLogado, _idGrupoNome, timeStamp);
-              Navigator.of(context).pop();
-            },
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 40)
-          ),
-          InkWell(
-            child: Text("Para ambos"),
-            onTap: (){
-              _removerMensagem(_idUsuarioLogado, _idGrupoNome, timeStamp);
-              _removerMensagem(_idGrupoNome, _idUsuarioLogado, timeStamp);
               Navigator.of(context).pop();
             },
           ),
@@ -310,7 +272,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
             Navigator.of(context).pop();
           },
           textColor: Theme.of(context).primaryColor,
-          child: const Text('Fechar'),
+          child: const Text('Cancelar'),
         ),
       ],
     );

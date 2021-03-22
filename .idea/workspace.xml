@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Bug na criação de grupo removido.">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616377140503</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Bug na criação de grupo removido.">
+      <created>1616378748255</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1616378748255</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -388,26 +391,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="156" key="GridCell.Tab.0.bottom" timestamp="1616376124570">
+    <state width="1306" height="281" key="GridCell.Tab.0.bottom" timestamp="1616379426430">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
-    <state width="1306" height="156" key="GridCell.Tab.0.center" timestamp="1616376124570">
+    <state width="1306" height="281" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
+    <state width="1306" height="281" key="GridCell.Tab.0.center" timestamp="1616379426430">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
-    <state width="1306" height="156" key="GridCell.Tab.0.left" timestamp="1616376124570">
+    <state width="1306" height="281" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
+    <state width="1306" height="281" key="GridCell.Tab.0.left" timestamp="1616379426430">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
-    <state width="1306" height="156" key="GridCell.Tab.0.right" timestamp="1616376124570">
+    <state width="1306" height="281" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
+    <state width="1306" height="281" key="GridCell.Tab.0.right" timestamp="1616379426430">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616377150792">
+    <state width="1306" height="281" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616379426430" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616378752796">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616377150792" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616378752796" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -436,4 +439,7 @@
           <url>file://$PROJECT_DIR$/lib/Configuracoes.dart</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
- 
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
