@@ -63,6 +63,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     mensagem.idUsuario = "sistema";
     mensagem.mensagem = "grupo criado";
     mensagem.timeStamp = Timestamp.now();
+    mensagem.tipo = "texto";
     db.collection("grupos")
         .document(_controllerNome.text)
         .collection("mensagens")
