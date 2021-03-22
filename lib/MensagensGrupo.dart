@@ -1,9 +1,9 @@
 // Cabeçalho:
-//  Este módulo é responsável por definir a tela de conversa e todas suas funcionalidades.
-//  1.Para implementar a notificação. Quando o botão de enviar é apertado, o osId é recuperado pelo Firestore, e uma notificação é postada para o osId do destinatário.
+//  Este módulo é responsável por definir a tela de conversa em grupo e todas suas funcionalidades.
+//  1.Para implementar a notificação. Foi modificado o método para mandar a notificação para cada integrante do grupo.
 //  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto.
-//  2.Para implementar a remoção de mensagens foram criados os métodos _removerMensagem e _buildPopupDialog.
-//  2.1 O _buildPopupDialog abre uma janela quando a mensagem é pressionado por um tempo, apresentando duas opções para o usuário e então chama _removerMensagem.
+//  2.Para implementar a remoção de mensagens foram modificados os métodos _removerMensagem e _buildPopupDialog.
+//  2.1 O _buildPopupDialog abre uma janela quando a mensagem é pressionada por um tempo, confirmando a exclusão da mensagem.
 //  2.2 O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
 
 import 'dart:async';
