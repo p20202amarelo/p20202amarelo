@@ -74,46 +74,47 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   _postarnotif(Mensagem mensagem) async {
     var status = await OneSignal.shared.getPermissionSubscriptionState();
 
-    var playerId = await _recuperarOsIdDestino();//status.subscriptionStatus.userId;
+    var playerId = await _recuperarOsIdDestino();
 
     var response;
 
     if(mensagem.urlImagem != ""){
       response = await OneSignal.shared.postNotificationWithJson({
-        "include_player_ids" : [ playerId],
+        "include_player_ids" : playerId,
         "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funfa
         "headings" : {"en" : "Você recebeu uma imagem!"},
       });
     }
     else{
       response = await OneSignal.shared.postNotificationWithJson({
-        "include_player_ids" : [ playerId],
+        "include_player_ids" : playerId,
         "contents" : {"en" : _nomeRemetente + " lhe mandou: " + mensagem.mensagem},
         "headings" : {"en" : "Você recebeu uma mensagem!"},
       });
     }
 
+
+
   }
 
-  Future<String>_recuperarOsIdDestino() async {
+  Future<List<String>> _recuperarOsIdDestino() async {
     String _osIdDestinatario;
     //Firestore db = Firestore.instance;
-    DocumentSnapshot snapshot = await db.collection("usuarios")
-        .document( _idGrupoNome )
-        .get();
+    QuerySnapshot query = await db.collection("grupos")
+        .document( widget.grupoNome )
+        .collection("integrantes")
+        .getDocuments();
 
-    Map<String, dynamic> dados = snapshot.data;
-
-    if( dados["osId"] != null){
-      setState(() {
-        _osIdDestinatario = dados["osId"];
-      });
+    List<String> idList = [];
+    for(DocumentSnapshot item in query.documents){
+      //if(item.documentID == _idUsuarioLogado)continue;
+      idList.add(item.data["osId"]);
     }
 
-    return _osIdDestinatario;
+    return idList;
   }
 
-    _salvarMensagem( // TODO : Acoplar o método
+    _salvarMensagem(
       String idRemetente, String idDestinatario, Mensagem msg) async {
     await db
         .collection("grupos")

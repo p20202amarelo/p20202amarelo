@@ -19,12 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Popup Cadastro.dart de email">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="TODOS ATUALIZADOS BOA SORTE">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616362205944</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="TODOS ATUALIZADOS BOA SORTE">
+      <created>1616364253418</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1616364253418</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -337,7 +342,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Retirando a base para arquivos" />
     <MESSAGE value="Colocando os TODO" />
     <MESSAGE value="Colocando o campo &quot;arquivada&quot; nas conversas" />
     <MESSAGE value="AbaConversas.dat mostra apenas as conversas com &quot;arquivada&quot; falso nas conversas" />
@@ -362,7 +366,8 @@
     <MESSAGE value="TODOs atualizados" />
     <MESSAGE value="Reunião de Grupo grupo grupo" />
     <MESSAGE value="Popup Cadastro.dart de email" />
-    <option name="LAST_COMMIT_MESSAGE" value="Popup Cadastro.dart de email" />
+    <MESSAGE value="TODOS ATUALIZADOS BOA SORTE" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODOS ATUALIZADOS BOA SORTE" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -373,26 +378,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="156" key="GridCell.Tab.0.bottom" timestamp="1616311235109">
+    <state width="1306" height="156" key="GridCell.Tab.0.bottom" timestamp="1616376124570">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
-    <state width="1306" height="156" key="GridCell.Tab.0.center" timestamp="1616311235109">
+    <state width="1306" height="156" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
+    <state width="1306" height="156" key="GridCell.Tab.0.center" timestamp="1616376124570">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
-    <state width="1306" height="156" key="GridCell.Tab.0.left" timestamp="1616311235109">
+    <state width="1306" height="156" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
+    <state width="1306" height="156" key="GridCell.Tab.0.left" timestamp="1616376124570">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
-    <state width="1306" height="156" key="GridCell.Tab.0.right" timestamp="1616311235109">
+    <state width="1306" height="156" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
+    <state width="1306" height="156" key="GridCell.Tab.0.right" timestamp="1616376124570">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1306" height="156" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616311235109" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616362212129">
+    <state width="1306" height="156" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616376124570" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616364265146">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616362212129" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616364265146" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
