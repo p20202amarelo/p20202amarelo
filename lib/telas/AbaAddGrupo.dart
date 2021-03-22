@@ -1,3 +1,6 @@
+// Cabeçalho:
+//  Este módulo define a página de adicionar pessoas à um grupo. E todas as suas funcionalidades.
+
 import 'package:flutter/material.dart';
 import '../model/Conversa.dart';
 import '../model/Usuario.dart';
