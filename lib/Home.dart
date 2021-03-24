@@ -249,12 +249,32 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   }
 
+  //controla estado do search bar
+  bool searchEnabled=false;
+  _switchSearchBarState(){
+    setState(() {
+      searchEnabled = !searchEnabled;
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_nomeUsuario),
         elevation: Platform.isIOS ? 0 : 4,
+        title: !searchEnabled ? Text(_nomeUsuario) :
+            TextField(
+              style: new TextStyle(
+                color: Colors.white,
+              ),
+              decoration: new InputDecoration(
+                prefixIcon: new Icon(Icons.search,color: Colors.white),
+                hintText: "Search...",
+                hintStyle: new TextStyle(color: Colors.white)
+              ),
+            ),
+
         bottom: TabBar(
           indicatorWeight: 4,
           labelStyle: TextStyle(
@@ -268,8 +288,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             Tab(text: "Contatos",),
             Tab(text: "Grupos",)
           ],
+
         ),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(searchEnabled ? Icons.close: Icons.search),
+            onPressed: _switchSearchBarState,
+          ),
+          IconButton(
+            onPressed: (){},
+            icon: Icon(Icons.message),
+          ),
+
           PopupMenuButton<String>(
             onSelected: _escolhaMenuItem,
             itemBuilder: (context){
@@ -283,6 +313,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           )
         ],
       ),
+
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
