@@ -20,11 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar.">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,21 +406,25 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="281" key="GridCell.Tab.0.bottom" timestamp="1616382408238">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="150" key="GridCell.Tab.0.bottom" timestamp="1616609222274">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
     <state width="1306" height="281" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
-    <state width="1306" height="281" key="GridCell.Tab.0.center" timestamp="1616382408238">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="150" key="GridCell.Tab.0.center" timestamp="1616609222274">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
     <state width="1306" height="281" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
-    <state width="1306" height="281" key="GridCell.Tab.0.left" timestamp="1616382408238">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="150" key="GridCell.Tab.0.left" timestamp="1616609222274">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
     <state width="1306" height="281" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
-    <state width="1306" height="281" key="GridCell.Tab.0.right" timestamp="1616382408238">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="150" key="GridCell.Tab.0.right" timestamp="1616609222274">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
     <state width="1306" height="281" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616382408238" />
     <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616380921112">
       <screen x="0" y="0" width="1366" height="738" />
