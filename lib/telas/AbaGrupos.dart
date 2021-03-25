@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import '../model/Conversa.dart';
 import '../model/Usuario.dart';
@@ -14,7 +16,7 @@ class _AbaGruposState extends State<AbaGrupos> {
   String _idUsuarioLogado;
   String _emailUsuarioLogado;
 
-  Future<List<Usuario>> _recuperarContatos() async { // TODO: Filtrar grupos onde o usuario está incluido (Theodoro, Pedro)
+  Future<List<Usuario>> _recuperarContatos() async {
     Firestore db = Firestore.instance;
 
     QuerySnapshot querySnapshot =
@@ -23,12 +25,15 @@ class _AbaGruposState extends State<AbaGrupos> {
     List<Usuario> listaUsuarios = [];
     for (DocumentSnapshot item in querySnapshot.documents) {
 
-      var dados = item.data;
-
-      Usuario usuario = Usuario();
-      usuario.idUsuario = item.documentID;
-
-      listaUsuarios.add(usuario);
+      QuerySnapshot queryIntegrante = await db.collection("grupos").document(item.documentID).collection("integrantes").getDocuments();
+      for (DocumentSnapshot integrante in queryIntegrante.documents){
+        if(integrante.documentID==_idUsuarioLogado){
+          Usuario usuario = Usuario();
+          usuario.idUsuario = item.documentID;
+          listaUsuarios.add(usuario);
+          break;
+        }
+      }
     }
 
     return listaUsuarios;
