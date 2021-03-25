@@ -16,7 +16,7 @@ class _AbaGruposState extends State<AbaGrupos> {
   String _idUsuarioLogado;
   String _emailUsuarioLogado;
 
-  Future<List<Usuario>> _recuperarContatos() async {
+  Future<List<Usuario>> _recuperarContatos() async { // recupera grupos
     Firestore db = Firestore.instance;
 
     QuerySnapshot querySnapshot =
