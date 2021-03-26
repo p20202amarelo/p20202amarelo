@@ -8,9 +8,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AbaAddGrupo extends StatefulWidget {
-  String grupoNome;
+  String grupoId;
 
-  AbaAddGrupo(this.grupoNome);
+  AbaAddGrupo(this.grupoId);
 
   @override
   _AbaAddGrupoState createState() => _AbaAddGrupoState();
@@ -25,7 +25,7 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
     Firestore db = Firestore.instance;
 
     QuerySnapshot iquery = await db.collection("grupos")
-        .document(widget.grupoNome)
+        .document(widget.grupoId)
         .collection("integrantes").getDocuments();
 
     List<String> listaIntegrantes = [];
@@ -70,7 +70,7 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
     Firestore db = Firestore.instance;
 
     db.collection("grupos")
-        .document(widget.grupoNome)
+        .document(widget.grupoId)
         .collection("integrantes")
         .document(usuario.idUsuario)
         .setData({"nome" : usuario.nome, "osId" : usuario.osId});

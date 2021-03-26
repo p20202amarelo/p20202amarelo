@@ -16,7 +16,8 @@ class _AbaGruposState extends State<AbaGrupos> {
   String _idUsuarioLogado;
   String _emailUsuarioLogado;
 
-  Future<List<Usuario>> _recuperarContatos() async { // recupera grupos
+
+  Future<List<Usuario>> _recuperarGrupos() async { // recupera grupos
     Firestore db = Firestore.instance;
 
     QuerySnapshot querySnapshot =
@@ -25,11 +26,16 @@ class _AbaGruposState extends State<AbaGrupos> {
     List<Usuario> listaUsuarios = [];
     for (DocumentSnapshot item in querySnapshot.documents) {
 
-      QuerySnapshot queryIntegrante = await db.collection("grupos").document(item.documentID).collection("integrantes").getDocuments();
+      QuerySnapshot queryIntegrante = await db.collection("grupos")
+          .document(item.documentID)
+          .collection("integrantes")
+          .getDocuments();
+
       for (DocumentSnapshot integrante in queryIntegrante.documents){
         if(integrante.documentID==_idUsuarioLogado){
           Usuario usuario = Usuario();
           usuario.idUsuario = item.documentID;
+          usuario.nome = item.data["nome"];
           listaUsuarios.add(usuario);
           break;
         }
@@ -48,6 +54,55 @@ class _AbaGruposState extends State<AbaGrupos> {
 
   }
 
+  _checaSeVazio(String grupoId) async{
+    QuerySnapshot qs = await Firestore.instance
+        .collection("grupos")
+        .document(grupoId)
+        .collection("integrantes").getDocuments();
+
+    if(qs.documents.length == 0){
+
+
+      QuerySnapshot qsi = await Firestore.instance.collection("grupos").document(grupoId).collection("mensagens").getDocuments();
+
+      for( DocumentSnapshot item in qsi.documents){
+        Firestore.instance.collection("grupos").document(grupoId).collection("mensagens").document(item.documentID).delete();
+      }
+
+      Firestore.instance.collection("grupos").document(grupoId).delete();
+
+    }
+  }
+
+  Widget _buildPopupDialog(BuildContext context, String grupoId) {
+    return AlertDialog(
+      title:Text("Opções:"),
+      actions: <Widget>[
+        TextButton(
+          child:Text("Ver Integrantes"),
+          onPressed: (){
+            // TODO : implementar tela de ver integrantes;
+          },
+        ),
+        TextButton(
+          child:Text("Retirar-se do grupo"),
+          onPressed: (){
+            Firestore.instance
+                .collection("grupos")
+                .document(grupoId)
+                .collection("integrantes")
+                .document(_idUsuarioLogado)
+                .delete();
+
+            _checaSeVazio(grupoId);
+
+            Navigator.of(context).pop();
+          },
+        )
+      ],
+    );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -57,7 +112,7 @@ class _AbaGruposState extends State<AbaGrupos> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Usuario>>(
-      future: _recuperarContatos(),
+      future: _recuperarGrupos(),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
@@ -80,27 +135,35 @@ class _AbaGruposState extends State<AbaGrupos> {
                   List<Usuario> listaItens = snapshot.data;
                   Usuario usuario = listaItens[indice];
 
-                  return ListTile(
-                    onTap: (){
-                      Navigator.pushNamed(
-                          context,
-                          "/mensagensgrupo",
-                          arguments: usuario.idUsuario
-                      );
+                  return InkWell(
+                    onLongPress:(){
+                      showDialog(context: context,
+                          builder: (BuildContext context) => _buildPopupDialog(context, usuario.idUsuario));
                     },
-                    contentPadding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                    leading: CircleAvatar(
-                        maxRadius: 30,
-                        backgroundColor: Colors.grey,
-                        backgroundImage: usuario.urlImagem != null
-                            ? NetworkImage(usuario.urlImagem)
-                            : null),
-                    title: Text(
-                      usuario.idUsuario,
-                      style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
+                    child: ListTile(
+                      onTap: (){
+                        Navigator.pushNamed(
+                            context,
+                            "/mensagensgrupo",
+                            arguments: usuario.idUsuario
+                        );
+                      },
+                      contentPadding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+                      leading: CircleAvatar(
+                          maxRadius: 30,
+                          backgroundColor: Colors.grey,
+                          backgroundImage: usuario.urlImagem != null
+                              ? NetworkImage(usuario.urlImagem)
+                              : null),
+                      title: Text(
+                        usuario.nome,
+                        style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                    )
                   );
+
+
                 });
             break;
         }

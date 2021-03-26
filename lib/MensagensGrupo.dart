@@ -21,9 +21,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class MensagensGrupo extends StatefulWidget {
-  String grupoNome;
+  String grupoId;
 
-  MensagensGrupo(this.grupoNome);
+  MensagensGrupo(this.grupoId);
 
   @override
   _MensagensGrupoState createState() => _MensagensGrupoState();
@@ -32,8 +32,9 @@ class MensagensGrupo extends StatefulWidget {
 class _MensagensGrupoState extends State<MensagensGrupo> {
   File _imagem;
   bool _subindoImagem = false;
-  String _idUsuarioLogado;
-  String _idGrupoNome;
+  String _idUsuarioLogado = "";
+  String _idGrupo = "";
+  String _grupoNome = "";
   String _urlImagemRemetente="blz2"; // Remetente eh o logado
   String _nomeRemetente="blz2";
 
@@ -55,7 +56,17 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
       _imagePicker = ImagePicker();
   }
 
+  _recuperarNomeGrupo() async{
+    Firestore db = Firestore.instance;
 
+    DocumentSnapshot grupodata = await db.collection("grupos").document(widget.grupoId).get();
+
+    setState(() {
+      _grupoNome = grupodata.data["nome"];
+    });
+
+
+  }
 
   _enviarMensagem() {
     String textoMensagem = _controllerMensagem.text;
@@ -68,7 +79,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
       mensagem.tipo = "texto";
 
       //Salvar mensagem para remetente
-      _salvarMensagem(_idUsuarioLogado, _idGrupoNome, mensagem);
+      _salvarMensagem(_idUsuarioLogado, _idGrupo, mensagem);
 
       //abv
       _postarnotif(mensagem);
@@ -93,7 +104,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     else{
       response = await OneSignal.shared.postNotificationWithJson({
         "include_player_ids" : playerId,
-        "contents" : {"en" : _nomeRemetente + " lhe mandou: " + mensagem.mensagem},
+        "contents" : {"en" : _nomeRemetente + " do grupo " + _grupoNome + " lhe mandou: " + mensagem.mensagem},
         "headings" : {"en" : "Você recebeu uma mensagem!"},
       });
     }
@@ -103,17 +114,16 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   }
 
   Future<List<String>> _recuperarOsIdDestino() async {
-    String _osIdDestinatario;
-    //Firestore db = Firestore.instance;
+
     QuerySnapshot query = await db.collection("grupos")
-        .document( widget.grupoNome )
+        .document( widget.grupoId )
         .collection("integrantes")
         .getDocuments();
 
     List<String> idList = [];
     for(DocumentSnapshot item in query.documents){
-      //if(item.documentID == _idUsuarioLogado)continue;
-      idList.add(item.data["osId"]);
+      DocumentSnapshot ds = await db.collection("usuarios").document(item.documentID).get();
+      idList.add(ds.data["osId"]);
     }
 
     return idList;
@@ -123,7 +133,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
       String idRemetente, String idDestinatario, Mensagem msg) async {
     await db
         .collection("grupos")
-        .document(widget.grupoNome)
+        .document(widget.grupoId)
         .collection("mensagens")
         .add(msg.toMap());
 
@@ -179,7 +189,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     mensagem.urlImagem = url;
     mensagem.tipo = "imagem";
 
-    _salvarMensagem(_idUsuarioLogado, _idGrupoNome, mensagem);
+    _salvarMensagem(_idUsuarioLogado, _idGrupo, mensagem);
 
     _postarnotif(mensagem);
 
@@ -189,7 +199,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
     _idUsuarioLogado = usuarioLogado.uid;
-    _idGrupoNome = widget.grupoNome;
+    _idGrupo = widget.grupoId;
 
     //Firestore db = Firestore.instance; // ja' eh atributo
     DocumentSnapshot snapshot = await db.collection("usuarios")
@@ -220,7 +230,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
 
     final stream = db.
     collection("grupos")
-        .document(widget.grupoNome)
+        .document(widget.grupoId)
         .collection("mensagens")
         .orderBy("timeStamp")  //LEK
         .snapshots()
@@ -240,7 +250,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     Timestamp ultimaMensagem;
 
     await db
-        .collection("grupos").document(widget.grupoNome)
+        .collection("grupos").document(widget.grupoId)
         .collection("mensagens")
         .where("timeStamp", isEqualTo: timeStamp)
         .limit(1)
@@ -250,7 +260,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     });
 
     await db
-        .collection("grupos").document(widget.grupoNome)
+        .collection("grupos").document(widget.grupoId)
         .collection("mensagens")
         .document(id)
         .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : ""});
@@ -267,7 +277,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
           InkWell(
             child: Text("Sim"),
             onTap: (){
-              _removerMensagem(_idUsuarioLogado, _idGrupoNome, timeStamp);
+              _removerMensagem(_idUsuarioLogado, _idGrupo, timeStamp);
               Navigator.of(context).pop();
             },
           ),
@@ -303,7 +313,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     String id;
     String nome;
     await db
-        .collection("grupos").document(widget.grupoNome)
+        .collection("grupos").document(widget.grupoId)
         .collection("integrantes")
         .getDocuments()
         .then((QuerySnapshot querySnapshot) => {
@@ -316,10 +326,11 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   @override
   void initState() {
     super.initState();
-    //_recuperarDadosRemetente();
+    _recuperarNomeGrupo();
     _recuperarDadosUsuario();
     print("Recuperando usuarios");
     _recuperaUsuarios();
+
   }
 
   Future<void> initOneSignal() async{
@@ -473,7 +484,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 8),
-              child: Text(widget.grupoNome),
+              child: Text(_grupoNome),
             )
           ],
         ),

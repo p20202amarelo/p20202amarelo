@@ -15,9 +15,9 @@ import 'Login.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class PopularGrupo extends StatefulWidget {
-  String grupoNome;
+  String grupoId;
 
-  PopularGrupo(this.grupoNome);
+  PopularGrupo(this.grupoId);
 
   @override
   _PopularGrupoState createState() => _PopularGrupoState();
@@ -29,6 +29,19 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
 
   TabController _tabController;
   String _emailUsuario= "";
+  String _grupoNome = "";
+
+  _recuperarNomeGrupo() async{
+    Firestore db = Firestore.instance;
+
+    DocumentSnapshot grupodata = await db.collection("grupos").document(widget.grupoId).get();
+
+    setState(() {
+      _grupoNome = grupodata.data["nome"];
+    });
+
+
+  }
 
   Future _recuperarDadosUsuario() async {
 
@@ -47,23 +60,11 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
 
   }
 
-  Future _verificarUsuarioLogado() async {
-    FirebaseAuth auth = FirebaseAuth.instance;
-
-    FirebaseUser usuarioLogado = await auth.currentUser();
-
-
-    if( usuarioLogado == null ){
-      Navigator.pushReplacementNamed(context, "/login");
-    }
-
-  }
-
   @override
   void initState() {
     super.initState();
-    _verificarUsuarioLogado();
     _recuperarDadosUsuario();
+    _recuperarNomeGrupo();
     _tabController = TabController(
         length: 1,
         vsync: this
@@ -221,23 +222,6 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
     }
   }
 
-  _escolhaMenuItem(String itemEscolhido){
-
-    switch( itemEscolhido ){
-      case "Configurações":
-        Navigator.pushNamed(context, "/configuracoes");
-        break;
-      case "Deslogar":
-        _deslogarUsuario();
-        break;
-      case "Criar Grupo":
-        Navigator.pushNamed(context, "/criargrupo");
-        break;
-    }
-    //print("Item escolhido: " + itemEscolhido );
-
-  }
-
   _deslogarUsuario() async {
 
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -262,7 +246,7 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
           controller: _tabController,
           indicatorColor: Platform.isIOS ? Colors.grey[400] : Colors.white,
           tabs: <Widget>[
-            Tab(text: widget.grupoNome,),
+            Tab(text: _grupoNome,),
           ],
         ),
         actions: <Widget>[
@@ -278,7 +262,7 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          AbaAddGrupo(widget.grupoNome),
+          AbaAddGrupo(widget.grupoId),
         ],
       ),
     );

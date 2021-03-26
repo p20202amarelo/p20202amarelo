@@ -19,21 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar.">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/debug_android_application.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/545edec175709f34e5a75723a6e63a03/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Ao criar um grupo, é checado se o grupo já existe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/CriarGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CriarGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/PopularGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/PopularGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/telas/AbaAddGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaAddGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616380915594</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Ao criar um grupo, é checado se o grupo já existe">
+      <created>1616790418692</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1616790418692</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -375,7 +374,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arquivamento de conversas completo. Talvez precise de melhoramento" />
     <MESSAGE value="tirando o TODO de arquivar conversa" />
     <MESSAGE value="Implementando verificação por e-mail" />
     <MESSAGE value="Verificação de email no cadastro implementada. Esta funcionalidade está comentada" />
@@ -400,7 +398,8 @@
     <MESSAGE value="Mensagens e notificações funcionando, precisa de mais testes" />
     <MESSAGE value="Bug na criação de grupo removido." />
     <MESSAGE value="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementadas todas as funcionalidades para o chat em grupo. O que nos resta é polir e testar." />
+    <MESSAGE value="Ao criar um grupo, é checado se o grupo já existe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ao criar um grupo, é checado se o grupo já existe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -411,26 +410,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="183" key="GridCell.Tab.0.bottom" timestamp="1616784617818">
+    <state width="1306" height="183" key="GridCell.Tab.0.bottom" timestamp="1616791421199">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="183" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616784617818" />
-    <state width="1306" height="183" key="GridCell.Tab.0.center" timestamp="1616784617818">
+    <state width="1306" height="183" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616791421199" />
+    <state width="1306" height="183" key="GridCell.Tab.0.center" timestamp="1616791421199">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="183" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616784617818" />
-    <state width="1306" height="183" key="GridCell.Tab.0.left" timestamp="1616784617818">
+    <state width="1306" height="183" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616791421199" />
+    <state width="1306" height="183" key="GridCell.Tab.0.left" timestamp="1616791421199">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="183" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616784617818" />
-    <state width="1306" height="183" key="GridCell.Tab.0.right" timestamp="1616784617818">
+    <state width="1306" height="183" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616791421199" />
+    <state width="1306" height="183" key="GridCell.Tab.0.right" timestamp="1616791421199">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="183" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616784617818" />
+    <state width="1306" height="183" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616791421199" />
     <state x="459" y="71" key="RollbackChangesDialog" timestamp="1616788619427">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -439,10 +438,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616380921112">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616790434707">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616380921112" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616790434707" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

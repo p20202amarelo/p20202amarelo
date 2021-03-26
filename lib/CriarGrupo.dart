@@ -43,19 +43,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
 
-
     Firestore db = Firestore.instance;
-
-    DocumentSnapshot gcheck = await db.collection("grupos")
-        .document(_controllerNome.text).get();
-
-    if(gcheck.exists){
-      setState(() {
-        _mensagemErro = "Grupo de mesmo nome já existe";
-      });
-      return;
-    }
-
 
     DocumentSnapshot item = await db.collection("usuarios").document(usuarioLogado.uid).get();
     var dados = item.data;
@@ -67,9 +55,9 @@ class _CriarGrupoState extends State<CriarGrupo> {
     usuario.urlImagem = dados["urlImagem"];
     usuario.osId = dados["osId"];
 
-    db.collection("grupos")
-        .document(_controllerNome.text)
-        .setData({"nome" : _controllerNome.text});
+    DocumentReference docadd = await db.collection("grupos").add({"nome" : _controllerNome.text});
+    String grupoId = docadd.documentID;
+
 
     Mensagem mensagem = Mensagem();
     mensagem.idUsuario = "sistema";
@@ -77,18 +65,18 @@ class _CriarGrupoState extends State<CriarGrupo> {
     mensagem.timeStamp = Timestamp.now();
     mensagem.tipo = "texto";
     db.collection("grupos")
-        .document(_controllerNome.text)
+        .document(grupoId)
         .collection("mensagens")
         .add(mensagem.toMap()); // rever
 
 
     db.collection("grupos")
-        .document(_controllerNome.text)
+        .document(grupoId)
         .collection("integrantes")
         .document(usuario.idUsuario)
         .setData({"nome" : usuario.nome, "osId" : usuario.osId});
 
-    Navigator.pushReplacementNamed(context, '/populargrupo', arguments: _controllerNome.text);
+    Navigator.pushReplacementNamed(context, '/populargrupo', arguments: grupoId);
   }
 
   @override
