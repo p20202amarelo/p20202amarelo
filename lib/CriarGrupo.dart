@@ -28,6 +28,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
     if( nome.isNotEmpty ){
         _cadastrarGrupo();
+
       }
     else{
       setState(() {
@@ -37,13 +38,24 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
   }
 
-  _testeMensagem() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
+  _cadastrarGrupo() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
 
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
 
 
     Firestore db = Firestore.instance;
+
+    DocumentSnapshot gcheck = await db.collection("grupos")
+        .document(_controllerNome.text).get();
+
+    if(gcheck.exists){
+      setState(() {
+        _mensagemErro = "Grupo de mesmo nome já existe";
+      });
+      return;
+    }
+
 
     DocumentSnapshot item = await db.collection("usuarios").document(usuarioLogado.uid).get();
     var dados = item.data;
@@ -56,7 +68,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     usuario.osId = dados["osId"];
 
     db.collection("grupos")
-        .document(_controllerNome.text) // TODO : Mudar para o nome do documento ser uma sopa de letrinhas
+        .document(_controllerNome.text)
         .setData({"nome" : _controllerNome.text});
 
     Mensagem mensagem = Mensagem();
@@ -69,21 +81,14 @@ class _CriarGrupoState extends State<CriarGrupo> {
         .collection("mensagens")
         .add(mensagem.toMap()); // rever
 
+
     db.collection("grupos")
         .document(_controllerNome.text)
         .collection("integrantes")
         .document(usuario.idUsuario)
         .setData({"nome" : usuario.nome, "osId" : usuario.osId});
-  }
 
-  _cadastrarGrupo() async{
-
-    FirebaseAuth auth = FirebaseAuth.instance;
-    FirebaseUser usuarioLogado = await auth.currentUser();
-
-    Firestore db = Firestore.instance;
-
-    Navigator.pushReplacementNamed(context, "/populargrupo", arguments: _controllerNome.text);
+    Navigator.pushReplacementNamed(context, '/populargrupo', arguments: _controllerNome.text);
   }
 
   @override
@@ -129,7 +134,6 @@ class _CriarGrupoState extends State<CriarGrupo> {
                           borderRadius: BorderRadius.circular(32)),
                       onPressed: () {
                         _validarCampos();
-                        _testeMensagem();
                       }
                   ),
                 ),
