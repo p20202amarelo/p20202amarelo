@@ -82,7 +82,6 @@ class _AbaGruposState extends State<AbaGrupos> {
           child:Text("Ver Integrantes"),
           onPressed: (){
             Navigator.pushReplacementNamed(context, '/verintegrantes', arguments: grupoId);
-            // TODO : implementar tela de ver integrantes;
           },
         ),
         TextButton(
