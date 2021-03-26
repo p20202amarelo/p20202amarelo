@@ -81,6 +81,7 @@ class _AbaGruposState extends State<AbaGrupos> {
         TextButton(
           child:Text("Ver Integrantes"),
           onPressed: (){
+            Navigator.pushReplacementNamed(context, '/verintegrantes', arguments: grupoId);
             // TODO : implementar tela de ver integrantes;
           },
         ),
@@ -120,7 +121,7 @@ class _AbaGruposState extends State<AbaGrupos> {
             return Center(
               child: Column(
                 children: <Widget>[
-                  Text("Carregando contatos"),
+                  Text("Carregando grupos"),
                   CircularProgressIndicator()
                 ],
               ),

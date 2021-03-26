@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:p20202amarelo/CriarGrupo.dart';
 import 'package:p20202amarelo/MensagensGrupo.dart';
 import 'package:p20202amarelo/Recuperacao.dart';
+import 'package:p20202amarelo/VerIntegrantes.dart';
 
 import 'Cadastro.dart';
 import 'Configuracoes.dart';
@@ -43,6 +44,10 @@ class RouteGenerator {
       case "/populargrupo" :
         return MaterialPageRoute(
             builder: (_) => PopularGrupo(args)
+        );
+      case "/verintegrantes" :
+        return MaterialPageRoute(
+            builder: (_) => VerIntegrantes(args)
         );
       case "/home" :
         return MaterialPageRoute(

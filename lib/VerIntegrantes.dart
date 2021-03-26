@@ -8,22 +8,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:p20202amarelo/telas/AbaAddGrupo.dart';
 import 'package:p20202amarelo/telas/AbaArquivadas.dart';
+import 'package:p20202amarelo/telas/AbaVerIntegrantes.dart';
 import 'telas/AbaContatos.dart';
 import 'telas/AbaConversas.dart';
 import 'dart:io';
 import 'Login.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
-class PopularGrupo extends StatefulWidget {
+class VerIntegrantes extends StatefulWidget {
   String grupoId;
 
-  PopularGrupo(this.grupoId);
+  VerIntegrantes(this.grupoId);
 
   @override
-  _PopularGrupoState createState() => _PopularGrupoState();
+  _VerIntegrantes createState() => _VerIntegrantes();
 }
 
-class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderStateMixin {
+class _VerIntegrantes extends State<VerIntegrantes> with SingleTickerProviderStateMixin {
 
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging(); // abv
 
@@ -235,7 +236,7 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Adicione integrantes ao grupo"),
+        title: Text("Integrantes"),
         elevation: Platform.isIOS ? 0 : 4,
         bottom: TabBar(
           indicatorWeight: 4,
@@ -251,9 +252,9 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.arrow_forward_outlined),
+            icon: Icon(Icons.add),
             onPressed: (){
-              Navigator.pushReplacementNamed(context, "/home");
+              Navigator.pushReplacementNamed(context, '/populargrupo', arguments: widget.grupoId);
             },
 
           ),
@@ -262,7 +263,7 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          AbaAddGrupo(widget.grupoId),
+          AbaVerIntegrantes(widget.grupoId),
         ],
       ),
     );
