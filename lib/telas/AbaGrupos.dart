@@ -1,7 +1,7 @@
-
+// Cabeçalho:
+//  Este módulo é responsável por mostrar os grupos do qual o usuário logado faz parte.
 
 import 'package:flutter/material.dart';
-import '../model/Conversa.dart';
 import '../model/Usuario.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -63,15 +63,28 @@ class _AbaGruposState extends State<AbaGrupos> {
     if(qs.documents.length == 0){
 
 
-      QuerySnapshot qsi = await Firestore.instance.collection("grupos").document(grupoId).collection("mensagens").getDocuments();
-
-      for( DocumentSnapshot item in qsi.documents){
-        Firestore.instance.collection("grupos").document(grupoId).collection("mensagens").document(item.documentID).delete();
-      }
+      CollectionReference qsi = await Firestore.instance.collection("grupos").document(grupoId).collection("mensagens");
 
       Firestore.instance.collection("grupos").document(grupoId).delete();
 
+      batchDelete(qsi);
+
     }
+  }
+
+  Future<void> batchDelete(CollectionReference cr) {
+    WriteBatch batch = Firestore.instance.batch();
+
+    return cr.getDocuments().then((querySnapshot) {
+      querySnapshot.documents.forEach((document) {
+        batch.delete(document.reference);
+      });
+      setState(() {
+
+      });
+      return batch.commit();
+    });
+
   }
 
   Widget _buildPopupDialog(BuildContext context, String grupoId) {
@@ -107,6 +120,7 @@ class _AbaGruposState extends State<AbaGrupos> {
   void initState() {
     super.initState();
     _recuperarDadosUsuario();
+    _recuperarGrupos();
   }
 
   @override
