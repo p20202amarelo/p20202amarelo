@@ -19,18 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Fazendo a busca por AbaGrupos.dart mais rápida">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Ainda falta atualizar o msgs, calmae">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -365,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616963223528</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Ainda falta atualizar o msgs, calmae">
+      <created>1616973618908</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1616973618916</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -421,7 +419,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementando a recuperação de senha no projeto" />
     <MESSAGE value="Implementando mudança de senha no projeto (baseado na implementação de mudança de e-mail do Pedro, crédito a ele)" />
     <MESSAGE value="Implementando remoção de mensagem (crédito ao Renan)" />
     <MESSAGE value="Tela inicial mudada para WhatsUff" />
@@ -446,7 +443,8 @@
     <MESSAGE value="atualizando TODO" />
     <MESSAGE value="Atualizando os cabeçalhos" />
     <MESSAGE value="Fazendo a busca por AbaGrupos.dart mais rápida" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fazendo a busca por AbaGrupos.dart mais rápida" />
+    <MESSAGE value="Ainda falta atualizar o msgs, calmae" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ainda falta atualizar o msgs, calmae" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -485,10 +483,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616963230041">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616973634651">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616963230041" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616973634651" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

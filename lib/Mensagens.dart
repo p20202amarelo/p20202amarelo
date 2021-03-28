@@ -34,6 +34,11 @@ class Mensagens extends StatefulWidget {
 
 
 class _MensagensState extends State<Mensagens> {
+
+  List<String> itensMenu = [
+    "Câmera", "Galeria", "Documento",
+  ];
+
   File _imagem;
   bool _subindoImagem = false;
   String _idUsuarioLogado;
@@ -318,7 +323,22 @@ class _MensagensState extends State<Mensagens> {
     };
   }
 
-  // TODO : Menu (popup ou não) Para escolher o tipo de anexo (Imagem da camera, imagem da galeria, video, e arquivo) para mandar [Lucas, Renan]
+  _escolhaMenuItem(String itemEscolhido){
+
+    switch( itemEscolhido ){
+      case "Câmera":
+      //Navigator.pushNamed(context, "/configuracoes");
+        break;
+      case "Galeria":
+      //_deslogarUsuario();
+        break;
+      case "Documentos":
+      //Navigator.pushNamed(context, "/criargrupo");
+        break;
+    }
+    //print("Item escolhido: " + itemEscolhido );
+
+  }
   // TODO : Tratar as opções de menu com o filepicker ou imagepicker ( filepicker pode tratar todos) [Arthur, Theodoro]
   // TODO : Depois de escolhido o arquivo, tratar de salvar a msg, e salvar no FireStore e Storage [Daniel, Pedro]
 
@@ -520,7 +540,6 @@ class _MensagensState extends State<Mensagens> {
 
     return Scaffold(
       appBar: AppBar(
-        // TODO : Adicionar ícone para mandar um anexo e faze-lo abrir um menu do que mandar (tirar o botão de camera também?) [Lucas, Renan]
         title: Row(
           children: <Widget>[
             CircleAvatar(
@@ -535,6 +554,20 @@ class _MensagensState extends State<Mensagens> {
             )
           ],
         ),
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            icon: Icon(Icons.attach_file),
+            onSelected: _escolhaMenuItem,
+            itemBuilder: (context){
+              return itensMenu.map((String item){
+                return PopupMenuItem<String>(
+                  value: item,
+                  child: Text(item),
+                );
+              }).toList();
+            },
+          )
+        ],
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
