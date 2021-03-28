@@ -27,14 +27,17 @@ class _AbaGruposState extends State<AbaGrupos> {
 
     List<Usuario> listaUsuarios = [];
 
+    if(querySnapshot.documents.isNotEmpty)
     for (DocumentSnapshot item in  querySnapshot.documents){
       Usuario usuario = Usuario();
       usuario.idUsuario = item.documentID;
       usuario.nome = item.data["nome"];
       listaUsuarios.add(usuario);
     }
+    else{
+      return await _recuperarGrupos();
+    }
 
-    print(listaUsuarios);
 
 
     // QuerySnapshot querySnapshot =
