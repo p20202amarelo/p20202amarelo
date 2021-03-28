@@ -193,7 +193,7 @@ class _PopularGrupoState extends State<PopularGrupo> with SingleTickerProviderSt
           IconButton(
             icon: Icon(Icons.arrow_forward_outlined),
             onPressed: (){
-              Navigator.pushReplacementNamed(context, "/home");
+              Navigator.pop(context);
             },
 
           ),

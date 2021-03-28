@@ -21,7 +21,7 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
   String _idUsuarioLogado;
   String _emailUsuarioLogado;
 
-  Future<List<Usuario>> _recuperarContatos() async {
+  Future<List<Usuario>> _recuperarIntegrantes() async {
     Firestore db = Firestore.instance;
 
     QuerySnapshot iquery = await db.collection("grupos")
@@ -75,6 +75,18 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
         .document(usuario.idUsuario)
         .setData({"nome" : usuario.nome, "osId" : usuario.osId});
 
+    db.collection("ug_teste") // essa coleção será feita para agilizar a abagrupos
+        .document(usuario.idUsuario)
+        .setData({});
+
+    var doc = await db.collection("grupos").document(widget.grupoId).get();
+
+    db.collection("ug_teste")
+        .document(usuario.idUsuario)
+        .collection("grupos")
+        .document(widget.grupoId)
+        .setData({'nome': doc.data["nome"] });
+
     setState(() {
 
     });
@@ -89,7 +101,7 @@ class _AbaAddGrupoState extends State<AbaAddGrupo> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Usuario>>(
-      future: _recuperarContatos(),
+      future: _recuperarIntegrantes(),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:

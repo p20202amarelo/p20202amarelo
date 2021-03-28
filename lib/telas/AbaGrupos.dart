@@ -20,27 +20,44 @@ class _AbaGruposState extends State<AbaGrupos> {
   Future<List<Usuario>> _recuperarGrupos() async { // recupera grupos
     Firestore db = Firestore.instance;
 
-    QuerySnapshot querySnapshot =
-    await db.collection("grupos").getDocuments();
+    QuerySnapshot querySnapshot = await db.collection("ug_teste")
+        .document(_idUsuarioLogado)
+        .collection("grupos")
+        .getDocuments();
 
     List<Usuario> listaUsuarios = [];
-    for (DocumentSnapshot item in querySnapshot.documents) {
 
-      QuerySnapshot queryIntegrante = await db.collection("grupos")
-          .document(item.documentID)
-          .collection("integrantes")
-          .getDocuments();
-
-      for (DocumentSnapshot integrante in queryIntegrante.documents){
-        if(integrante.documentID==_idUsuarioLogado){
-          Usuario usuario = Usuario();
-          usuario.idUsuario = item.documentID;
-          usuario.nome = item.data["nome"];
-          listaUsuarios.add(usuario);
-          break;
-        }
-      }
+    for (DocumentSnapshot item in  querySnapshot.documents){
+      Usuario usuario = Usuario();
+      usuario.idUsuario = item.documentID;
+      usuario.nome = item.data["nome"];
+      listaUsuarios.add(usuario);
     }
+
+    print(listaUsuarios);
+
+
+    // QuerySnapshot querySnapshot =
+    // await db.collection("grupos").getDocuments();
+    //
+    // List<Usuario> listaUsuarios = [];
+    // for (DocumentSnapshot item in querySnapshot.documents) {
+    //
+    //   QuerySnapshot queryIntegrante = await db.collection("grupos")
+    //       .document(item.documentID)
+    //       .collection("integrantes")
+    //       .getDocuments();
+    //
+    //   for (DocumentSnapshot integrante in queryIntegrante.documents){
+    //     if(integrante.documentID==_idUsuarioLogado){
+    //       Usuario usuario = Usuario();
+    //       usuario.idUsuario = item.documentID;
+    //       usuario.nome = item.data["nome"];
+    //       listaUsuarios.add(usuario);
+    //       break;
+    //     }
+    //   }
+    // }
 
     return listaUsuarios;
   }

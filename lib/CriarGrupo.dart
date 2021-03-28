@@ -35,6 +35,13 @@ class _CriarGrupoState extends State<CriarGrupo> {
 
   }
 
+  Future<String> _recuperarDadosUsuario() async {
+
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseUser usuarioLogado = await auth.currentUser();
+    return usuarioLogado.uid;
+  }
+
   _cadastrarGrupo() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
 
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -72,6 +79,14 @@ class _CriarGrupoState extends State<CriarGrupo> {
         .collection("integrantes")
         .document(usuario.idUsuario)
         .setData({"nome" : usuario.nome, "osId" : usuario.osId});
+
+    String _idUsuarioLogado = await _recuperarDadosUsuario();
+
+    db.collection("ug_teste")
+        .document(_idUsuarioLogado)
+        .collection("grupos")
+        .document(grupoId)
+        .setData({'nome': _controllerNome.text});
 
     Navigator.pushReplacementNamed(context, '/populargrupo', arguments: grupoId);
   }
