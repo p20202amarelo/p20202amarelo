@@ -20,8 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Fazendo a busca por AbaGrupos.dart mais rápida">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/telas/AbaGrupos.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616961381916</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fazendo a busca por AbaGrupos.dart mais rápida">
+      <created>1616963223528</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1616963223528</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -441,26 +457,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1616962896021">
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1616964563128">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616962896021" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1616962896020">
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616964563128" />
+    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1616964563128">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616962896020" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1616962896020">
+    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616964563128" />
+    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1616964563127">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616962896020" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1616962896020">
+    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616964563127" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1616964563128">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616962896020" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616964563128" />
     <state x="459" y="71" key="RollbackChangesDialog" timestamp="1616801287315">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -469,10 +485,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616961384715">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616963230041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616961384715" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616963230041" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

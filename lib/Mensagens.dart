@@ -318,7 +318,11 @@ class _MensagensState extends State<Mensagens> {
     };
   }
 
-  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) {
+  // TODO : Menu (popup ou não) Para escolher o tipo de anexo (Imagem da camera, imagem da galeria, video, e arquivo) para mandar [Lucas, Renan]
+  // TODO : Tratar as opções de menu com o filepicker ou imagepicker ( filepicker pode tratar todos) [Arthur, Theodoro]
+  // TODO : Depois de escolhido o arquivo, tratar de salvar a msg, e salvar no FireStore e Storage [Daniel, Pedro]
+
+  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) { // by renan
     return new AlertDialog(
       title: const Text('Deletar', style: TextStyle(color: Colors.red)),
       content: new Column(
@@ -473,7 +477,7 @@ class _MensagensState extends State<Mensagens> {
                                 msgatual.idUsuario = item["idUsuario"];
                                 msgatual.mensagem = item["mensagem"];
                                 msgatual.timeStamp = item["timeStamp"];
-                                msgatual.tipo = item["tipo"];
+                                msgatual.tipo = item["tipo"]; // TODO : tratar mensagens de tipo Video e Arquivo além dos demais [Pedro, Arthur]
                                 msgatual.urlImagem = item["uriImagem"];
                                 print(msgatual.toMap());
                                 showDialog(
@@ -516,6 +520,7 @@ class _MensagensState extends State<Mensagens> {
 
     return Scaffold(
       appBar: AppBar(
+        // TODO : Adicionar ícone para mandar um anexo e faze-lo abrir um menu do que mandar (tirar o botão de camera também?) [Lucas, Renan]
         title: Row(
           children: <Widget>[
             CircleAvatar(

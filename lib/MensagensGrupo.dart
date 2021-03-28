@@ -40,6 +40,10 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
   String _urlImagemRemetente="blz2"; // Remetente eh o logado
   String _nomeRemetente="blz2";
 
+  List<String> itensMenu = [
+    "Câmera", "Galeria", "Documento",
+  ];
+
   final Map<String, String> _mapaUsuarios = {};
 
 
@@ -325,6 +329,23 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     });
   }
 
+  _escolhaMenuItem(String itemEscolhido){
+
+    switch( itemEscolhido ){
+      case "Câmera":
+      //Navigator.pushNamed(context, "/configuracoes");
+        break;
+      case "Galeria":
+      //_deslogarUsuario();
+        break;
+      case "Documentos":
+      //Navigator.pushNamed(context, "/criargrupo");
+        break;
+    }
+    //print("Item escolhido: " + itemEscolhido );
+
+  }
+
   @override
   void initState() {
     super.initState();
@@ -496,6 +517,20 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
             )
           ],
         ),
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            icon: Icon(Icons.attach_file),
+            onSelected: _escolhaMenuItem,
+            itemBuilder: (context){
+              return itensMenu.map((String item){
+                return PopupMenuItem<String>(
+                  value: item,
+                  child: Text(item),
+                );
+              }).toList();
+            },
+          )
+        ],
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
