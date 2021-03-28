@@ -1,6 +1,5 @@
 // Cabeçalho:
-//  Este é o modulo responsável por definir a página de seleção de conversa (Seja pela aba contatos ou pela aba conversas) e suas funcionalidades.
-//  1.Para implementar as notificações, foram colocados os métodos de inicialização do OneSignal.
+//  Este é o modulo responsável por definir a página de ver integrantes em um grupo, determinado pelo invocador da tela. E suas funcionalidades.
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -70,62 +69,6 @@ class _VerIntegrantes extends State<VerIntegrantes> with SingleTickerProviderSta
         length: 1,
         vsync: this
     );
-
-    //depois deste comentário sou eu (abv) frankensteinizando o código
-
-    registerNotification();
-
-    // colocando o ONE SIGNAL
-
-    initPlatformState();
-
-  }
-
-  //register notification do primeiro exemplo
-  void registerNotification() {
-    _firebaseMessaging.requestNotificationPermissions();
-
-    _firebaseMessaging.getToken().then((token){
-      print('token: $token');
-    });
-  }
-
-  //implementação do OneSignal
-  Future<void> initPlatformState() async {
-    if (!mounted) return;
-
-    //Remove this method to stop OneSignal Debugging
-    OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
-
-    OneSignal.shared.init(
-        "f0a0fb40-2f40-4ac9-a6ab-80f79025eb43",
-        iOSSettings: {
-          OSiOSSettings.autoPrompt: false,
-          OSiOSSettings.inAppLaunchUrl: false
-        }
-    );
-    OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.notification);
-
-    // The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
-    await OneSignal.shared.promptUserForPushNotificationPermission(fallbackToSettings: true);
-
-    void _handleSendNotification() async {
-      var status = await OneSignal.shared.getPermissionSubscriptionState();
-
-      var playerId = status.subscriptionStatus.userId;
-
-      var notification = OSCreateNotification(
-          playerIds: [playerId],
-          content: "this is a test from OneSignal's Flutter SDK",
-          heading: "Test Notification",
-          buttons: [
-            OSActionButton(text: "test1", id: "id1"),
-            OSActionButton(text: "test2", id: "id2")
-          ]);
-
-      var response = await OneSignal.shared.postNotification(notification);
-    }
-
   }
 
   Future<bool> onBackPress() {

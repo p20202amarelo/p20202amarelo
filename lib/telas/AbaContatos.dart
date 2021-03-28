@@ -1,3 +1,6 @@
+// Cabeçalho:
+//  Este módulo define a aba de contatos e todas as suas funcionalidades. Na verdade este mostra todos os usuários do Firestore.
+
 import 'package:flutter/material.dart';
 import '../model/Conversa.dart';
 import '../model/Usuario.dart';

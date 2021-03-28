@@ -1,8 +1,8 @@
 // Cabeçalho:
-//  Este módulo define a página de adicionar pessoas à um grupo. E todas as suas funcionalidades.
+//  Este módulo define a lista de integrantes que podem ser adicionados a um grupo. E todas as suas funcionalidades.
+//  1.O grupo a ser modificado é informado pelo invocador da página
 
 import 'package:flutter/material.dart';
-import '../model/Conversa.dart';
 import '../model/Usuario.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

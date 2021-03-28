@@ -1,5 +1,6 @@
 // Cabeçalho:
 //  Este módulo é responsável por definir a aba de conversas arquivadas e todas suas funcionalidades;
+//  1.Neste momento em desuso, para não deixar a página home muito pesada.
 
 import 'dart:async';
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
 // Cabeçalho:
-// Este módulo define a página de cadastro de grupo e todas as suas funcionalidades.
+//  Este módulo define a página de cadastro de grupo e todas as suas funcionalidades.
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';

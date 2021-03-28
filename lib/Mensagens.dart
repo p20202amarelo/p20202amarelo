@@ -3,8 +3,9 @@
 //  1.Para implementar a notificação. Quando o botão de enviar é apertado, o osId é recuperado pelo Firestore, e uma notificação é postada para o osId do destinatário.
 //  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto.
 //  2.Para implementar a remoção de mensagens foram criados os métodos _removerMensagem e _buildPopupDialog.
-//  2.1 O _buildPopupDialog abre uma janela quando a mensagem é pressionado por um tempo, apresentando duas opções para o usuário e então chama _removerMensagem.
-//  2.2 O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
+//  2.1.O _buildPopupDialog abre uma janela quando a mensagem é pressionado por um tempo, apresentando duas opções para o usuário e então chama _removerMensagem.
+//  2.2.O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
+//  3.Para implementar a detecção de links, foram usados os plugins url_launcher e link_text
 
 import 'dart:async';
 
@@ -19,6 +20,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:link_text/link_text.dart';
 
 class Mensagens extends StatefulWidget {
   Usuario contato;
@@ -489,7 +491,15 @@ class _MensagensState extends State<Mensagens> {
                                   BorderRadius.all(Radius.circular(8))),
                               child:
                               item["tipo"] == "texto"
-                                  ? Text(item["mensagem"],style: TextStyle(fontSize: 18),)
+                                  ? LinkText(
+                                    text: item["mensagem"],
+                                    textStyle: TextStyle(fontSize: 18),
+                                    linkStyle: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.lightBlue,
+                                      decoration: TextDecoration.underline
+                                    )
+                                ,)
                                   : Image.network(item["urlImagem"]),
                             ),
                           )

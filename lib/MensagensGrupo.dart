@@ -3,13 +3,15 @@
 //  1.Para implementar a notificação. Foi modificado o método para mandar a notificação para cada integrante do grupo.
 //  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto.
 //  2.Para implementar a remoção de mensagens foram modificados os métodos _removerMensagem e _buildPopupDialog.
-//  2.1 O _buildPopupDialog abre uma janela quando a mensagem é pressionada por um tempo, confirmando a exclusão da mensagem.
-//  2.2 O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
+//  2.1.O _buildPopupDialog abre uma janela quando a mensagem é pressionada por um tempo, confirmando a exclusão da mensagem.
+//  2.2.O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
+//  3.Para implementar a detecção de links, foram usados os plugins url_launcher e link_text
 
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:link_text/link_text.dart';
 import 'dart:io';
 import 'model/Conversa.dart';
 import 'model/Mensagem.dart';
@@ -462,9 +464,15 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
                                 child:
-                                item["tipo"] == "texto"
-                                    ? Text(nome + ": " + item["mensagem"],style: TextStyle(fontSize: 18),)
-                                    : Image.network(item["urlImagem"]),
+                                item["tipo"] == "texto" ? LinkText(
+                                    text: nome + ": " + item["mensagem"],
+                                    textStyle: TextStyle(fontSize: 18),
+                                    linkStyle: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.lightBlue,
+                                        decoration: TextDecoration.underline
+                                    )
+                                ) : Image.network(item["urlImagem"]),
                               ),
                             )
                         ),

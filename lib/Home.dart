@@ -1,12 +1,15 @@
 // Cabeçalho:
 //  Este é o modulo responsável por definir a página de seleção de conversa (Seja pela aba contatos ou pela aba conversas) e suas funcionalidades.
 //  1.Para implementar as notificações, foram colocados os métodos de inicialização do OneSignal.
+//  2.Para implementar o chat em grupo, foi adicionada a aba de conversas de grupo.
+//  3.Para implementar a página de ver integrantes e retirar-se do grupo foi modificada a AbaGrupo.dart
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:p20202amarelo/telas/AbaArquivadas.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'telas/AbaContatos.dart';
 import 'telas/AbaConversas.dart';
 import 'dart:io';
@@ -296,7 +299,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             onPressed: _switchSearchBarState,
           ),
           IconButton(
-            onPressed: (){},
+            onPressed: (){
+              launch('https://www.google.com'); // TODO: Retirar este código e implementar a funcionalidade do botão
+            },
             icon: Icon(Icons.message),
           ),
 

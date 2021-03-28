@@ -8,8 +8,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:p20202amarelo/Recuperacao.dart';
 import 'Cadastro.dart';
-import 'Home.dart';
-import 'RouteGenerator.dart';
 import 'model/Usuario.dart';
 
 class Login extends StatefulWidget {

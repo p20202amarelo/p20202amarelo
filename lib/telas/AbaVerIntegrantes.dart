@@ -1,5 +1,6 @@
 // Cabeçalho:
-//  Este módulo define a página de adicionar pessoas à um grupo. E todas as suas funcionalidades.
+//  Este módulo define a página de ver integrantes de um grupo. E todas as suas funcionalidades.
+//  1.O grupo a ser lido é informado pelo invocador da aba.
 
 import 'package:flutter/material.dart';
 import '../model/Conversa.dart';
