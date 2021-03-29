@@ -160,7 +160,7 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-    _salvarMensagem(
+  _salvarMensagem(
       String idRemetente, String idDestinatario, Mensagem msg) async {
     await db
         .collection("mensagens")
@@ -173,8 +173,16 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-  _enviarFoto() async {
-    PickedFile pf = await _imagePicker.getImage(source: ImageSource.camera) ;// await ImagePicker.pickImage(source: ImageSource.gallery);
+  _enviarFoto(String source) async {
+    PickedFile pf;
+    if(source=="Camera") {
+      pf = await _imagePicker.getImage(source: ImageSource
+          .camera); // await ImagePicker.pickImage(source: ImageSource.gallery);
+    }
+    else if(source=="Galeria") {
+      pf = await _imagePicker.getImage(source: ImageSource
+          .gallery); // await ImagePicker.pickImage(source: ImageSource.gallery);
+    }
     File imagemSelecionada = File(pf.path);
     _subindoImagem = true;
     String nomeImagem = DateTime.now().millisecondsSinceEpoch.toString();
@@ -207,6 +215,8 @@ class _MensagensState extends State<Mensagens> {
     task.onComplete.then((StorageTaskSnapshot snapshot){
       _recuperarUrlImagem(snapshot);
     });
+
+
   }
 
   Future _recuperarUrlImagem(StorageTaskSnapshot snapshot) async {
@@ -227,6 +237,8 @@ class _MensagensState extends State<Mensagens> {
     _salvarMensagem(_idUsuarioDestinatario, _idUsuarioLogado, mensagem);
 
     _postarnotif(mensagem);
+
+    _salvarConversa( mensagem );
 
   }
 
@@ -291,7 +303,7 @@ class _MensagensState extends State<Mensagens> {
         .limit(1)
         .getDocuments()
         .then((QuerySnapshot querySnapshot) => {
-          id = querySnapshot.documents.first.documentID
+      id = querySnapshot.documents.first.documentID
     });
 
     await db
@@ -307,8 +319,8 @@ class _MensagensState extends State<Mensagens> {
         .document(_idUsuarioDestinatario)
         .get()
         .then((DocumentSnapshot doc) => {
-          ultimaMensagem = doc.data["timeStamp"]
-        });
+      ultimaMensagem = doc.data["timeStamp"]
+    });
 
     print(ultimaMensagem);
     print(timeStamp);
@@ -327,10 +339,10 @@ class _MensagensState extends State<Mensagens> {
 
     switch( itemEscolhido ){
       case "Câmera":
-      //Navigator.pushNamed(context, "/configuracoes");
+        _enviarFoto("Camera");
         break;
       case "Galeria":
-      //_deslogarUsuario();
+        _enviarFoto("Galeria");
         break;
       case "Documentos":
       //Navigator.pushNamed(context, "/criargrupo");
@@ -357,7 +369,7 @@ class _MensagensState extends State<Mensagens> {
             },
           ),
           Padding(
-            padding: EdgeInsets.only(top: 40)
+              padding: EdgeInsets.only(top: 40)
           ),
           InkWell(
             child: Text("Para ambos"),
@@ -410,34 +422,30 @@ class _MensagensState extends State<Mensagens> {
                 keyboardType: TextInputType.text,
                 style: TextStyle(fontSize: 20),
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(32, 8, 32, 8),
-                    hintText: "Digite uma mensagem...",
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32)),
-                    prefixIcon:
-                      _subindoImagem
-                        ? CircularProgressIndicator()
-                        : IconButton(icon: Icon(Icons.camera_alt),onPressed: _enviarFoto)
+                  contentPadding: EdgeInsets.fromLTRB(32, 8, 32, 8),
+                  hintText: "Digite uma mensagem...",
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32)),
                 ),
               ),
             ),
           ),
           Platform.isIOS
               ? CupertinoButton(
-                  child: Text("Enviar"),
-                  onPressed: _enviarMensagem,
-                )
+            child: Text("Enviar"),
+            onPressed: _enviarMensagem,
+          )
               : FloatingActionButton(
-                  backgroundColor: Color(0xff075E54),
-                  child: Icon(
-                    Icons.send,
-                    color: Colors.white,
-                  ),
-                  mini: true,
-                  onPressed: _enviarMensagem,
-                )
+            backgroundColor: Color(0xff075E54),
+            child: Icon(
+              Icons.send,
+              color: Colors.white,
+            ),
+            mini: true,
+            onPressed: _enviarMensagem,
+          )
         ],
       ),
     );
@@ -489,44 +497,44 @@ class _MensagensState extends State<Mensagens> {
                       return Align(
                         alignment: alinhamento,
                         child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: InkWell(
-                            onLongPress: (){
-                              if ( _idUsuarioLogado == item["idUsuario"] ) {
-                                Mensagem msgatual = Mensagem();
-                                msgatual.idUsuario = item["idUsuario"];
-                                msgatual.mensagem = item["mensagem"];
-                                msgatual.timeStamp = item["timeStamp"];
-                                msgatual.tipo = item["tipo"]; // TODO : tratar mensagens de tipo Video e Arquivo além dos demais [Pedro, Arthur]
-                                msgatual.urlImagem = item["uriImagem"];
-                                print(msgatual.toMap());
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
-                                );
-                              }
-                            },
-                            child: Container(
-                              width: larguraContainer,
-                              padding: EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                  color: cor,
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(8))),
-                              child:
-                              item["tipo"] == "texto"
-                                  ? LinkText(
-                                    text: item["mensagem"],
-                                    textStyle: TextStyle(fontSize: 18),
-                                    linkStyle: TextStyle(
+                            padding: EdgeInsets.all(6),
+                            child: InkWell(
+                              onLongPress: (){
+                                if ( _idUsuarioLogado == item["idUsuario"] ) {
+                                  Mensagem msgatual = Mensagem();
+                                  msgatual.idUsuario = item["idUsuario"];
+                                  msgatual.mensagem = item["mensagem"];
+                                  msgatual.timeStamp = item["timeStamp"];
+                                  msgatual.tipo = item["tipo"]; // TODO : tratar mensagens de tipo Video e Arquivo além dos demais [Pedro, Arthur]
+                                  msgatual.urlImagem = item["uriImagem"];
+                                  print(msgatual.toMap());
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
+                                  );
+                                }
+                              },
+                              child: Container(
+                                width: larguraContainer,
+                                padding: EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                    color: cor,
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(8))),
+                                child:
+                                item["tipo"] == "texto"
+                                    ? LinkText(
+                                  text: item["mensagem"],
+                                  textStyle: TextStyle(fontSize: 18),
+                                  linkStyle: TextStyle(
                                       fontSize: 18,
                                       color: Colors.lightBlue,
                                       decoration: TextDecoration.underline
-                                    )
-                                ,)
-                                  : Image.network(item["urlImagem"]),
-                            ),
-                          )
+                                  )
+                                  ,)
+                                    : Image.network(item["urlImagem"]),
+                              ),
+                            )
                         ),
                       );
                     }),
@@ -576,14 +584,14 @@ class _MensagensState extends State<Mensagens> {
                 image: AssetImage("imagens/bg.png"), fit: BoxFit.cover)),
         child: SafeArea(
             child: Container(
-          padding: EdgeInsets.all(8),
-          child: Column(
-            children: <Widget>[
-              stream,
-              caixaMensagem,
-            ],
-          ),
-        )),
+              padding: EdgeInsets.all(8),
+              child: Column(
+                children: <Widget>[
+                  stream,
+                  caixaMensagem,
+                ],
+              ),
+            )),
       ),
     );
   }

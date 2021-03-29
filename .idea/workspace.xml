@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Ainda falta atualizar o msgs, calmae">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Msgs e MsgsGrupo com menu de anexo (by Renan)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
     </list>
@@ -363,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616973618916</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Msgs e MsgsGrupo com menu de anexo (by Renan)">
+      <created>1616975221286</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1616975221286</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -419,7 +426,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementando mudança de senha no projeto (baseado na implementação de mudança de e-mail do Pedro, crédito a ele)" />
     <MESSAGE value="Implementando remoção de mensagem (crédito ao Renan)" />
     <MESSAGE value="Tela inicial mudada para WhatsUff" />
     <MESSAGE value="Atualizando os TODO" />
@@ -444,7 +450,8 @@
     <MESSAGE value="Atualizando os cabeçalhos" />
     <MESSAGE value="Fazendo a busca por AbaGrupos.dart mais rápida" />
     <MESSAGE value="Ainda falta atualizar o msgs, calmae" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ainda falta atualizar o msgs, calmae" />
+    <MESSAGE value="Msgs e MsgsGrupo com menu de anexo (by Renan)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Msgs e MsgsGrupo com menu de anexo (by Renan)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -455,26 +462,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1616964563128">
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1616975759872">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616964563128" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1616964563128">
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
+    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1616975759872">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616964563128" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1616964563127">
+    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
+    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1616975759872">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616964563127" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1616964563128">
+    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1616975759872">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616964563128" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
     <state x="459" y="71" key="RollbackChangesDialog" timestamp="1616801287315">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -483,10 +490,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616973634651">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616975223246">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616973634651" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616975223246" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
