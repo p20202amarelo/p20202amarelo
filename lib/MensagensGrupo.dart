@@ -148,8 +148,16 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
 
   }
 
-  _enviarFoto() async {
-    PickedFile pf = await _imagePicker.getImage(source: ImageSource.camera) ;// await ImagePicker.pickImage(source: ImageSource.gallery);
+  _enviarFoto(String source) async {
+    PickedFile pf;
+    if(source=="Camera") {
+      pf = await _imagePicker.getImage(source: ImageSource
+          .camera); // await ImagePicker.pickImage(source: ImageSource.gallery);
+    }
+    else if(source=="Galeria") {
+      pf = await _imagePicker.getImage(source: ImageSource
+          .gallery); // await ImagePicker.pickImage(source: ImageSource.gallery);
+    }
     File imagemSelecionada = File(pf.path);
     _subindoImagem = true;
     String nomeImagem = DateTime.now().millisecondsSinceEpoch.toString();
@@ -333,10 +341,10 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
 
     switch( itemEscolhido ){
       case "Câmera":
-      //Navigator.pushNamed(context, "/configuracoes");
+        _enviarFoto("Camera");
         break;
       case "Galeria":
-      //_deslogarUsuario();
+        _enviarFoto("Galeria");
         break;
       case "Documentos":
       //Navigator.pushNamed(context, "/criargrupo");
@@ -384,10 +392,6 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32)),
-                    prefixIcon:
-                    _subindoImagem
-                        ? CircularProgressIndicator()
-                        : IconButton(icon: Icon(Icons.camera_alt),onPressed: _enviarFoto)
                 ),
               ),
             ),
