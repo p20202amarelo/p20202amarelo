@@ -22,7 +22,9 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:link_text/link_text.dart';
-import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
+
 
 class Mensagens extends StatefulWidget {
   Usuario contato;
@@ -232,9 +234,6 @@ class _MensagensState extends State<Mensagens> {
     } else {
       // User canceled the picker
     }
-
-
-
   }
 
   Future<String> _uploadFile(File file, String ext) async {
@@ -270,13 +269,40 @@ class _MensagensState extends State<Mensagens> {
     task.onComplete.then((StorageTaskSnapshot snapshot) async {
       List<String> imgExt = ['png', 'jpg'];
       List<String> docExt = ['docx','pdf', 'txt', 'doc'];
+      List<String> vidExt = ['mp4'];
       if (imgExt.contains(ext)) {
         URL = await _recuperarUrlImagem(snapshot);
 
       } else if(docExt.contains(ext)){
-        // TODO escrever url do documento como mensagen
         URL = await arquivo.getDownloadURL();
         print(URL);
+        launch(URL); // abre navegador para download ideal seria abrir para leitura
+
+        String textoMensagem = URL;
+        if (textoMensagem.isNotEmpty) {
+          Mensagem mensagem = Mensagem();
+          mensagem.idUsuario = _idUsuarioLogado;
+          mensagem.mensagem = textoMensagem;
+          mensagem.timeStamp = Timestamp.now(); //LEK
+          mensagem.urlImagem = "";
+          mensagem.tipo = "texto";
+
+          //Salvar mensagem para remetente
+          _salvarMensagem(_idUsuarioLogado, _idUsuarioDestinatario, mensagem);
+
+          //Salvar mensagem para o destinatário
+          _salvarMensagem(_idUsuarioDestinatario, _idUsuarioLogado, mensagem);
+
+          //Salvar conversa
+          _salvarConversa( mensagem );
+
+          //abv
+          _postarnotif(mensagem);
+
+        }
+
+      } else if(vidExt.contains(ext)) {
+
       }
       return URL;
     });
@@ -412,7 +438,7 @@ class _MensagensState extends State<Mensagens> {
         break;
       case "Documento":
         _enviarArquivo();
-        downloadFile();
+      //downloadFile();
       //Navigator.pushNamed(context, "/criargrupo");
         break;
     }
