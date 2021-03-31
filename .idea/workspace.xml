@@ -16,17 +16,10 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Ainda falta atualizar o msgs, calmae">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Algumas mudanças em Mensagens.dart (by Renan)">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
@@ -34,7 +27,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MensagensGrupo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MensagensGrupo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +57,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/telas" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -427,19 +420,7 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -484,47 +465,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615768574788" />
-    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1617064901813">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1617064901813" />
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog" timestamp="1615662410938">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1617064769297">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1617208321441">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617064769297" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1617064769297">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
+    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1617208321441">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617064769297" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1617064769297">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
+    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1617208321441">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617064769297" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1617064769297">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1617208321441">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1616975759872" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617064769297" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
     <state x="459" y="71" key="RollbackChangesDialog" timestamp="1616801287315">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="459" y="71" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1616801287315" />
-    <state x="259" y="20" key="SettingsEditor" timestamp="1617063022176">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1616643436066">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="259" y="20" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1617063022176" />
     <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616975223246">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -533,10 +505,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1615911814346" />
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616801303710">
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617203940660">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1616801303710" />
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1617203940660" />
     <state x="462" y="230" key="git4idea.rebase.GitRebaseDialog" timestamp="1615911721041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

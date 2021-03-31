@@ -500,6 +500,38 @@ class _MensagensState extends State<Mensagens> {
     });
   }
 
+  Widget _msgWidgetBuilder(Mensagem msg){
+    switch(msg.tipo){
+      case "texto":
+
+        return LinkText(
+            text: msg.mensagem,
+            textStyle: TextStyle(fontSize: 18),
+            linkStyle: TextStyle(
+                fontSize: 18,
+                color: Colors.lightBlue,
+                decoration: TextDecoration.underline
+            )
+        );
+
+        break;
+
+      case "imagem":
+
+        return Image.network(msg.urlImagem);
+
+        break;
+
+      default:
+
+        return Text("isso é um arquivo ou o tipo de mensagem está errado");
+        // TODO : tratar mensagens de tipo Video e Arquivo além dos demais [Pedro, Arthur]
+
+        break;
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -588,23 +620,24 @@ class _MensagensState extends State<Mensagens> {
                         cor = Colors.white;
                       }
 
+                      Mensagem msgatual = Mensagem();
+                      msgatual.idUsuario = item["idUsuario"];
+                      msgatual.mensagem = item["mensagem"];
+                      msgatual.timeStamp = item["timeStamp"];
+                      msgatual.tipo = item["tipo"];
+                      msgatual.urlImagem = item["urlImagem"];
+
                       return Align(
                         alignment: alinhamento,
                         child: Padding(
                             padding: EdgeInsets.all(6),
                             child: InkWell(
                               onLongPress: (){
-                                if ( _idUsuarioLogado == item["idUsuario"] ) {
-                                  Mensagem msgatual = Mensagem();
-                                  msgatual.idUsuario = item["idUsuario"];
-                                  msgatual.mensagem = item["mensagem"];
-                                  msgatual.timeStamp = item["timeStamp"];
-                                  msgatual.tipo = item["tipo"]; // TODO : tratar mensagens de tipo Video e Arquivo além dos demais [Pedro, Arthur]
-                                  msgatual.urlImagem = item["uriImagem"];
+                                if ( _idUsuarioLogado == msgatual.tipo ) {
                                   print(msgatual.toMap());
                                   showDialog(
                                     context: context,
-                                    builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
+                                    builder: (BuildContext context) => _buildPopupDialog(context, msgatual.timeStamp),
                                   );
                                 }
                               },
@@ -615,19 +648,8 @@ class _MensagensState extends State<Mensagens> {
                                     color: cor,
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
-                                child:
-                                item["tipo"] == "texto"
-                                    ? LinkText(
-                                  text: item["mensagem"],
-                                  textStyle: TextStyle(fontSize: 18),
-                                  linkStyle: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.lightBlue,
-                                      decoration: TextDecoration.underline
-                                  )
-                                  ,)
-                                    : Image.network(item["urlImagem"]),
-                              ),
+                                child: _msgWidgetBuilder(msgatual)
+                              )
                             )
                         ),
                       );
