@@ -9,6 +9,7 @@
 
 import 'dart:async';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -21,6 +22,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:link_text/link_text.dart';
+import 'package:http/http.dart' as http;
 
 class Mensagens extends StatefulWidget {
   Usuario contato;
@@ -160,6 +162,35 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
+
+
+
+
+  Future<void> downloadFile() async {
+
+    FirebaseStorage storage = FirebaseStorage.instance;
+    StorageReference pastaRaiz = storage.ref();
+    StorageReference ref = pastaRaiz
+        .child("mensagens")
+        .child( _idUsuarioLogado )
+        .child( "/1617168607361.pdf");
+
+
+    print(ref.getName());
+
+
+    final File tempDir = File('sdk_gphone_x86/Download');
+    final File tempFile = File('${tempDir.path}/tmp.pdf');
+
+    final StorageFileDownloadTask task = ref.writeToFile(tempFile);
+    FileDownloadTaskSnapshot snapshot = await task.future;
+
+    // String name = await ref.getName();
+    // String path = await ref.getPath();
+
+  }
+
+
   _salvarMensagem(
       String idRemetente, String idDestinatario, Mensagem msg) async {
     await db
@@ -184,17 +215,40 @@ class _MensagensState extends State<Mensagens> {
           .gallery); // await ImagePicker.pickImage(source: ImageSource.gallery);
     }
     File imagemSelecionada = File(pf.path);
+    _uploadFile(imagemSelecionada, imagemSelecionada.path.split('.').last);
+
+  }
+
+  _enviarArquivo() async {
+    String URL;
+    File result = await FilePicker.getFile(
+      type: FileType.custom,
+      allowedExtensions: ['docx','pdf', 'txt', 'doc'],
+    );
+
+    if(result != null) {
+      print(result.path);
+      print(_uploadFile(result, result.path.split('.').last));
+    } else {
+      // User canceled the picker
+    }
+
+
+
+  }
+
+  Future<String> _uploadFile(File file, String ext) async {
     _subindoImagem = true;
-    String nomeImagem = DateTime.now().millisecondsSinceEpoch.toString();
+    String filename = DateTime.now().millisecondsSinceEpoch.toString();
     FirebaseStorage storage = FirebaseStorage.instance;
     StorageReference pastaRaiz = storage.ref();
     StorageReference arquivo = pastaRaiz
         .child("mensagens")
         .child( _idUsuarioLogado )
-        .child( nomeImagem + ".jpg");
+        .child( filename +'.'+ext);
 
     //Upload da imagem
-    StorageUploadTask task = arquivo.putFile( imagemSelecionada );
+    StorageUploadTask task = arquivo.putFile( file );
 
     //Controlar progresso do upload
     task.events.listen((StorageTaskEvent storageEvent){
@@ -210,16 +264,28 @@ class _MensagensState extends State<Mensagens> {
       }
 
     });
+    String URL;
 
     //Recuperar url da imagem
-    task.onComplete.then((StorageTaskSnapshot snapshot){
-      _recuperarUrlImagem(snapshot);
+    task.onComplete.then((StorageTaskSnapshot snapshot) async {
+      List<String> imgExt = ['png', 'jpg'];
+      List<String> docExt = ['docx','pdf', 'txt', 'doc'];
+      if (imgExt.contains(ext)) {
+        URL = await _recuperarUrlImagem(snapshot);
+
+      } else if(docExt.contains(ext)){
+        // TODO escrever url do documento como mensagen
+        URL = await arquivo.getDownloadURL();
+        print(URL);
+      }
+      return URL;
     });
 
 
   }
 
-  Future _recuperarUrlImagem(StorageTaskSnapshot snapshot) async {
+
+  Future<String> _recuperarUrlImagem(StorageTaskSnapshot snapshot) async {
 
     String url = await snapshot.ref.getDownloadURL();
 
@@ -239,7 +305,7 @@ class _MensagensState extends State<Mensagens> {
     _postarnotif(mensagem);
 
     _salvarConversa( mensagem );
-
+    return url;
   }
 
   _recuperarDadosUsuario() async {
@@ -344,7 +410,9 @@ class _MensagensState extends State<Mensagens> {
       case "Galeria":
         _enviarFoto("Galeria");
         break;
-      case "Documentos":
+      case "Documento":
+        _enviarArquivo();
+        downloadFile();
       //Navigator.pushNamed(context, "/criargrupo");
         break;
     }
