@@ -276,7 +276,7 @@ class _MensagensState extends State<Mensagens> {
       } else if(docExt.contains(ext)){
         URL = await arquivo.getDownloadURL();
         print(URL);
-        launch(URL); // abre navegador para download ideal seria abrir para leitura
+        //launch(URL); // abre navegador para download ideal seria abrir para leitura
 
         String textoMensagem = URL;
         if (textoMensagem.isNotEmpty) {

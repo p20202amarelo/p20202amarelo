@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
     </list>
@@ -377,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617208624962</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem.">
+      <created>1617574256489</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1617574256489</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -433,7 +440,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tela inicial mudada para WhatsUff" />
     <MESSAGE value="Atualizando os TODO" />
     <MESSAGE value="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)" />
     <MESSAGE value="Criado os módulos de criar grupo e objeto grupo" />
@@ -458,7 +464,8 @@
     <MESSAGE value="Ainda falta atualizar o msgs, calmae" />
     <MESSAGE value="Msgs e MsgsGrupo com menu de anexo (by Renan)" />
     <MESSAGE value="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro" />
+    <MESSAGE value="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem." />
+    <option name="LAST_COMMIT_MESSAGE" value="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem." />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -497,10 +504,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1617208627724">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1617574264803">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1617208627724" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1617574264803" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
