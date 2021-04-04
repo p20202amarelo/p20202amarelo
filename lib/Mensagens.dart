@@ -285,7 +285,7 @@ class _MensagensState extends State<Mensagens> {
           mensagem.mensagem = textoMensagem;
           mensagem.timeStamp = Timestamp.now(); //LEK
           mensagem.urlImagem = "";
-          mensagem.tipo = "texto";
+          mensagem.tipo = "arquivo";
 
           //Salvar mensagem para remetente
           _salvarMensagem(_idUsuarioLogado, _idUsuarioDestinatario, mensagem);
@@ -445,8 +445,6 @@ class _MensagensState extends State<Mensagens> {
     //print("Item escolhido: " + itemEscolhido );
 
   }
-  // TODO : Tratar as opções de menu com o filepicker ou imagepicker ( filepicker pode tratar todos) [Arthur, Theodoro]
-  // TODO : Depois de escolhido o arquivo, tratar de salvar a msg, e salvar no FireStore e Storage [Daniel, Pedro]
 
   Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) { // by renan
     return new AlertDialog(
@@ -524,8 +522,20 @@ class _MensagensState extends State<Mensagens> {
 
       default:
 
-        return Text("isso é um arquivo ou o tipo de mensagem está errado");
-        // TODO : tratar mensagens de tipo Video e Arquivo além dos demais [Pedro, Arthur]
+
+        return Row(children: [
+          Flexible(
+            child: Text("Clique no botão para baixar o arquivo",
+            )
+          ),
+          IconButton(
+            icon: Icon(Icons.download_rounded),
+            onPressed: (){
+              launch(msg.mensagem);
+            },
+          )
+        ]
+        );
 
         break;
     }

@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Algumas mudanças em Mensagens.dart (by Renan)">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616975221286</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro">
+      <created>1617208624962</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1617208624962</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -433,7 +433,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementando remoção de mensagem (crédito ao Renan)" />
     <MESSAGE value="Tela inicial mudada para WhatsUff" />
     <MESSAGE value="Atualizando os TODO" />
     <MESSAGE value="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)" />
@@ -458,7 +457,8 @@
     <MESSAGE value="Fazendo a busca por AbaGrupos.dart mais rápida" />
     <MESSAGE value="Ainda falta atualizar o msgs, calmae" />
     <MESSAGE value="Msgs e MsgsGrupo com menu de anexo (by Renan)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Msgs e MsgsGrupo com menu de anexo (by Renan)" />
+    <MESSAGE value="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
@@ -469,26 +469,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1617208321441">
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom" timestamp="1617573440499">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1617208321441">
+    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
+    <state width="1306" height="321" key="GridCell.Tab.0.center" timestamp="1617573440499">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1617208321441">
+    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
+    <state width="1306" height="321" key="GridCell.Tab.0.left" timestamp="1617573440499">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1617208321441">
+    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right" timestamp="1617573440499">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1617208321441" />
+    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
     <state x="459" y="71" key="RollbackChangesDialog" timestamp="1616801287315">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -497,18 +497,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1616975223246">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1617208627724">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1616975223246" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1617208627724" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1615911814346" />
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617203940660">
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617572096609">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1617203940660" />
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1617572096609" />
     <state x="462" y="230" key="git4idea.rebase.GitRebaseDialog" timestamp="1615911721041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
