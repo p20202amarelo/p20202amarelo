@@ -27,9 +27,6 @@ class Usuario {
 
   }
 
-  // TODO : metodo para recuperar informações de usuario do firestore
-
-  //gets e sets do osId
 
   String get osId => _osId;
 

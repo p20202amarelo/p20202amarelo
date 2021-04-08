@@ -298,13 +298,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             icon: Icon(searchEnabled ? Icons.close: Icons.search),
             onPressed: _switchSearchBarState,
           ),
-          IconButton(
-            onPressed: (){
-              launch('https://www.google.com'); // TODO: Retirar este código e implementar a funcionalidade do botão
-            },
-            icon: Icon(Icons.message),
-          ),
-
           PopupMenuButton<String>(
             onSelected: _escolhaMenuItem,
             itemBuilder: (context){

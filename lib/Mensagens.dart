@@ -638,17 +638,17 @@ class _MensagensState extends State<Mensagens> {
                       msgatual.urlImagem = item["urlImagem"];
 
                       return Align(
-                        alignment: alinhamento,
+                        alignment: alinhamento, // TODO: apagar no firestore
                         child: Padding(
-                            padding: EdgeInsets.all(6),
+                            padding: EdgeInsets.all(6),//remove mensagem
                             child: InkWell(
                               onLongPress: (){
-                                if ( _idUsuarioLogado == msgatual.tipo ) {
+                                if ( _idUsuarioLogado == msgatual.idUsuario ) {
                                   print(msgatual.toMap());
                                   showDialog(
                                     context: context,
                                     builder: (BuildContext context) => _buildPopupDialog(context, msgatual.timeStamp),
-                                  );
+                                  );//remove mensagem
                                 }
                               },
                               child: Container(

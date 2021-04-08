@@ -38,6 +38,7 @@ class _CadastroState extends State<Cadastro> {
 
           setState(() {
             _mensagemErro = "";
+            mensagemCad(context);
           });
 
           Usuario usuario = Usuario();
@@ -87,18 +88,6 @@ class _CadastroState extends State<Cadastro> {
           .setData( usuario.toMap() );
 
       _cadastrarPlayerId(firebaseUser.user.uid);
-
-      //TODO : Descomentar esta parte para implementar verificação de email 1/2
-
-      // if(!firebaseUser.user.isEmailVerified){
-      //   firebaseUser.user.sendEmailVerification();
-      //   //print("no email");
-      //   setState(() {
-      //     _mensagemErro = "Conta cadastrada, verifique seu e-mail antes de prosseguir"; // TODO : (Extra) Mandar o cadastrado para uma pagina de verificação de email
-      //   });
-      //
-      // }
-      // else{
       Navigator.pushNamedAndRemoveUntil(
           context, "/login", (_)=>false
       );
@@ -229,7 +218,6 @@ class _CadastroState extends State<Cadastro> {
                           borderRadius: BorderRadius.circular(32)),
                       onPressed: () {
                         _validarCampos();
-                        mensagemCad(context);
                       }
                   ),
                 ),
