@@ -266,18 +266,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         elevation: Platform.isIOS ? 0 : 4,
-        title: !searchEnabled ? Text(_nomeUsuario) :
-            TextField(
-              style: new TextStyle(
-                color: Colors.white,
-              ),
-              decoration: new InputDecoration(
-                prefixIcon: new Icon(Icons.search,color: Colors.white),
-                hintText: "Search...",
-                hintStyle: new TextStyle(color: Colors.white)
-              ),
-            ),
-
+        title: Text(_nomeUsuario),
         bottom: TabBar(
           indicatorWeight: 4,
           labelStyle: TextStyle(
@@ -294,10 +283,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
         ),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(searchEnabled ? Icons.close: Icons.search),
-            onPressed: _switchSearchBarState,
-          ),
           PopupMenuButton<String>(
             onSelected: _escolhaMenuItem,
             itemBuilder: (context){
