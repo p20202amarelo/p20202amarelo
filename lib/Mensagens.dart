@@ -164,10 +164,6 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-
-
-
-
   Future<void> downloadFile() async {
 
     FirebaseStorage storage = FirebaseStorage.instance;
@@ -191,7 +187,6 @@ class _MensagensState extends State<Mensagens> {
     // String path = await ref.getPath();
 
   }
-
 
   _salvarMensagem(
       String idRemetente, String idDestinatario, Mensagem msg) async {
@@ -217,7 +212,7 @@ class _MensagensState extends State<Mensagens> {
           .gallery); // await ImagePicker.pickImage(source: ImageSource.gallery);
     }
     File imagemSelecionada = File(pf.path);
-    _uploadFile(imagemSelecionada, imagemSelecionada.path.split('.').last);
+    _uploadFile(imagemSelecionada, imagemSelecionada.path.split('.').last, imagemSelecionada.path.split('/').last);
 
   }
 
@@ -230,13 +225,13 @@ class _MensagensState extends State<Mensagens> {
 
     if(result != null) {
       print(result.path);
-      print(_uploadFile(result, result.path.split('.').last));
+      print(_uploadFile(result, result.path.split('.').last, result.path.split('/').last));
     } else {
       // User canceled the picker
     }
   }
 
-  Future<String> _uploadFile(File file, String ext) async {
+  Future<String> _uploadFile(File file, String ext, String filename) async {
     _subindoImagem = true;
     String filename = DateTime.now().millisecondsSinceEpoch.toString();
     FirebaseStorage storage = FirebaseStorage.instance;
@@ -282,9 +277,9 @@ class _MensagensState extends State<Mensagens> {
         if (textoMensagem.isNotEmpty) {
           Mensagem mensagem = Mensagem();
           mensagem.idUsuario = _idUsuarioLogado;
-          mensagem.mensagem = textoMensagem;
+          mensagem.mensagem = filename;
           mensagem.timeStamp = Timestamp.now(); //LEK
-          mensagem.urlImagem = "";
+          mensagem.urlImagem = textoMensagem;
           mensagem.tipo = "arquivo";
 
           //Salvar mensagem para remetente
@@ -383,7 +378,7 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-  _removerMensagem(String idRemetente, String idDestinatario, Timestamp timeStamp) async {
+  _removerMensagem(String idRemetente, String idDestinatario, Timestamp timeStamp) async { // TODO : tratar remoção de arquivos e imagens
     String id;
     Timestamp ultimaMensagem;
 
@@ -427,6 +422,12 @@ class _MensagensState extends State<Mensagens> {
     };
   }
 
+  _removerArquivo(String filepath) async {
+    var firebaseStorage_instance = FirebaseStorage.instance;
+    StorageReference sr = await firebaseStorage_instance.getReferenceFromUrl(filepath);
+    sr.delete();
+  }
+
   _escolhaMenuItem(String itemEscolhido){
 
     switch( itemEscolhido ){
@@ -446,7 +447,7 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) { // by renan
+  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp, String urlImagem) { // by renan
     return new AlertDialog(
       title: const Text('Deletar', style: TextStyle(color: Colors.red)),
       content: new Column(
@@ -468,6 +469,7 @@ class _MensagensState extends State<Mensagens> {
             onTap: (){
               _removerMensagem(_idUsuarioLogado, _idUsuarioDestinatario, timeStamp);
               _removerMensagem(_idUsuarioDestinatario, _idUsuarioLogado, timeStamp);
+              _removerArquivo(urlImagem);
               Navigator.of(context).pop();
             },
           ),
@@ -525,15 +527,15 @@ class _MensagensState extends State<Mensagens> {
 
         return Row(children: [
           Flexible(
-            child: Text("Clique no botão para baixar o arquivo",
+            child: Text(msg.mensagem,
             )
           ),
           IconButton(
             icon: Icon(Icons.download_rounded),
             onPressed: (){
-              launch(msg.mensagem);
+              launch(msg.urlImagem);
             },
-          )
+          ),
         ]
         );
 
@@ -647,7 +649,7 @@ class _MensagensState extends State<Mensagens> {
                                   print(msgatual.toMap());
                                   showDialog(
                                     context: context,
-                                    builder: (BuildContext context) => _buildPopupDialog(context, msgatual.timeStamp),
+                                    builder: (BuildContext context) => _buildPopupDialog(context, msgatual.timeStamp, item["urlImagem"]),
                                   );//remove mensagem
                                 }
                               },
