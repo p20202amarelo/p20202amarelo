@@ -398,7 +398,7 @@ class _MensagensState extends State<Mensagens> {
         .document(idRemetente)
         .collection(idDestinatario)
         .document(id)
-        .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : ""});
+        .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : "", "tipo" : "texto"});
 
     await db.collection("conversas")
         .document(_idUsuarioLogado)
