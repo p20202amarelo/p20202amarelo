@@ -127,6 +127,16 @@ class _AbaGruposState extends State<AbaGrupos> {
                 .document(_idUsuarioLogado)
                 .delete();
 
+            Firestore.instance
+                .collection("ug_teste")
+                .document(_idUsuarioLogado)
+                .collection("grupos")
+                .document(grupoId).delete();
+
+            setState(() {
+
+            });
+
             _checaSeVazio(grupoId);
 
             Navigator.of(context).pop();
