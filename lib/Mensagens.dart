@@ -377,7 +377,7 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-  _removerMensagem(String idRemetente, String idDestinatario, Timestamp timeStamp) async { // TODO : tratar remoção de arquivos e imagens
+  _removerMensagem(String idRemetente, String idDestinatario, Timestamp timeStamp) async {
     String id;
     Timestamp ultimaMensagem;
 

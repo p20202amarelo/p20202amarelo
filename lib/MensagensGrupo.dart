@@ -364,11 +364,18 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
         .collection("grupos").document(widget.grupoId)
         .collection("mensagens")
         .document(id)
-        .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : ""});
+        .updateData({"mensagem" : "[Mensagem apagada]", "urlImagem" : "" , "tipo" : "texto"});
+
 
   }
 
-  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp) {
+  _removerArquivo(String filepath) async {
+    var firebaseStorage_instance = FirebaseStorage.instance;
+    StorageReference sr = await firebaseStorage_instance.getReferenceFromUrl(filepath);
+    sr.delete();
+  }
+
+  Widget _buildPopupDialog(BuildContext context, Timestamp timeStamp, String urlImagem) {
     return new AlertDialog(
       title: const Text('Deletar em grupo deleta para todos. Deletar?', style: TextStyle(color: Colors.red)),
       content: new Column(
@@ -379,6 +386,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
             child: Text("Sim"),
             onTap: (){
               _removerMensagem(_idUsuarioLogado, _idGrupo, timeStamp);
+              _removerArquivo(urlImagem);
               Navigator.of(context).pop();
             },
           ),
@@ -609,7 +617,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                                   print(msgatual.toMap());
                                   showDialog(
                                     context: context,
-                                    builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"]),
+                                    builder: (BuildContext context) => _buildPopupDialog(context, item["timeStamp"], item["urlImagem"]),
                                   );
                                 }
                               },
