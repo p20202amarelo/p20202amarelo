@@ -1,6 +1,4 @@
-// TODO : Fazer cabeçalho de cada método
-
-// Cabeçalho:
+//  Cabeçalho:
 //  Este módulo tem como objetivo delinear a classe Conversa, que por tabela também define que campos o objeto conversa terá no Firestore
 //  1.Adicionamos uma booleana para informar se a conversa foi arquivada, e um método para mudar esta booleana no Firestore
 
