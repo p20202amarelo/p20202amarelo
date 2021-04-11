@@ -8,7 +8,6 @@
 //  3.Para implementar a detecção de links, foram usados os plugins url_launcher e link_text
 //  4.Para implementar os anexos foi implementados os plugins image_picker e file_picker
 
-// TODO: implementar anexos do Mensagens.dart para cá;
 
 import 'dart:async';
 
@@ -108,7 +107,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     if(mensagem.urlImagem != ""){
       response = await OneSignal.shared.postNotificationWithJson({
         "include_player_ids" : playerId,
-        "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funfa
+        "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funciona
         "headings" : {"en" : "Você recebeu uma imagem!"},
       });
     }
@@ -252,7 +251,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
       } else if(docExt.contains(ext)){
         URL = await arquivo.getDownloadURL();
         print(URL);
-        //launch(URL); // abre navegador para download ideal seria abrir para leitura
+        //launch(URL);
 
         String textoMensagem = URL;
         if (textoMensagem.isNotEmpty) {
@@ -303,7 +302,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     _idUsuarioLogado = usuarioLogado.uid;
     _idGrupo = widget.grupoId;
 
-    //Firestore db = Firestore.instance; // ja' eh atributo
+    //Firestore db = Firestore.instance; //
     DocumentSnapshot snapshot = await db.collection("usuarios")
         .document( _idUsuarioLogado )
         .get();
@@ -446,7 +445,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
         _enviarArquivo();
         break;
     }
-    //print("Item escolhido: " + itemEscolhido );
+    
 
   }
 
