@@ -100,7 +100,7 @@ class _MensagensState extends State<Mensagens> {
     if(mensagem.urlImagem != ""){
       response = await OneSignal.shared.postNotificationWithJson({
         "include_player_ids" : [ playerId],
-        "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funfa
+        "contents" : {"en" : "abra o app para ver a imagem "}, // se não tiver isso a notificação não funciona
         "headings" : {"en" : "Você recebeu uma imagem!"},
       });
     }
@@ -273,7 +273,7 @@ class _MensagensState extends State<Mensagens> {
       } else if(docExt.contains(ext)){
         URL = await arquivo.getDownloadURL();
         print(URL);
-        //launch(URL); // abre navegador para download ideal seria abrir para leitura
+        //launch(URL);
 
         String textoMensagem = URL;
         if (textoMensagem.isNotEmpty) {
@@ -641,7 +641,7 @@ class _MensagensState extends State<Mensagens> {
                       msgatual.urlImagem = item["urlImagem"];
 
                       return Align(
-                        alignment: alinhamento, // TODO: apagar no firestore
+                        alignment: alinhamento,
                         child: Padding(
                             padding: EdgeInsets.all(6),//remove mensagem
                             child: InkWell(
