@@ -305,7 +305,6 @@ class _MensagensState extends State<Mensagens> {
 
   }
 
-
   Future<String> _recuperarUrlImagem(StorageTaskSnapshot snapshot) async {
 
     String url = await snapshot.ref.getDownloadURL();

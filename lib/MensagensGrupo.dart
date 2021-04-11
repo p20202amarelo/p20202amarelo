@@ -11,9 +11,11 @@
 
 import 'dart:async';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:link_text/link_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:io';
 import 'model/Conversa.dart';
 import 'model/Mensagem.dart';
@@ -194,6 +196,89 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     });
   }
 
+  _enviarArquivo() async {
+    String URL;
+    File result = await FilePicker.getFile(
+      type: FileType.custom,
+      allowedExtensions: ['docx','pdf', 'txt', 'doc'],
+    );
+
+    if(result != null) {
+      print(result.path);
+      print(_uploadFile(result, result.path.split('.').last, result.path.split('/').last));
+    } else {
+      // User canceled the picker
+    }
+  }
+
+  Future<String> _uploadFile(File file, String ext, String filename) async {
+    _subindoImagem = true;
+    String filename = DateTime.now().millisecondsSinceEpoch.toString();
+    FirebaseStorage storage = FirebaseStorage.instance;
+    StorageReference pastaRaiz = storage.ref();
+    StorageReference arquivo = pastaRaiz
+        .child("mensagens")
+        .child( _idUsuarioLogado )
+        .child( filename +'.'+ext);
+
+    //Upload da imagem
+    StorageUploadTask task = arquivo.putFile( file );
+
+    //Controlar progresso do upload
+    task.events.listen((StorageTaskEvent storageEvent){
+
+      if( storageEvent.type == StorageTaskEventType.progress ){
+        setState(() {
+          _subindoImagem = true;
+        });
+      }else if( storageEvent.type == StorageTaskEventType.success ){
+        setState(() {
+          _subindoImagem = false;
+        });
+      }
+
+    });
+    String URL;
+
+    //Recuperar url da imagem
+    task.onComplete.then((StorageTaskSnapshot snapshot) async {
+      List<String> imgExt = ['png', 'jpg'];
+      List<String> docExt = ['docx','pdf', 'txt', 'doc'];
+      List<String> vidExt = ['mp4'];
+      if (imgExt.contains(ext)) {
+        URL = await _recuperarUrlImagem(snapshot);
+
+      } else if(docExt.contains(ext)){
+        URL = await arquivo.getDownloadURL();
+        print(URL);
+        //launch(URL); // abre navegador para download ideal seria abrir para leitura
+
+        String textoMensagem = URL;
+        if (textoMensagem.isNotEmpty) {
+          Mensagem mensagem = Mensagem();
+          mensagem.idUsuario = _idUsuarioLogado;
+          mensagem.mensagem = filename;
+          mensagem.timeStamp = Timestamp.now(); //LEK
+          mensagem.urlImagem = textoMensagem;
+          mensagem.tipo = "arquivo";
+
+          //Salvar mensagem para remetente
+          _salvarMensagem(_idUsuarioLogado, _idGrupo, mensagem);
+
+          //abv
+          _postarnotif(mensagem);
+
+        }
+
+      } else if(vidExt.contains(ext)) {
+
+      }
+      return URL;
+    });
+
+
+  }
+
   Future _recuperarUrlImagem(StorageTaskSnapshot snapshot) async {
 
     String url = await snapshot.ref.getDownloadURL();
@@ -348,8 +433,8 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
       case "Galeria":
         _enviarFoto("Galeria");
         break;
-      case "Documentos":
-      //Navigator.pushNamed(context, "/criargrupo");
+      case "Documento":
+        _enviarArquivo();
         break;
     }
     //print("Item escolhido: " + itemEscolhido );
@@ -370,6 +455,50 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
     OneSignal.shared
         .setInAppMessageClickedHandler((OSInAppMessageAction action) {
     });
+  }
+
+  Widget _msgWidgetBuilder(Mensagem msg){
+    switch(msg.tipo){
+      case "texto":
+
+        return LinkText(
+            text: msg.mensagem,
+            textStyle: TextStyle(fontSize: 18),
+            linkStyle: TextStyle(
+                fontSize: 18,
+                color: Colors.lightBlue,
+                decoration: TextDecoration.underline
+            )
+        );
+
+        break;
+
+      case "imagem":
+
+        return Image.network(msg.urlImagem);
+
+        break;
+
+      default:
+
+
+        return Row(children: [
+          Flexible(
+              child: Text(msg.mensagem,
+              )
+          ),
+          IconButton(
+            icon: Icon(Icons.download_rounded),
+            onPressed: (){
+              launch(msg.urlImagem);
+            },
+          ),
+        ]
+        );
+
+        break;
+    }
+
   }
 
   @override
@@ -463,6 +592,13 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                         cor = Colors.white;
                       }
 
+                      Mensagem msgatual = Mensagem();
+                      msgatual.idUsuario = item["idUsuario"];
+                      msgatual.mensagem = item["mensagem"];
+                      msgatual.timeStamp = item["timeStamp"];
+                      msgatual.tipo = item["tipo"];
+                      msgatual.urlImagem = item["urlImagem"];
+
                       return Align(
                         alignment: alinhamento,
                         child: Padding(
@@ -470,12 +606,6 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                             child: InkWell(
                               onLongPress: (){
                                 if ( _idUsuarioLogado == item["idUsuario"] ) {
-                                  Mensagem msgatual = Mensagem();
-                                  msgatual.idUsuario = item["idUsuario"];
-                                  msgatual.mensagem = item["mensagem"];
-                                  msgatual.timeStamp = item["timeStamp"];
-                                  msgatual.tipo = item["tipo"];
-                                  msgatual.urlImagem = item["uriImagem"];
                                   print(msgatual.toMap());
                                   showDialog(
                                     context: context,
@@ -491,15 +621,7 @@ class _MensagensGrupoState extends State<MensagensGrupo> {
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
                                 child:
-                                item["tipo"] == "texto" ? LinkText(
-                                    text: nome + ": " + item["mensagem"],
-                                    textStyle: TextStyle(fontSize: 18),
-                                    linkStyle: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.lightBlue,
-                                        decoration: TextDecoration.underline
-                                    )
-                                ) : Image.network(item["urlImagem"]),
+                                _msgWidgetBuilder(msgatual)
                               ),
                             )
                         ),
