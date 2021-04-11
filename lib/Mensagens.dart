@@ -7,6 +7,7 @@
 //  2.2.O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
 //  3.Para implementar a detecção de links, foram usados os plugins url_launcher e link_text
 //  4.Para implementar os anexos, foi implementado o plugin file_picker e image_picker.
+//  5.Implementado _escolhaMenuItem para que o usuario possa escolher entre enviar fotos ou documentos
 
 import 'dart:async';
 
