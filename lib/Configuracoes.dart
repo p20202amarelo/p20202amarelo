@@ -131,7 +131,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
             .document(_idUsuarioLogado)
             .updateData( dadosAtualizar );
 
-        _atualizarEmailAuth(email).then((value) => log("############################################ $value"));
+        _atualizarEmailAuth(email).then((value) => log("$value"));
         _onLoading();
       }else {
         log("not email");
@@ -301,7 +301,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
                   ),
                 ),
 
-                // WORKING HERE
+                
                 Padding(
                   padding: EdgeInsets.only(bottom: 8),
                   child: TextField(
