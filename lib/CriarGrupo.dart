@@ -44,7 +44,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     return usuarioLogado.uid;
   }
 
-  _cadastrarGrupo() async { // função de testes, talez seja reutilizada dps para criar de fato o grupo
+  _cadastrarGrupo() async { 
 
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseUser usuarioLogado = await auth.currentUser();
@@ -73,7 +73,7 @@ class _CriarGrupoState extends State<CriarGrupo> {
     db.collection("grupos")
         .document(grupoId)
         .collection("mensagens")
-        .add(mensagem.toMap()); // rever
+        .add(mensagem.toMap()); 
 
 
     db.collection("grupos")
