@@ -74,8 +74,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         vsync: this
     );
 
-    //depois deste comentário sou eu (abv) frankensteinizando o código
-
+    
     registerNotification();
 
     // colocando o ONE SIGNAL
@@ -302,7 +301,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: <Widget>[
           AbaConversas(),
           AbaContatos(),
-          AbaGrupos() // temporario?
+          AbaGrupos()
         ],
       ),
     );
