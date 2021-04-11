@@ -1,11 +1,12 @@
 // Cabeçalho:
 //  Este módulo é responsável por definir a tela de conversa e todas suas funcionalidades.
 //  1.Para implementar a notificação. Quando o botão de enviar é apertado, o osId é recuperado pelo Firestore, e uma notificação é postada para o osId do destinatário.
-//  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto.
+//  1.1.Isto funciona tanto para uma mensagem de texto, quanto uma foto ou arquivo.
 //  2.Para implementar a remoção de mensagens foram criados os métodos _removerMensagem e _buildPopupDialog.
 //  2.1.O _buildPopupDialog abre uma janela quando a mensagem é pressionado por um tempo, apresentando duas opções para o usuário e então chama _removerMensagem.
 //  2.2.O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
 //  3.Para implementar a detecção de links, foram usados os plugins url_launcher e link_text
+//  4.Para implementar os anexos, foi implementado o plugin file_picker e image_picker.
 
 import 'dart:async';
 

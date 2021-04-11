@@ -1,5 +1,7 @@
 // Cabeçalho:
 //  Este é o modulo responsável por definir a página de ver integrantes em um grupo, determinado pelo invocador da tela. E suas funcionalidades.
+//  1.Para implementar a funcionalidade de adicionar integrantes foi colocado um botão no AppBar, quando clicado. O botão invoca a página de
+//  1.1.PopularGrupo.dart dando-lhe o id do grupo a modificar.
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';

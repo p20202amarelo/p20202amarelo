@@ -6,6 +6,7 @@
 //  2.1.O _buildPopupDialog abre uma janela quando a mensagem é pressionada por um tempo, confirmando a exclusão da mensagem.
 //  2.2.O _removerMensagem acessa o Firebase e procura a mensagem a ser removida pelo seu timestamp, em seguida trocando o texto da mensagem para "[Mensagem apagada]"
 //  3.Para implementar a detecção de links, foram usados os plugins url_launcher e link_text
+//  4.Para implementar os anexos foi implementados os plugins image_picker e file_picker
 
 // TODO: implementar anexos do Mensagens.dart para cá;
 

@@ -1,5 +1,7 @@
 // Cabeçalho:
 //  Este módulo define a página de cadastro de grupo e todas as suas funcionalidades.
+//  1.Quando o botão Continuar, cadastra o grupo. E o usuário logado como único integrante do grupo. Além de levar para PopularGrupo.dart
+
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -1,5 +1,7 @@
 // Cabeçalho:
 //  Este módulo é responsável por mostrar os grupos do qual o usuário logado faz parte.
+//  1.Para mostrar apenas os grupos do qual o usuário faz parte. O firestore tem uma coleção que liga o usuário aos grupos chamado ug_teste.
+//  1.1.Esta é a coleção consultada para mostrar os grupos.
 
 import 'package:flutter/material.dart';
 import '../model/Usuario.dart';
