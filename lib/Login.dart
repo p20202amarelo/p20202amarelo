@@ -64,9 +64,21 @@ class _LoginState extends State<Login> {
         email: usuario.email,
         password: usuario.senha
     ).then((firebaseUser){
+        // _atualizarOSId(firebaseUser.user.uid);
+        // Navigator.pushReplacementNamed(context, "/home")
+
+        if(!firebaseUser.user.isEmailVerified){
+          firebaseUser.user.sendEmailVerification();
+          //print("no email");
+          setState(() {
+            _mensagemErro = "Por favor verifique seu e-mail antes de prosseguir";
+          });
+
+        }
+        else{
         _atualizarOSId(firebaseUser.user.uid);
         Navigator.pushReplacementNamed(context, "/home");
-      //}
+      }
 
     }).catchError((error){
 
