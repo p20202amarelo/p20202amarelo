@@ -25,7 +25,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:link_text/link_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:video_player/video_player.dart';
 
 
 class Mensagens extends StatefulWidget {
