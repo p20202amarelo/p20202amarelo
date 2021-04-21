@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem.">
+    <list default="true" id="55c86400-ec2d-4360-80c1-dd39b3bb7931" name="Default Changelist" comment="TODO removidos, msg de confirmação de email só aparece com conta verificada, mensagens apagando">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
@@ -28,17 +28,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/br/uff/ic/dm/p20202amarelo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/kotlin/br/uff/ic/dm/p20202amarelo/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Configuracoes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuracoes.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Mensagens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Mensagens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/Usuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Usuario.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/Conversa.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/Conversa.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1pV4uqoYo8Lm3z48LyB0jTEAwC5" />
   <component name="ProjectViewState">
@@ -67,7 +69,10 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/telas" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -401,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617574256489</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="TODO removidos, msg de confirmação de email só aparece com conta verificada, mensagens apagando">
+      <created>1617907860007</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1617907860007</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -457,7 +469,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Atualizando os TODO" />
     <MESSAGE value="Criada a aba de conversa na tela Home, atualizado os cabeçalho, e colocada a opção de criar um grupo novo (não faz nada ainda)" />
     <MESSAGE value="Criado os módulos de criar grupo e objeto grupo" />
     <MESSAGE value="Atualizando o RouteGenerator.dart para incluir a pagina CriarGrupo" />
@@ -482,65 +493,91 @@
     <MESSAGE value="Msgs e MsgsGrupo com menu de anexo (by Renan)" />
     <MESSAGE value="Atualizando o widget de Mensagens.dart para tratar arquivos e não dar erro" />
     <MESSAGE value="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem." />
-    <option name="LAST_COMMIT_MESSAGE" value="Mensagens em arquivo agora mandam mensagens do tipo Arquivo, que podem ser baixadas pelo botão da mensagem." />
+    <MESSAGE value="TODO removidos, msg de confirmação de email só aparece com conta verificada, mensagens apagando" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO removidos, msg de confirmação de email só aparece com conta verificada, mensagens apagando" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="280" y="4" key="#Project_Structure" timestamp="1618541072287">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="280" y="4" key="#Project_Structure/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618541072287" />
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615768574788">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615768574788" />
-    <state x="92" y="92" width="1416" height="676" key="AVDManager" timestamp="1617905680331">
+    <state x="92" y="92" width="1416" height="676" key="AVDManager" timestamp="1618541135599">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="92" y="92" width="1416" height="676" key="AVDManager/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617905680331" />
+    <state x="-1508" y="124" width="1416" height="912" key="AVDManager/0.0.1600.860/-1600.0.1600.1160@-1600.0.1600.1160" timestamp="1618524994054" />
+    <state x="92" y="92" width="1416" height="676" key="AVDManager/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618541135599" />
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog" timestamp="1615662410938">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1615662410938" />
-    <state width="1557" height="201" key="GridCell.Tab.0.bottom" timestamp="1617850263461">
+    <state x="495" y="126" key="FileChooserDialogImpl" timestamp="1618540967835">
       <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="495" y="126" key="FileChooserDialogImpl/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618540967835" />
+    <state width="1306" height="333" key="GridCell.Tab.0.bottom" timestamp="1619035357139">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
-    <state width="1557" height="201" key="GridCell.Tab.0.bottom/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617850263461" />
-    <state width="1557" height="201" key="GridCell.Tab.0.center" timestamp="1617850263461">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1306" height="333" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1619035357139" />
+    <state width="1557" height="289" key="GridCell.Tab.0.bottom/0.0.1600.860/-1600.0.1600.1160@-1600.0.1600.1160" timestamp="1618525444362" />
+    <state width="1557" height="197" key="GridCell.Tab.0.bottom/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618542379004" />
+    <state width="1306" height="333" key="GridCell.Tab.0.center" timestamp="1619035357139">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
-    <state width="1557" height="201" key="GridCell.Tab.0.center/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617850263461" />
-    <state width="1557" height="201" key="GridCell.Tab.0.left" timestamp="1617850263461">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1306" height="333" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1619035357139" />
+    <state width="1557" height="289" key="GridCell.Tab.0.center/0.0.1600.860/-1600.0.1600.1160@-1600.0.1600.1160" timestamp="1618525444362" />
+    <state width="1557" height="197" key="GridCell.Tab.0.center/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618542379003" />
+    <state width="1306" height="333" key="GridCell.Tab.0.left" timestamp="1619035357138">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
-    <state width="1557" height="201" key="GridCell.Tab.0.left/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617850263461" />
-    <state width="1557" height="201" key="GridCell.Tab.0.right" timestamp="1617850263461">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1306" height="333" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1619035357138" />
+    <state width="1557" height="289" key="GridCell.Tab.0.left/0.0.1600.860/-1600.0.1600.1160@-1600.0.1600.1160" timestamp="1618525444362" />
+    <state width="1557" height="197" key="GridCell.Tab.0.left/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618542379003" />
+    <state width="1306" height="333" key="GridCell.Tab.0.right" timestamp="1619035357139">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616609222274" />
-    <state width="1306" height="321" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1617573440499" />
-    <state width="1557" height="201" key="GridCell.Tab.0.right/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617850263461" />
+    <state width="1306" height="333" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1619035357139" />
+    <state width="1557" height="289" key="GridCell.Tab.0.right/0.0.1600.860/-1600.0.1600.1160@-1600.0.1600.1160" timestamp="1618525444362" />
+    <state width="1557" height="197" key="GridCell.Tab.0.right/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618542379003" />
+    <state x="179" y="51" key="MergeDialog" timestamp="1618355693538">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="179" y="51" key="MergeDialog/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618355693538" />
     <state x="459" y="71" key="RollbackChangesDialog" timestamp="1616801287315">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="459" y="71" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1616801287315" />
-    <state x="184" y="14" key="SettingsEditor" timestamp="1616643436066">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="447" y="2" key="SettingsEditor" timestamp="1618541441051">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1616643436066" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1617574264803">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="447" y="2" key="SettingsEditor/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618541441051" />
+    <state x="322" y="119" key="Vcs.Push.Dialog.v2" timestamp="1617908012807">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1617574264803" />
+    <state x="322" y="119" key="Vcs.Push.Dialog.v2/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617908012807" />
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615911814346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="100" y="100" width="1166" height="538" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1615911814346" />
-    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617572096609">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="576" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618355869807">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1617572096609" />
+    <state x="576" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618355869807" />
+    <state x="174" y="96" width="583" height="764" key="find.popup" timestamp="1618524971419">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="174" y="96" width="583" height="764" key="find.popup/0.0.1600.860/-1600.0.1600.1160@-1600.0.1600.1160" timestamp="1618524971419" />
+    <state x="508" y="147" width="583" height="566" key="find.popup/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1618512713548" />
     <state x="462" y="230" key="git4idea.rebase.GitRebaseDialog" timestamp="1615911721041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -549,9 +586,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="497" y="213" key="git4idea.ui.GitTagDialog/0.0.1366.738@0.0.1366.738" timestamp="1615908493013" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1616362017094">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="405" y="69" width="788" height="791" key="search.everywhere.popup" timestamp="1617910335707">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1616362017094" />
+    <state x="405" y="69" width="788" height="791" key="search.everywhere.popup/0.0.1600.860/-1600.0.1600.1160@0.0.1600.860" timestamp="1617910335707" />
   </component>
 </project>

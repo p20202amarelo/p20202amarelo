@@ -1,4 +1,4 @@
-package br.uff.ic.dm.p20202amarelo
+package dm20202amarelo.ic.uff.br
 
 import io.flutter.embedding.android.FlutterActivity
 

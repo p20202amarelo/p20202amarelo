@@ -64,9 +64,21 @@ class _LoginState extends State<Login> {
         email: usuario.email,
         password: usuario.senha
     ).then((firebaseUser){
+      // _atualizarOSId(firebaseUser.user.uid);
+      // Navigator.pushReplacementNamed(context, "/home")
+
+      if(!firebaseUser.user.isEmailVerified){
+        firebaseUser.user.sendEmailVerification();
+        //print("no email");
+        setState(() {
+          _mensagemErro = "Por favor verifique seu e-mail antes de prosseguir";
+        });
+
+      }
+      else{
         _atualizarOSId(firebaseUser.user.uid);
         Navigator.pushReplacementNamed(context, "/home");
-      //}
+      }
 
     }).catchError((error){
 
@@ -168,7 +180,7 @@ class _LoginState extends State<Login> {
                       color: Colors.green,
                       padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32)
+                          borderRadius: BorderRadius.circular(32)
                       ),
                       onPressed: () {
                         _validarCampos();
@@ -193,7 +205,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(top: 16),
+                  padding: EdgeInsets.only(top: 16),
                   child: Center(
                     child: Text(
                       _mensagemErro,
@@ -209,10 +221,10 @@ class _LoginState extends State<Login> {
                   child: GestureDetector(
                     child:Center(
                       child: Text(
-                        "Esqueceu sua senha? Clique Aqui.",
-                        style: TextStyle(
-                            color: Colors.white
-                        )
+                          "Esqueceu sua senha? Clique Aqui.",
+                          style: TextStyle(
+                              color: Colors.white
+                          )
                       ),
                     ),
                     onTap: (){

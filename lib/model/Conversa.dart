@@ -11,7 +11,7 @@ class Conversa {
   String _mensagem;
   Timestamp _timeStamp; // LEK
   String _caminhoFoto;
-  String _tipoMensagem;//texto ou imagem
+  String _tipoMensagem;//texto ou imagem/video
 
   bool _arquivada;
 

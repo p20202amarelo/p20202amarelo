@@ -25,7 +25,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:link_text/link_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:video_player/video_player.dart';
 
 
 class Mensagens extends StatefulWidget {
@@ -548,7 +547,7 @@ class _MensagensState extends State<Mensagens> {
   @override
   Widget build(BuildContext context) {
 
-    var caixaMensagem = Container(
+    var caixaMensagem = Container(// emoji??
       padding: EdgeInsets.all(8),
       child: Row(
         children: <Widget>[

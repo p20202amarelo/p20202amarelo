@@ -1,6 +1,6 @@
 // Cabeçalho:
 //  Este módulo é responsavel por definir a página de configurações de conta. E todas as suas funcionalidades.
-//  1.Para implementar a opção de mudar e-mail e senha foram criados os TextControllers para e-mail e senha sao acionados tanto firebase_auth quanto firestore para atualizar os campos.
+//  1.Para implementar a opção de mudar e-mail e senha foram criados os TextControllers para e-mail e senha.
 //  1.1.Quando o botão "Salvar" é apertado, os controladores de e-mail e senha são checados, e se não estiverem vazios, fazem o update de e-mail e senha no firebase
 
 import 'package:flutter/material.dart';
@@ -131,7 +131,8 @@ class _ConfiguracoesState extends State<Configuracoes> {
             .document(_idUsuarioLogado)
             .updateData( dadosAtualizar );
 
-        _atualizarEmailAuth(email).then((value) => log("$value"));
+        _atualizarEmailAuth(email).then((value) => log("############################################ $value"));
+        // TODO: estilizar tela de loading
         _onLoading();
       }else {
         log("not email");
@@ -169,6 +170,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
 
 
   Future _atualizarEmailAuth(String newEmail) async {
+    // TODO: bug estranho as vezes aqui
     var message;
     FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
     log("_atualizarEmailAuth function call args $newEmail");
@@ -301,7 +303,7 @@ class _ConfiguracoesState extends State<Configuracoes> {
                   ),
                 ),
 
-                
+                // WORKING HERE
                 Padding(
                   padding: EdgeInsets.only(bottom: 8),
                   child: TextField(
